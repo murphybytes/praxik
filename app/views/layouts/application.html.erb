@@ -1,5 +1,9 @@
-<html class="no-js" ng-app="LowaFields">
-  <head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="LowaFields"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="LowaFields"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="LowaFields"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="LowaFields"> <!--<![endif]-->
+    <head>
 
     <!-- Basic Page Needs
     ================================================== -->
@@ -93,15 +97,19 @@
             <li><a href="http://mmp360.com/contact-us/">Contact Us</a></li>
             <li><a href="http://mmp360.com/services/">Services</a></li>
           </ul>
-        </div>
+        </div> <!-- / primary navigation -->
         </nav>
       </div>
+      <div class="twelve columns alpha">
+        <div id="content">
+          <%= yield %>
+          </div> <!-- / MY REPORTS page content -->
+        </div> <!-- / HOMEPAGE content -->
+      </div> <!-- /container main -->
+    </section> <!-- / page content -->
 
-      <%= yield %>
-    </div>
-    </section>
-  </body>
 
+<!-- /* vvv What is this stuff vvv */ -->
   <script type="text/ng-template" id="template/accordion/accordion.html">
     <div class="accordion" ng-transclude></div>
   </script>
@@ -114,4 +122,18 @@
       </div>
     </div>
   </script>
+ 
+
+    <footer>
+      <div class="container">
+        <div class="sixteen columns">
+          <div align="right">
+            <a href="http://mmp360.com/terms-of-service">Terms of Service</a> | <a href="http://mmp360.com/privacy-policy">Privacy Policy</a><br>
+            &copy; 2013 Praxik, LLC
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
