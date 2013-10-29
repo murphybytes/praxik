@@ -20,7 +20,6 @@ l = console.log;
 app = angular.module('LowaFields', ['LowaFieldsServices', 'ngRoute', 'ng', 'ui.bootstrap']);
 
 function FieldsCtrl($scope, Data) {
-    console.log("init");
     $scope.crops = ['Corn', 'Soybeans', 'Wheat', 'Oat', 'Alfalfa', 'Corn silage'];
     $scope.harvestMethods = ['Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower'];
     $scope.field = {plans: [{}, {}, {}, {}]};
@@ -31,7 +30,7 @@ function FieldsCtrl($scope, Data) {
     $scope.yesNoBlank = ["Yes", "No", "Unknown"];
     $scope.ownRent = ["Own", "Rent"];
     $scope.field.color = "Love";
-    $scope.conservationPractices = [ "Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces" ];
+    $scope.conservationPractices = ["Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
 
     $scope.$watch('field', function (value) {
         l($scope.field);
@@ -46,13 +45,6 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'account/fields',
         controller: 'FieldsCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
-      }).
-      otherwise({
-        redirectTo: '/phones'
-      });
   }]);
 
 app.directive('text', function() {
