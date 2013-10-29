@@ -1,4 +1,4 @@
-class Account::FieldsController < ApplicationController
+class Account::FieldsController < AccountsController
 
   def show
     @field = Field.find(params[:id])
