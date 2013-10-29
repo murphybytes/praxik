@@ -1,137 +1,27 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="LowaFields"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="LowaFields"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="LowaFields"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" ng-app="LowaFields"> <!--<![endif]-->
-    <head>
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="LowaFields"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="LowaFields"> <![endif]-->
+      <!--[if gt IE 8]><!--> <html class="no-js" ng-app="LowaFields"> <!--<![endif]-->
+        <head>
+          <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+          <title>MMP360 › Log In</title>
+          <link media="all" type="text/css" href="http://mmp360.com/wp-admin/css/wp-admin.min.css?ver=3.5.2" id="wp-admin-css" rel="stylesheet">
+          <link media="all" type="text/css" href="http://mmp360.com/wp-includes/css/buttons.min.css?ver=3.5.2" id="buttons-css" rel="stylesheet">
+          <link media="all" type="text/css" href="http://mmp360.com/wp-admin/css/colors-fresh.min.css?ver=3.5.2" id="colors-fresh-css" rel="stylesheet">
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1" type="text/javascript"></script>
+          <style type="text/css">
+            h1 a { 	background-image:url(http://mmp360.com/wp-content/themes/kps_skeleton/images/iowa-mmp-logo.png) !important; 
+            background-size:auto !important;
+            height:75px !important;
+            }
+          </style><meta content="noindex,nofollow" name="robots">
+        </head>
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Home : MMP360</title>
-    <meta name="description" content="">
-    <meta name="author" content="CFSPH Webspinner">
-    <meta name="robots" content="noindex,nofollow">
-
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1" type="text/javascript" style=""></script>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <body>
-    <section>
-    <div class="container" id="login">
-      <div class="sixteen columns">
-        <div align="right">
-          Hello Bob Dooley : <a title="Logout" href="http://mmp360.com/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Fmmp360.com&amp;_wpnonce=8bd88ca420">Logout</a>
-        </div>
-      </div>
-    </div>
-    <div class="container main">
-      <header class="container">
-      <a href="http://mmp360.com"><img id="logo" title="MMP360" src="http://mmp360.com/wp-content/themes/kps_skeleton/images/praxik-mmp360-logo.png"></a>
-      </header>
-      <div class="four columns omega">
-        <nav>
-        <div id="mini-menu">
-          <select name="sections" class="menu_select">
-            <option value="network" selected="selected">- select -</option>
-            <optgroup label="Reports">
-              <option value="http://mmp360.com/my-reports/">My Reports</option>
-            </optgroup>
-            <optgroup label="My Account">
-              <option value="http://mmp360.com/change-my-password/">Change My Password</option>
-              <option value="http://mmp360.com/edit-my-profile/">Edit My Profile</option>
-            </optgroup>
-            <optgroup label="Feeding Operation Site Management">
-              <option value="http://mmp360.com/add-feeding-operation/">Add a Feeding Operation</option>
-              <option value="http://mmp360.com/my-feeding-operations/">My Feeding Operations</option>
-            </optgroup>
-            <optgroup label="Field Management">
-              <option value="http://mmp360.com/add-field/">Add a Field</option>
-              <option value="http://mmp360.com/my-fields/">My Fields</option>
-            </optgroup>
-            <optgroup label="About">
-              <option value="http://mmp360.com/about-this-site/">About This Site</option>
-              <option value="http://mmp360.com/contact-us/">Contact Us</option>
-              <option value="http://mmp360.com/services/">Services</option>
-            </optgroup>
-          </select>
-        </div>
-        <div id="normal-menu">
-          <div><h5>Reports</h5></div>
-          <ul>
-            <li><a href="http://mmp360.com/my-reports/">My Reports</a></li>
-          </ul>
-          <div><h5>My Account</h5></div>
-          <ul>
-            <li><a href="http://mmp360.com/change-my-password/">Change My Password</a></li>
-            <li><a href="http://mmp360.com/edit-my-profile/">Edit My Profile</a></li>
-          </ul>
-          <div><h5>Feeding Operation Site Management</h5></div>
-          <ul>
-            <li><a href="http://mmp360.com/add-feeding-operation/">Add a Feeding Operation</a></li>
-            <li><a href="http://mmp360.com/my-feeding-operations/">My Feeding Operations</a></li>
-          </ul>
-          <div><h5>Field Management</h5></div>
-          <ul>
-            <li><a href="http://mmp360.com/add-field/">Add a Field</a></li>
-            <li><a href="http://mmp360.com/my-fields/">My Fields</a></li>
-          </ul>
-          <div><h5>About</h5></div>
-          <ul>
-            <li><a href="http://mmp360.com/about-this-site/">About This Site</a></li>
-            <li><a href="http://mmp360.com/contact-us/">Contact Us</a></li>
-            <li><a href="http://mmp360.com/services/">Services</a></li>
-          </ul>
-        </div> <!-- / primary navigation -->
-        </nav>
-      </div>
-      <div class="twelve columns alpha">
-        <div id="content">
+        <body class="login login-action-login wp-core-ui">
           <%= yield %>
-          </div> <!-- / MY REPORTS page content -->
-        </div> <!-- / HOMEPAGE content -->
-      </div> <!-- /container main -->
-    </section> <!-- / page content -->
-
-
-<!-- /* vvv What is this stuff vvv */ -->
-  <script type="text/ng-template" id="template/accordion/accordion.html">
-    <div class="accordion" ng-transclude></div>
-  </script>
-
-  <script type="text/ng-template" id="template/accordion/accordion-group.html">
-    <div class="accordion-group">
-      <div class="accordion-heading" ><a class="accordion-toggle" ng-click="isOpen = !isOpen" accordion-transclude="heading">{{heading}}</a></div>
-      <div class="accordion-body" collapse="!isOpen">
-        <div class="accordion-inner" ng-transclude></div> 
-      </div>
-    </div>
-  </script>
- 
-
-    <footer>
-      <div class="container">
-        <div class="sixteen columns">
-          <div align="right">
-            <a href="http://mmp360.com/terms-of-service">Terms of Service</a> | <a href="http://mmp360.com/privacy-policy">Privacy Policy</a><br>
-            &copy; 2013 Praxik, LLC
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </body>
-</html>
+        </body>
+      </html>

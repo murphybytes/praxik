@@ -36,7 +36,7 @@
     <div class="container" id="login">
       <div class="sixteen columns">
         <div align="right">
-          Hello Bob Dooley : <a title="Logout" href="http://mmp360.com/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Fmmp360.com&amp;_wpnonce=8bd88ca420">Logout</a>
+          <%= current_user %>: <%= link_to "Signout", destroy_user_session_path, method: "DELETE" %>
         </div>
       </div>
     </div>
