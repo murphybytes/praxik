@@ -62,7 +62,7 @@ app.directive('text', function() {
       template: '<div class="control-group">' +
                 '<label for="name" class="control-label"><span class="required" ng-transclude></span></label>' +
                 '<div class="controls">' +
-                '<input ng-model="ngModel" />' +
+                '<input type="text" ng-model="ngModel" />' +
                 '</div>' +
                 '</div>',
       scope: {
