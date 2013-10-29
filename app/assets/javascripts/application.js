@@ -75,14 +75,6 @@ app.directive('text', function() {
       compile: function (tElement, tAttrs, transclude) {
             var tInput = tElement.find('input');
             
-            // Move the attributed given to 'custom-input'
-            // to the real input field
-            angular.forEach(tAttrs, function(value, key) {
-                if (key.charAt(0) == '$')
-                    return;
-                tInput.attr(key, value);
-                tInput.parent().removeAttr(key);
-            });
             tElement.removeAttr('ng-model');
             
             return;
