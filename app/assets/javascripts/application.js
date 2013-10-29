@@ -44,7 +44,7 @@ app.config(['$routeProvider', function($routeProvider) {
       when('/fields', {
         templateUrl: 'account/fields',
         controller: 'FieldsCtrl'
-      }).
+      })
   }]);
 
 app.directive('text', function() {
