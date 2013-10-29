@@ -168,7 +168,7 @@ app.directive('step', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<div ng-show="showMe" ng-transclude></div>',
+      template: '<div ng-show="showMe" ng-transclude class="multipage-form-step"></div>',
       scope: { },
       replace: true,
       transclude: true,

@@ -12,3 +12,6 @@
  *= require_tree .
  *= old_css .
  */
+
+/* This makes each "step" within forms relatively the same height */
+.multipage-form-step {min-height: 380px;}
