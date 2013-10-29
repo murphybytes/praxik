@@ -1,0 +1,7 @@
+<%= simple_form_for [:account, @field] do |f|%>
+  <%= f.input :name %>
+  <%= f.input :associated_feeding_operation %>
+  <%= f.input :conservation_practices do %>
+    <%= f.select :conservation_practices, conservation_practices, include_blank: true %>
+  <% end %>
+<% end %>

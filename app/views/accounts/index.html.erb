@@ -1,0 +1,193 @@
+<div class="twelve columns alpha" ng-controller="FieldsCtrl">
+  <div id="content">
+    <h1 class="remove-bottom">Add a Feeding Operation</h1>
+    <hr>
+
+    <style type="text/css">label span.required { color: #B94A48; }span.help-inline, span.help-block { color: #888; font-size: .9em; font-style: italic; }</style>
+    <form class="form-horizontal" method="post" id="add_feeding_operation">
+      <fieldset>
+        <input type="hidden" value="add_feeding_operation" id="form" name="form">
+        <input type="hidden" value="d6ee7a4b06" id="nonce" name="nonce">
+
+        <h2>Step 1 of 2: General Details and Contact Information</h2>
+        <input type="hidden" value="1" id="step" name="step">			
+
+        <div class="control-group">
+          <div><label><span class="required">* </span><strong>Locate and Mark Your Feeding Operation:</strong></label></div>
+        </div>
+
+        <div class="control-group" id="feeding_op_name_group">
+          <label for="feeding_op_name" class="control-label">
+            <span class="required">* </span>Name of Operation:
+          </label>
+          <div class="controls"><input ng-model="field.name" type="text" required="" id="feeding_op_name" name="feeding_op_name"></div>
+        </div>
+
+        <div class="control-group" id="facility_id_group">
+          <label for="facility_id" class="control-label"><span class="required">* </span>Facility ID No.:</label>
+          <div class="controls"><input type="text" required="" id="facility_id" name="facility_id"></div>
+        </div>
+
+        <div class="control-group" id="feeding_op_address_group">
+          <label for="feeding_op_address" class="control-label"><span class="required">* </span>911 Street Address:</label>
+          <div class="controls"><input type="text" required="" id="feeding_op_address" name="feeding_op_address"></div>
+        </div>
+
+        <div class="control-group" id="feeding_op_city_group">
+          <label for="feeding_op_city" class="control-label"><span class="required">* </span>City:</label>
+          <div class="controls"><input type="text" required="" id="feeding_op_city" name="feeding_op_city"></div>
+        </div>
+
+        <div class="control-group" id="feeding_op_state_group">
+          <label for="feeding_op_state" class="control-label">State:</label>
+          <div class="controls"><input type="text" value="Iowa" readonly="1" id="feeding_op_state" name="feeding_op_state"></div>
+        </div>
+
+        <div class="control-group" id="feeding_op_zip_group">
+          <label for="feeding_op_zip" class="control-label"><span class="required">* </span>Zip:</label>
+          <div class="controls"><input type="text" required="" id="feeding_op_zip" name="feeding_op_zip"></div>
+        </div>
+
+        <h3>Owner Information</h3>
+
+        <div class="control-group" id="owner_name_group">
+          <label for="owner_name" class="control-label"> <span class="required">* </span>Owner Name</label>
+          <div class="controls"><input type="text" required="" id="owner_name" name="owner_name"></div>
+        </div>
+
+        <div class="control-group" id="owner_address_group">
+          <label for="owner_address" class="control-label"><span class="required">* </span>Address:</label>
+          <div class="controls"><input type="text" required="" id="owner_address" name="owner_address"></div>
+        </div>
+
+        <div class="control-group" id="owner_city_group">
+          <label for="owner_city" class="control-label"><span class="required">* </span>City:</label>
+          <div class="controls"><input type="text" required="" id="owner_city" name="owner_city"></div>
+        </div>
+
+        <div class="control-group" id="owner_state_group">
+          <label for="owner_state" class="control-label"><span class="required">* </span>State:</label>
+          <div class="controls"><input type="text" required="" id="owner_state" name="owner_state"></div>
+        </div>
+
+        <div class="control-group" id="owner_zip_group">
+          <label for="owner_zip" class="control-label"><span class="required">* </span>Zip:</label>
+          <div class="controls">
+            <input type="text" required="" id="owner_zip" name="owner_zip">
+          </div>
+        </div>
+
+        <div class="control-group" id="owner_phone_group">
+          <label for="owner_phone" class="control-label"><span class="required">* </span>Phone:</label>
+          <div class="controls">
+            <input type="tel" required="" id="owner_phone" name="owner_phone">
+          </div>
+        </div>
+
+        <div class="control-group" id="owner_email_group">
+          <label for="owner_email" class="control-label">
+            <span class="required">* </span>Email:
+          </label>
+
+          <div class="controls">
+            <input type="email" required="" id="owner_email" name="owner_email">
+          </div>
+        </div>
+
+        <h3>Contact Information</h3>
+        <div class="control-group">
+          <div class="controls">Add if different than owner information above.</div>
+        </div>
+
+        <div class="control-group" id="contact_name_group">
+          <label for="contact_name" class="control-label">Contact Name</label>
+          <div class="controls">
+            <input type="text" id="contact_name" name="contact_name">
+          </div>
+        </div>
+
+        <div class="control-group" id="contact_address_group">
+          <label for="contact_address" class="control-label">Address:</label>
+
+          <div class="controls">
+            <input type="text" id="contact_address" name="contact_address">
+          </div>
+        </div>
+
+        <div class="control-group" id="contact_city_group">
+          <label for="contact_city" class="control-label">City:</label>
+
+          <div class="controls">
+            <input type="text" id="contact_city" name="contact_city">
+          </div>
+        </div>
+
+        <div class="control-group" id="contact_state_group">
+          <label for="contact_state" class="control-label">State:</label>
+          <div class="controls">
+            <input type="text" id="contact_state" name="contact_state">
+          </div>
+        </div>
+
+        <div class="control-group" id="contact_zip_group">
+          <label for="contact_zip" class="control-label">Zip:</label>
+          <div class="controls"><input type="text" id="contact_zip" name="contact_zip"></div>
+        </div>
+
+        <div class="control-group" id="contact_phone_group">
+          <label for="contact_phone" class="control-label">Phone:</label>
+          <div class="controls">
+            <input type="tel" id="contact_phone" name="contact_phone">
+          </div>
+        </div>
+
+        <div class="control-group" id="contact_email_group">
+          <label for="contact_email" class="control-label">Email:</label>
+          <div class="controls"><input type="email" id="contact_email" name="contact_email"></div>
+        </div>
+
+        <h3>Contract Company</h3>
+        <div class="control-group" id="contract_co_name_group">
+          <label for="contract_co_name" class="control-label">Company Name</label>
+          <div class="controls"><input type="text" id="contract_co_name" name="contract_co_name"></div>
+        </div>
+
+        <div class="control-group" id="contract_co_address_group">
+          <label for="contract_co_address" class="control-label">Address:</label>
+          <div class="controls"><input type="text" id="contract_co_address" name="contract_co_address"></div>
+        </div>
+
+        <div class="control-group" id="contract_co_city_group">
+          <label for="contract_co_city" class="control-label">City:</label>
+          <div class="controls">
+            <input type="text" id="contract_co_city" name="contract_co_city">
+          </div>
+        </div>
+
+        <div class="control-group" id="contract_co_state_group">
+          <label for="contract_co_state" class="control-label">State:</label>
+          <div class="controls"><input type="text" id="contract_co_state" name="contract_co_state"></div>
+        </div>
+
+        <div class="control-group" id="contract_co_zip_group">
+          <label for="contract_co_zip" class="control-label">Zip:</label>
+          <div class="controls"><input type="text" id="contract_co_zip" name="contract_co_zip"></div>
+        </div>
+
+        <div class="control-group" id="contract_co_phone_group">
+          <label for="contract_co_phone" class="control-label">Phone:</label>
+          <div class="controls">
+            <input type="tel" id="contract_co_phone" name="contract_co_phone">
+          </div>
+        </div>
+
+        <div style="display:none;" id="form-response">
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" class="btn btn-primary" id="submit_button" name="" value="Save and Continue">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

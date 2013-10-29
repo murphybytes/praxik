@@ -1,0 +1,387 @@
+/*
+Theme Name: KPS Skeleton
+Theme URI: http://www.simplethemes.com
+Description: A simple WordPress theme based on the Skeleton RWD framework
+Version: 1.6
+Author: Simple Themes
+Author URI: http://www.simplethemes.com
+License: GPL
+License URI: http://www.opensource.org/licenses/gpl-license.php
+*/
+
+	html{
+		height:100%;
+	}
+	
+	body{
+		/* @http://ie.microsoft.com/testdrive/graphics/cssgradientbackgroundmaker/ */
+			
+		/* IE10 Consumer Preview */ 
+		background-image: -ms-linear-gradient(top, #E3E1CC 0%, #FFFFFF 100%);
+		
+		/* Mozilla Firefox */ 
+		background-image: -moz-linear-gradient(top, #E3E1CC 0%, #FFFFFF 100%);
+		
+		/* Opera */ 
+		background-image: -o-linear-gradient(top, #E3E1CC 0%, #FFFFFF 100%);
+		
+		/* Webkit (Safari/Chrome 10) */ 
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E3E1CC), color-stop(1, #FFFFFF));
+		
+		/* Webkit (Chrome 11+) */ 
+		background-image: -webkit-linear-gradient(top, #E3E1CC 0%, #FFFFFF 100%);
+		
+		/* W3C Markup, IE10 Release Preview */ 
+		background-image: linear-gradient(to bottom, #E3E1CC 0%, #FFFFFF 100%);
+		
+		background-attachment:fixed;
+		background-color:#e3e1cc;
+		margin:0;
+		padding:0;
+		min-height: 100%;
+	}
+	
+	header{
+		/* IE10 Consumer Preview */ 
+		background-image: -ms-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* Mozilla Firefox */ 
+		background-image: -moz-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* Opera */ 
+		background-image: -o-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* Webkit (Safari/Chrome 10) */ 
+		background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #E6F4C6), color-stop(1, #AEE0A6));
+		
+		/* Webkit (Chrome 11+) */ 
+		background-image: -webkit-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* W3C Markup, IE10 Release Preview */ 
+		background-image: linear-gradient(to bottom right, #E6F4C6 0%, #AEE0A6 100%);
+		position:relative;
+		border-bottom:solid 8px #6D5E4E;
+		padding-top:5px !important;
+		padding-bottom:0px !important;
+	}
+	
+	#logo{
+		margin:10px;
+	}
+	
+	#login{
+		padding-bottom:5px;
+		padding-right:0;	
+		font-weight:bold;	
+		font-size:13px;
+	}
+	
+	#login a{
+		color: #1f9010;
+	
+	}
+	
+	.main{
+		background:white;
+		box-shadow: 0 1px 4px #999;
+		margin-top:0;
+	}
+	
+	.main {
+		min-height: 400px;
+	}
+		
+	footer{
+		font-size:11px;
+		color:#1f9010;
+		line-height:14px;
+	}
+	
+	footer .container{
+		padding-top:10px;
+		padding-right:0;
+	}
+	
+	nav{
+		margin:20px 10px;
+	}
+	
+	nav ul li a, nav ul li a:visited, nav ul li a:active {
+		color:#1f9010;
+		font-size: 14px;
+		text-decoration: none;
+		font-weight:normal;
+	}
+	
+	nav ul li a:hover {
+		color:#A5733A;
+		text-decoration: underline;
+	}
+	
+	nav li{
+		line-height:16px;
+		margin-bottom:8px;
+	}
+	
+	h1{
+		font-size: 30px;
+		line-height: 34px;
+		margin-top:15px;
+		margin-left:0;
+		padding-bottom:0;
+		margin-bottom: 8px;
+		color:#1f9010;
+		font-family: 'Lusitana', serif;
+	}
+	
+	h2{
+		font-size: 18px;
+		line-height: 20px;
+		margin-bottom: 15px;
+		color:#1f9010;
+		font-family: 'Lusitana', serif;
+	}
+	
+	
+	h3{
+		font-size: 16px;
+		line-height: 18px;
+		margin-bottom: 10px;
+		color:#1f9010;
+		border-bottom:solid 1px #B6E3AB;
+		font-family: 'Lusitana', serif;
+		margin-top:30px;
+		margin-left:10px;
+	}
+	
+	h4{
+		font-size: 16px;
+		line-height: 18px;
+		margin-bottom: 10px;
+		color:#1f9010;
+		font-family: 'Lusitana', serif;
+		margin-top:30px;
+	}
+	
+	h5{
+		font-family: 'Lusitana', serif;
+		font-size:18px;
+		margin-bottom:5px;
+	}
+	
+	#splash-screen{
+		height:240px;
+		margin:10px;
+		box-shadow: 0 1px 4px #333;
+		background-image:url(images/corn-field-wallcharts.jpg);
+		background-position:center;
+		
+	}	
+	
+	#user_login,
+	#user_pass{
+		width:180px;	
+	}
+	
+	.error_textbox{
+		border:solid 1px #D6908F !important;
+		background-color:#EFDADA !important;	
+	}
+	
+	#mini-menu select{
+		width: 100%;	
+	}
+	
+	hr{
+		margin-bottom:10px;	
+	}
+	
+	a{
+		color:#1f9010;	
+	}
+	
+	a:hover, a:focus{
+		color:	#A5733A;
+	}
+	
+	p{
+		margin-left:10px;	
+		margin-right:10px;
+	}
+	
+	.alert{
+		border:solid 1px red;
+		background-color:#EACCCC;
+		color:#900;
+		padding:10px 20px;
+		margin:10px 0;	
+	}
+	
+	.message{
+		border:solid 1px green;
+		background-color:#A6FBA4;
+		color:#060;
+		padding:10px 20px;
+		margin:10px 0;	
+	}
+	
+	.role-view{
+		text-align:right;
+		font-size:10px;
+		color:#999;	
+		margin-right:10px;
+	}
+	
+	.blue-box{
+		margin:10px 30px;
+		border:solid 1px #6B86AD;
+		padding:20px;
+		padding-bottom:0;
+		background-color:#C9D8ED;
+		box-shadow: 0 1px 3px #999;
+	}
+	
+	.green-box{
+		/* IE10 Consumer Preview */ 
+		background-image: -ms-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* Mozilla Firefox */ 
+		background-image: -moz-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* Opera */ 
+		background-image: -o-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* Webkit (Safari/Chrome 10) */ 
+		background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #E6F4C6), color-stop(1, #AEE0A6));
+		
+		/* Webkit (Chrome 11+) */ 
+		background-image: -webkit-linear-gradient(top left, #E6F4C6 0%, #AEE0A6 100%);
+		
+		/* W3C Markup, IE10 Release Preview */ 
+		background-image: linear-gradient(to bottom right, #E6F4C6 0%, #AEE0A6 100%);
+		border:solid 1px #82BC76;
+		padding:15px;
+		padding-bottom:0;
+		margin:30px 10px;
+		box-shadow: 0 1px 3px #999;
+	}
+	
+	.white-box{
+		margin:10px 30px;
+		border:solid 1px #CCC;
+		padding:25px;
+		background-color:#f5f5f5;
+		box-shadow: 0 1px 3px #999;
+	}
+	
+	.grey{
+		color:#AAA;	
+	}
+	
+	.pdf {
+		background-image: url("images/doc-icon-sm.gif");
+		background-position: 2px center;
+		background-repeat: no-repeat;
+		padding-left: 15px;
+	}
+	
+	.video-frame{
+		width:420px;
+		margin:20px auto;	
+	}
+	
+	.asilomar input[type="text"]{
+		margin-bottom:0 !important;
+	}
+	
+	.asilomar th{
+		font-weight:bold;	
+	}
+	
+	.asilomar .section{
+		background-color: #E6EEEE;	
+		font-weight:bold;
+	}
+	
+	.assessment-ref-id{
+		color:#999;
+		font-size:11px;	
+	}
+	
+	.assessment-responses{
+		float:left;
+		margin-right:10px;	
+	}
+	
+	.assessment-radio-selsector{
+		width:240px;	
+	}
+	
+	.error-code{
+		font-size:10px;	
+	}
+	
+	#content ul{
+		list-style:circle;
+		margin-left:20px;
+		margin-right:10px;
+	}
+	
+	.collapsible {
+		margin-top:0;
+		padding-left:18px;
+		background-image:url("images/collapse-icon-up.gif");
+		background-position:0 2px;
+		background-repeat:no-repeat;
+		cursor:pointer;
+	}
+	
+	.map-icon-tray{
+		width:310px;
+		float:right;
+		text-align:right;
+	}
+	.map-zoon-tray{
+		width:100px;
+		float:right;	
+	}
+
+    @media only screen and (max-width: 767px) {		
+		.assessment-radio-selsector{
+			width:80px;	
+		}
+		
+		.white-box{
+			margin:5px;
+			padding:10px;
+			box-shadow:none;
+		}
+		
+		nav{
+			margin:10px;
+			margin-bottom:0;
+		}
+		
+		.controls p {
+			padding-left:20px;
+		}
+		.main{
+			min-height:200px;	
+		}
+		h1{
+			font-size:24px;
+		}
+		h2{
+			font-size:16px;	
+		}
+		#logo{
+			width:180px;
+			height:auto;	
+		}
+		#splash-screen{
+			background:none;
+			display:none;
+		}
+		
+	}
+	

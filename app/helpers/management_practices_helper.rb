@@ -1,0 +1,2 @@
+module ManagementPracticesHelper
+end

@@ -1,0 +1,707 @@
+<form class="form-horizontal" method="post" id="edit_field">
+  <fieldset>
+    <input type="hidden" value="edit_field" id="form" name="form">
+    <input type="hidden" value="5152832e69" id="nonce" name="nonce">
+    <h2>Step 1 of 6: General Field Site Details</h2>
+    <input type="hidden" value="1" id="step" name="step">
+    <input type="hidden" value="71821f45-2ee6-4a34-98fc-18a5f9fc7d9f" id="field" name="field">
+    <div class="control-group">
+      <div>
+        <label>
+          <span class="required">* </span>
+          <strong>Locate and Mark Your Field:</strong>
+      </label>
+    </div>
+				<div>
+					<div id="mapcontainer">
+						<div align="right" style="padding:3px;">
+							<strong>View:</strong>
+							<input type="radio" onclick="change_map_view('terrain');" name="map_view"> Terrain
+							<input type="radio" onclick="change_map_view('roadmap');" name="map_view"> Roadmap
+							<input type="radio" checked="checked" onclick="change_map_view('hybrid');" name="map_view"> Hybrid
+							<input type="radio" onclick="change_map_view('satellite');" name="map_view"> Satellite 
+						</div>
+						<div align="right" style="padding:3px;"><strong>Zoom to:</strong> <select id="county_selector"><option selected="selected" value="">--SELECT COUNTY--</option><option value="001">Adair</option><option value="003">Adams</option><option value="005">Allamakee</option><option value="007">Appanoose</option><option value="009">Audubon</option><option value="011">Benton</option><option value="013">Black Hawk</option><option value="015">Boone</option><option value="017">Bremer</option><option value="019">Buchanan</option><option value="021">Buena Vista</option><option value="023">Butler</option><option value="025">Calhoun</option><option value="027">Carroll</option><option value="029">Cass</option><option value="031">Cedar</option><option value="033">Cerro Gordo</option><option value="035">Cherokee</option><option value="037">Chickasaw</option><option value="039">Clarke</option><option value="041">Clay</option><option value="043">Clayton</option><option value="045">Clinton</option><option value="047">Crawford</option><option value="049">Dallas</option><option value="051">Davis</option><option value="053">Decatur</option><option value="055">Delaware</option><option value="057">Des Moines</option><option value="059">Dickinson</option><option value="061">Dubuque</option><option value="063">Emmet</option><option value="065">Fayette</option><option value="067">Floyd</option><option value="069">Franklin</option><option value="071">Fremont</option><option value="073">Greene</option><option value="075">Grundy</option><option value="077">Guthrie</option><option value="079">Hamilton</option><option value="081">Hancock</option><option value="083">Hardin</option><option value="085">Harrison</option><option value="087">Henry</option><option value="089">Howard</option><option value="091">Humboldt</option><option value="093">Ida</option><option value="095">Iowa</option><option value="097">Jackson</option><option value="099">Jasper</option><option value="101">Jefferson</option><option value="103">Johnson</option><option value="105">Jones</option><option value="107">Keokuk</option><option value="109">Kossuth</option><option value="111">Lee</option><option value="113">Linn</option><option value="115">Louisa</option><option value="117">Lucas</option><option value="119">Lyon</option><option value="121">Madison</option><option value="123">Mahaska</option><option value="125">Marion</option><option value="127">Marshall</option><option value="129">Mills</option><option value="131">Mitchell</option><option value="133">Monona</option><option value="135">Monroe</option><option value="137">Montgomery</option><option value="139">Muscatine</option><option value="141">O'Brien</option><option value="143">Osceola</option><option value="145">Page</option><option value="147">Palo Alto</option><option value="149">Plymouth</option><option value="151">Pocahontas</option><option value="153">Polk</option><option value="155">Pottawattamie</option><option value="157">Poweshiek</option><option value="159">Ringgold</option><option value="161">Sac</option><option value="163">Scott</option><option value="165">Shelby</option><option value="167">Sioux</option><option value="169">Story</option><option value="171">Tama</option><option value="173">Taylor</option><option value="175">Union</option><option value="177">Van Buren</option><option value="179">Wapello</option><option value="181">Warren</option><option value="183">Washington</option><option value="185">Wayne</option><option value="187">Webster</option><option value="189">Winnebago</option><option value="191">Winneshiek</option><option value="193">Woodbury</option><option value="195">Worth</option><option value="197">Wright</option></select></div>
+						<div id="map" class="olMap"><div id="OpenLayers.Map_8_OpenLayers_ViewPort" style="position: relative; overflow: hidden; width: 100%; height: 100%;" class="olMapViewport olControlDragPanActive olControlZoomBoxActive olControlPinchZoomActive olControlNavigationActive olControlSelectFeatureActive"><div id="OpenLayers.Map_8_OpenLayers_Container" style="position: absolute; width: 100px; height: 100px; z-index: 749; left: 0px; top: 0px;"><div id="OpenLayers.Layer.WMS_32" style="position: absolute; width: 100%; height: 100%; z-index: 345; left: 0%; top: 0%;" dir="ltr" class="olLayerDiv olLayerGrid"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 258%; top: 124%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10410111.754766,5009377.085,-10331840.237812,5087648.6019531&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 2%; top: 124%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10488383.271719,5009377.085,-10410111.754766,5087648.6019531&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 258%; top: -132%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10410111.754766,5087648.6019531,-10331840.237812,5165920.1189063&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 258%; top: 380%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10410111.754766,4931105.5680469,-10331840.237812,5009377.085&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 514%; top: 124%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10331840.237812,5009377.085,-10253568.720859,5087648.6019531&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 2%; top: -132%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10488383.271719,5087648.6019531,-10410111.754766,5165920.1189063&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 2%; top: 380%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10488383.271719,4931105.5680469,-10410111.754766,5009377.085&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 514%; top: -132%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10331840.237812,5087648.6019531,-10253568.720859,5165920.1189063&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: 514%; top: 380%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10331840.237812,4931105.5680469,-10253568.720859,5009377.085&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: -254%; top: 124%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10566654.788672,5009377.085,-10488383.271719,5087648.6019531&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: -254%; top: -132%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10566654.788672,5087648.6019531,-10488383.271719,5165920.1189063&amp;WIDTH=256&amp;HEIGHT=256"><img class="olTileImage" style="visibility: inherit; opacity: 0.5; position: absolute; left: -254%; top: 380%; width: 256%; height: 256%;" src="http://iowammp.com/gis/geoserver/ssurgo/gwc/service/wms?LAYERS=ssurgo%3Asapolygon&amp;FORMAT=image%2Fpng&amp;TRANSPARENT=TRUE&amp;TILED=true&amp;STYLES=&amp;SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;SRS=EPSG%3A3857&amp;BBOX=-10566654.788672,4931105.5680469,-10488383.271719,5009377.085&amp;WIDTH=256&amp;HEIGHT=256"></div><div id="OpenLayers.Layer.WMS_34" style="position: absolute; width: 100%; height: 100%; z-index: 350; display: none;" dir="ltr" class="olLayerDiv olLayerGrid"></div><div id="OpenLayers.Layer.Vector_36" style="position: absolute; width: 100%; height: 100%; z-index: 725; left: 0px; top: 0px;" dir="ltr" class="olLayerDiv"><svg id="OpenLayers.Layer.Vector_36_svgRoot" style="display: block;" width="685" height="500" viewBox="0 0 685 500"><g id="OpenLayers.Layer.Vector_36_root" style="visibility: visible;" transform=""><g id="OpenLayers.Layer.Vector_36_vroot"><path id="OpenLayers.Geometry.Polygon_97" d=" M 678.499999999709,393.99999999977445 678.499999999709,105.99999999966167 6.499999999541615,105.99999999966167 6.499999999541615,393.99999999977445 678.499999999709,393.99999999977445 z" fill-rule="evenodd" fill="#7CC96E" fill-opacity="0.5" stroke="#209110" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" cursor="pointer"/></g><g id="OpenLayers.Layer.Vector_36_troot"><text id="OpenLayers.Feature.Vector_99_label" x="342.49999999623833" y="249.9999999981119" fill="#B4DCA8" stroke="#B4DCA8" stroke-width="2" font-weight="bold" pointer-events="none" text-anchor="middle" dominant-baseline="central"><tspan id="OpenLayers.Feature.Vector_99_label_tspan_0" x="342.49999999623833" dy="0em">Test One</tspan></text><text id="OpenLayers.Feature.Vector_99_outline" x="342.49999999623833" y="249.9999999981119" fill="#1F8E0F" font-weight="bold" pointer-events="none" text-anchor="middle" dominant-baseline="central"><tspan id="OpenLayers.Feature.Vector_99_outline_tspan_0" x="342.49999999623833" dy="0em">Test One</tspan></text></g></g></svg></div><div id="OpenLayers.Layer.Vector_38" style="position: absolute; width: 100%; height: 100%; z-index: 360; left: 0px; top: 0px;" dir="ltr" class="olLayerDiv"><svg id="OpenLayers.Layer.Vector_38_svgRoot" style="display: block;" width="685" height="500" viewBox="0 0 685 500"><g id="OpenLayers.Layer.Vector_38_root" style="visibility: visible;" transform=""><g id="OpenLayers.Layer.Vector_38_vroot"/><g id="OpenLayers.Layer.Vector_38_troot"/></g></svg></div></div><div id="OpenLayers.Control.Zoom_11" style="position: absolute; z-index: 1004;" class="olControlZoom olControlNoSelect" unselectable="on"><a href="#zoomIn" class="olControlZoomIn olButton">+</a><a href="#zoomOut" class="olControlZoomOut olButton">-</a></div><div id="OpenLayers.Control.ArgParser_12" style="position: absolute; z-index: 1004;" class="olControlArgParser olControlNoSelect" unselectable="on"></div><div id="OpenLayers.Control.Attribution_13" style="position: absolute; z-index: 1004;" class="olControlAttribution olControlNoSelect" unselectable="on"></div><div id="OpenLayers.Layer.Google_24" style="position: absolute; width: 100%; height: 100%; z-index: 100; display: none;" dir="ltr" class="olLayerDiv"></div><div id="OpenLayers.Layer.Google_24_EventPane" style="position: absolute; z-index: 101; width: 100%; height: 100%; display: none;"></div><div id="OpenLayers.Map_8_GMapContainer" style="position: absolute; width: 100%; height: 100%; background-color: rgb(229, 227, 223); overflow: hidden;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; left: 0px; top: 0px; z-index: 101;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 201;"><div style="position: absolute; left: 0px; top: 0px; z-index: 102;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 202;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 100;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; position: absolute; left: 2px; top: 124px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 258px; top: 124px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 2px; top: -132px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 2px; top: 380px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 258px; top: -132px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 258px; top: 380px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -254px; top: 124px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 514px; top: 124px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -254px; top: -132px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -254px; top: 380px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 514px; top: -132px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 514px; top: 380px;"></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 685px; height: 500px;"><img style="width: 685px; height: 500px;" src="http://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&amp;1i31230&amp;2i48772&amp;2e2&amp;3u9&amp;4m2&amp;1u685&amp;2u500&amp;5m4&amp;1e3&amp;5sen-US&amp;6sus&amp;10b0&amp;token=1973"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1;"><div style="width: 256px; height: 256px; position: absolute; left: 2px; top: 124px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm0.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=122&amp;y=191&amp;z=9&amp;token=39957" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt0.googleapis.com/vt?lyrs=m@239121501&amp;src=apiv3&amp;hl=en-US&amp;x=122&amp;y=191&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 258px; top: 124px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm1.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=123&amp;y=191&amp;z=9&amp;token=108778" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt1.googleapis.com/vt?lyrs=m@239121433&amp;src=apiv3&amp;hl=en-US&amp;x=123&amp;y=191&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 2px; top: -132px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm0.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=122&amp;y=190&amp;z=9&amp;token=48875" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt0.googleapis.com/vt?lyrs=m@239118571&amp;src=apiv3&amp;hl=en-US&amp;x=122&amp;y=190&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 2px; top: 380px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm0.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=122&amp;y=192&amp;z=9&amp;token=31039" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt0.googleapis.com/vt?lyrs=m@239121869&amp;src=apiv3&amp;hl=en-US&amp;x=122&amp;y=192&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 258px; top: -132px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm1.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=123&amp;y=190&amp;z=9&amp;token=117696" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt1.googleapis.com/vt?lyrs=m@239120573&amp;src=apiv3&amp;hl=en-US&amp;x=123&amp;y=190&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 258px; top: 380px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm1.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=123&amp;y=192&amp;z=9&amp;token=99860" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt1.googleapis.com/vt?lyrs=m@239121413&amp;src=apiv3&amp;hl=en-US&amp;x=123&amp;y=192&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: -254px; top: 124px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm1.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=121&amp;y=191&amp;z=9&amp;token=102207" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt1.googleapis.com/vt?lyrs=m@239113908&amp;src=apiv3&amp;hl=en-US&amp;x=121&amp;y=191&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 514px; top: 124px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm0.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=124&amp;y=191&amp;z=9&amp;token=46528" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt0.googleapis.com/vt?lyrs=m@239121433&amp;src=apiv3&amp;hl=en-US&amp;x=124&amp;y=191&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: -254px; top: -132px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm1.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=121&amp;y=190&amp;z=9&amp;token=111125" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt1.googleapis.com/vt?lyrs=m@239120693&amp;src=apiv3&amp;hl=en-US&amp;x=121&amp;y=190&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: -254px; top: 380px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm1.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=121&amp;y=192&amp;z=9&amp;token=93289" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt1.googleapis.com/vt?lyrs=m@239114057&amp;src=apiv3&amp;hl=en-US&amp;x=121&amp;y=192&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 514px; top: -132px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm0.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=124&amp;y=190&amp;z=9&amp;token=55446" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt0.googleapis.com/vt?lyrs=m@239120713&amp;src=apiv3&amp;hl=en-US&amp;x=124&amp;y=190&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div><div style="width: 256px; height: 256px; position: absolute; left: 514px; top: 380px; opacity: 1; transition: opacity 200ms ease-out 0s;"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://khm0.googleapis.com/kh?v=140&amp;hl=en-US&amp;x=124&amp;y=192&amp;z=9&amp;token=37610" draggable="false"><img style="width: 256px; height: 256px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px; position: absolute; left: 0px; top: 0px;" src="http://mt0.googleapis.com/vt?lyrs=m@239113202&amp;src=apiv3&amp;hl=en-US&amp;x=124&amp;y=192&amp;z=9&amp;style=4,37%7Csmartmaps" draggable="false"></div></div></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data &copy;2013 Google  Imagery &copy;2013 TerraMetrics</div></div><div class="gmnoprint" style="font-size: 10px; height: 17px; background-color: rgb(245, 245, 245); border: 1px solid rgb(220, 220, 220); line-height: 19px; position: absolute; right: 0px; bottom: 0px;"><a target="_new" title="Report errors in the road map or imagery to Google" style="font-family: Arial,sans-serif; font-size: 85%; font-weight: bold; bottom: 1px; padding: 1px 3px; color: rgb(68, 68, 68); text-decoration: none; position: relative;" href="http://maps.google.com/maps?ll=41.249269,-93.283235&amp;z=9&amp;t=h&amp;hl=en-US&amp;mapclient=apiv3&amp;skstate=action:mps_dialog$apiref:1&amp;output=classic">Report a map error</a></div></div></div><div id="OpenLayers.Layer.Google_26" style="position: absolute; width: 100%; height: 100%; z-index: 105; display: none;" dir="ltr" class="olLayerDiv"></div><div id="OpenLayers.Layer.Google_26_EventPane" style="position: absolute; z-index: 106; width: 100%; height: 100%; display: none;"></div><div id="OpenLayers.Layer.Google_28" style="position: absolute; width: 100%; height: 100%; z-index: 110; display: block;" dir="ltr" class="olLayerDiv"></div><div id="OpenLayers.Layer.Google_28_EventPane" style="position: absolute; z-index: 111; width: 100%; height: 100%; display: block;"></div><div id="OpenLayers.Layer.Google_30" style="position: absolute; width: 100%; height: 100%; z-index: 115; display: none;" dir="ltr" class="olLayerDiv"></div><div id="OpenLayers.Layer.Google_30_EventPane" style="position: absolute; z-index: 116; width: 100%; height: 100%; display: none;"></div><div id="OpenLayers.Control.DrawFeature_40" style="position: absolute; z-index: 1005;" class="olControlDrawFeaturePoint olControlNoSelect" unselectable="on" title="points"></div><div id="OpenLayers.Control.DrawFeature_46" style="position: absolute; z-index: 1006;" class="olControlDrawFeaturePath olControlNoSelect" unselectable="on" title="path"></div><div id="OpenLayers.Control.DrawFeature_52" style="position: absolute; z-index: 1007;" class="olControlDrawFeatureBox olControlNoSelect" unselectable="on" title="square"></div><div id="OpenLayers.Control.DrawFeature_58" style="position: absolute; z-index: 1008;" class="olControlDrawFeaturePoly olControlNoSelect" unselectable="on" title="poly"></div><div id="OpenLayers.Control.DrawFeature_64" style="position: absolute; z-index: 1009;" class="olControlDrawFeatureFreePoly olControlNoSelect" unselectable="on" title="freepoly"></div><div id="OpenLayers.Control.DrawFeature_70" style="position: absolute; z-index: 1010;" class="olControlDrawFeatureTriangle olControlNoSelect" unselectable="on" title="triangle"></div><div id="OpenLayers.Control.DrawFeature_76" style="position: absolute; z-index: 1011;" class="olControlDrawFeatureCircle olControlNoSelect" unselectable="on" title="circle"></div><div id="OpenLayers.Control.SelectFeature_82" style="position: absolute; z-index: 1012;" class="olControlSelectFeature olControlNoSelect" unselectable="on" title="select"></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Arial,sans-serif; color: rgb(34, 34, 34); box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2); z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 193px; top: 160px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data &copy;2013 Google  Imagery &copy;2013 TerraMetrics</div><div style="width: 10px; height: 10px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img style="position: absolute; left: -18px; top: -44px; width: 68px; height: 67px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="http://maps.gstatic.com/mapfiles/mv/imgs8.png" draggable="false"></div></div><div class="olLayerGoogleCopyright olLayerGoogleV3" style="z-index: 1100; position: absolute; right: 85px; bottom: 0px;"><div style="height: 19px; -moz-user-select: none; line-height: 19px; padding-right: 2px; padding-left: 50px; background: -moz-linear-gradient(left center , rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.5) 50px) repeat scroll 0% 0% transparent; font-family: Arial,sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right;" draggable="false"><a style="color: rgb(68, 68, 68); text-decoration: underline; cursor: pointer; display: none;">Map Data</a><span style="">Map data &copy;2013 Google  Imagery &copy;2013 TerraMetrics</span><span style=""> - </span><a style="color: rgb(68, 68, 68); text-decoration: underline; cursor: pointer;" href="http://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">Terms of Use</a></div></div><div style="margin: 2px 5px 2px 2px; z-index: 1100; position: absolute; left: 0px; bottom: 0px;" class="olLayerGooglePoweredBy olLayerGoogleV3 gmnoprint"><a style="position: static; overflow: visible; float: none; display: inline;" target="_blank" href="http://maps.google.com/maps?ll=41.249269,-93.283235&amp;z=9&amp;t=h&amp;hl=en-US&amp;mapclient=apiv3" title="Click to see this area on Google Maps"><div style="width: 62px; height: 24px; cursor: pointer;"><img style="position: absolute; left: 0px; top: 0px; width: 62px; height: 24px; -moz-user-select: none; border: 0px none; padding: 0px; margin: 0px;" src="http://maps.gstatic.com/mapfiles/google_white.png" draggable="false"></div></a></div></div></div>
+						<div style="display:none;float:left;" id="controls">
+							<input type="button" value="Delete Selected Feature" onclick="delete_selected_feature();" name="delete_feature"><br>
+							
+						</div>
+						<div class="map-icon-tray">
+							<img style="cursor:pointer" onclick="change_map_mode('select');" id="button-select-icon" src="/wp-content/plugins/kps-webspinner/assets/select-icon-down.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('square');" id="button-square-icon" src="/wp-content/plugins/kps-webspinner/assets/square-icon-up.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('poly');" id="button-poly-icon" src="/wp-content/plugins/kps-webspinner/assets/poly-icon-up.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('circle');" id="button-circle-icon" src="/wp-content/plugins/kps-webspinner/assets/circle-icon-up.gif"> 
+						</div>
+						<div class="map-zoom-tray">
+							<img style="cursor:pointer" onclick="zoom_extents();" src="http://mmp360.com/wp-content/plugins/kps-webspinner/assets/zoom-icon.gif"> 
+							<img style="cursor:pointer;display:none;" onclick="toggle_soil_layer();" id="button-soil-icon" src="http://mmp360.com/wp-content/plugins/kps-webspinner/assets/soil-button-up.gif"> 
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<script type="text/javascript">
+				var map;
+				
+					
+		var keyStr = "ABCDEFGHIJKLMNOP" +
+					 "QRSTUVWXYZabcdef" +
+					 "ghijklmnopqrstuv" +
+					 "wxyz0123456789+/" +
+					 "=";
+				   
+		 function decode(input) {
+			 var output = "";
+			 var chr1, chr2, chr3 = "";
+			 var enc1, enc2, enc3, enc4 = "";
+			 var i = 0;
+		
+			 // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+			 var base64test = /[^A-Za-z0-9\+\/\=]/g;
+			 if (base64test.exec(input)) {
+				alert("There was an error with the mapping software. Please contact the Webmaster.");
+			 }
+			 input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+		
+			 do {
+				enc1 = keyStr.indexOf(input.charAt(i++));
+				enc2 = keyStr.indexOf(input.charAt(i++));
+				enc3 = keyStr.indexOf(input.charAt(i++));
+				enc4 = keyStr.indexOf(input.charAt(i++));
+		
+				chr1 = (enc1 &lt;&lt; 2) | (enc2 &gt;&gt; 4);
+				chr2 = ((enc2 &amp; 15) &lt;&lt; 4) | (enc3 &gt;&gt; 2);
+				chr3 = ((enc3 &amp; 3) &lt;&lt; 6) | enc4;
+		
+				output = output + String.fromCharCode(chr1);
+		
+				if (enc3 != 64) {
+				   output = output + String.fromCharCode(chr2);
+				}
+				if (enc4 != 64) {
+				   output = output + String.fromCharCode(chr3);
+				}
+		
+				chr1 = chr2 = chr3 = "";
+				enc1 = enc2 = enc3 = enc4 = "";
+		
+			 } while (i &lt; input.length);
+		
+			 return unescape(output);
+		  };
+				
+						//Set for Iowa
+		var bounds = new OpenLayers.Bounds(
+			-10757866.4085138, 4920674.43409749,
+			-10034363.897346, 5388559.04380514 );
+							
+				var drawoptions = {
+					styleMap: new OpenLayers.StyleMap({
+						"default": new OpenLayers.Style({
+								fillColor: "#7CC96E",
+								fillOpacity: 0.5,
+								strokeColor: "#209110",
+								strokeOpacity: 1,
+								strokeWidth: 2,
+								cursor: "pointer",
+								pointRadius: 6,
+								label: "",
+								fontColor:"#1F8E0F",
+								fontWeight: "bold",
+								labelOutlineColor: "#B4DCA8",
+                    			labelOutlineWidth: 2,	
+							}),
+						"select": new OpenLayers.Style({
+								fillColor: "#75CAB5",
+								fillOpacity: 0.5,
+								strokeColor: "#5FC2BA",
+								strokeOpacity: 1,
+								strokeWidth: 2,
+								graphicZIndex: 2,
+								cursor: "pointer",
+								label: ""
+							})
+					})
+				};					
+											
+				function init(){
+					
+						
+		//Pink tile avoidance
+		OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
+		
+		//Make OL compute scale according to WMS spec
+		OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
+
+		var resarray = [
+			156543.03390625,    //0
+			78271.516953125,    //1
+			39135.7584765625,   //2
+			19567.87923828125,  //3
+			9783.939619140625,  //4
+			4891.9698095703125, //5
+			2445.9849047851562, //6
+			1222.9924523925781, //7
+			611.4962261962891,  //8
+			305.74811309814453, //9
+			152.87405654907226, //10
+			76.43702827453613,  //11
+			38.218514137268066, //12
+			19.109257068634033, //13
+			9.554628534317017,  //14
+			4.777314267158508,  //15
+			2.388657133579254,  //16
+			1.194328566789627,  //17
+			0.5971642833948135, //18
+			0.2985821416974068, //19
+			0.1492910708487034, //20
+			0.0746455354243517, //21
+			0.0373227677121758, //22
+			0.0186613838560879, //23
+			0.009330691928044,  //24
+			0.004665345964022,  //25
+			0.002332672982011,  //26
+			0.0011663364910055, //27
+			0.0005831682455027, //28
+			0.0002915841227514, //29
+			0.0001457920613757  //30
+		];
+
+			
+		var mapoptions = {
+			//controls: [],  //removes all the default controls
+			maxExtent: bounds,
+			restrictedExtend: bounds,
+			resolutions: resarray,
+			serverResolutions: resarray,
+			minZoomLevel: 7,
+			projection: "EPSG:3857",
+			units: "m",
+			theme: "/wp-content/plugins/kps-webspinner/code/lib/open-layers/css/map.css"
+		};
+		
+		//Initial map creation call
+		map = new OpenLayers.Map( "map", mapoptions );
+				
+							
+		map.events.register("zoomend", map, zoom_level_change);
+
+		function zoom_level_change(){
+			zoom_level = map.getZoom();
+		  	if (zoom_level &gt; 6){
+				jQuery("#button-soil-icon").show();
+		  	}else{
+				jQuery("#button-soil-icon").hide();
+		  	}
+		}
+		
+					
+						
+		//---------Setup Google layers-----------//
+		var googleoptions = {
+			buffer: 0,
+			maxExtent: bounds,
+			tileOrigin: new OpenLayers.LonLat( -20037508.34, -20037508.34 ),
+			tileSize: new OpenLayers.Size( 256, 256 ),
+			displayOutsideMaxExtent: false,
+			isBaseLayer: true,
+			wrapDateLine: false
+		};					
+
+		var googlelayers = {
+			terrain: new OpenLayers.Layer.Google(
+				"terrain",
+				jQuery.extend(
+				{
+					type: google.maps.MapTypeId.TERRAIN,
+					maxZoomLevel: 15
+				},
+				googleoptions ) ),
+			roadmap: new OpenLayers.Layer.Google(
+				"roadmap",
+				jQuery.extend(
+				{
+					type: google.maps.MapTypeId.ROADMAP,
+					maxZoomLevel: 17
+				},
+				googleoptions ) ),
+			hybrid: new OpenLayers.Layer.Google(
+				"hybrid",
+				jQuery.extend(
+				{
+					type: google.maps.MapTypeId.HYBRID,
+					maxZoomLevel: 17
+				},
+				googleoptions ) ),
+			satellite: new OpenLayers.Layer.Google(
+				"satellite",
+				jQuery.extend(
+				{
+					type: google.maps.MapTypeId.SATELLITE,
+					maxZoomLevel: 17
+				},
+				googleoptions ) )
+		};
+		
+		map.addLayers(
+			[
+				googlelayers[ "terrain" ],
+				googlelayers[ "roadmap" ],
+				googlelayers[ "hybrid" ],
+				googlelayers[ "satellite" ]
+			] );
+
+		//Initialize the default map view
+		change_map_view("hybrid");				
+		//---------END Setup Google layers-----------//
+	
+					
+						
+		//------------Setup SSURGO Layers-----------//
+		var ssurgoparams = {
+			format: "image/png",
+			transparent: true,
+			tiled: true,
+			styles: "", //Defined on WMS server...I think
+		};
+		
+		var ssurgooptions ={
+			buffer: 0,
+			maxExtent: bounds,
+			tileOrigin: new OpenLayers.LonLat( -20037508.34, -20037508.34 ),
+			tileSize: new OpenLayers.Size( 256, 256 ),
+			displayOutsideMaxExtent: false,
+			isBaseLayer: false,
+			yx : { projection : false }
+		};
+	
+		var ssurgolayers = {
+			sapolygon: new OpenLayers.Layer.WMS(
+				"sapolygon", decode("aHR0cDovL2lvd2FtbXAuY29tL2dpcy9nZW9zZXJ2ZXIvc3N1cmdvL2d3Yy9zZXJ2aWNlL3dtcw=="),
+				jQuery.extend(
+				{
+					layers: "ssurgo:sapolygon",
+				},
+				ssurgoparams ),
+				jQuery.extend(
+				{
+					visibility: true,
+					opacity: 0.5
+				},
+				ssurgooptions ) ),
+			mupolygon: new OpenLayers.Layer.WMS(
+				"mupolygon", decode("aHR0cDovL2lvd2FtbXAuY29tL2dpcy9nZW9zZXJ2ZXIvc3N1cmdvL2d3Yy9zZXJ2aWNlL3dtcw=="),
+				jQuery.extend(
+				{
+					layers: "ssurgo:mupolygon",
+				},
+				ssurgoparams ),
+				jQuery.extend(
+				{
+					visibility: false,
+					maxResolution: resarray[ 14 ],
+					minResolution: resarray.slice( -1 ).pop(),
+					opacity: 0.3
+				},
+				ssurgooptions ) ),
+				
+		};
+		
+		map.addLayers(
+			[
+				ssurgolayers[ "sapolygon" ],
+				ssurgolayers[ "mupolygon" ],
+			] );		
+		//------------END Setup SSURGO Layers-----------//
+			
+					
+					//------------Setup Draw Layers-----------//
+					
+					var drawlayers ={
+						userfeature: new OpenLayers.Layer.Vector(
+							"userfeature",
+							jQuery.extend(
+							{
+				
+							},
+							drawoptions ) ),
+						muintersect: new OpenLayers.Layer.Vector(
+							"Mupolygon Intersect",
+							jQuery.extend(
+							{
+				
+							},
+							drawoptions ) )
+					};
+					
+					map.addLayers(
+						[
+							drawlayers[ "userfeature" ],
+							drawlayers[ "muintersect" ]
+						] );
+					//------------END Setup Draw Layers-----------//
+						
+						
+						
+		//------------Setup Draw Controls-----------//
+		var draw_controls ={
+			points: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.Point,
+				{
+					displayClass: "olControlDrawFeaturePoint",
+					title: "points"
+				} ),
+			path: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.Path,
+				{
+					displayClass: "olControlDrawFeaturePath",
+					title: "path"
+				} ),
+			square: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.RegularPolygon,
+				{
+					displayClass: "olControlDrawFeatureBox",
+					title: "square",
+					handlerOptions:
+					{
+						irregular: true
+					}
+				} ),
+			poly: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.Polygon,
+				{
+					displayClass: "olControlDrawFeaturePoly",
+					title: "poly",
+					handlerOptions:
+					{
+						freehand: false,
+						freehandToggle: null,
+						stopDown: false,
+						stopUp: false
+					}
+				} ),
+			freepoly: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.Polygon,
+				{
+					displayClass: "olControlDrawFeatureFreePoly",
+					title: "freepoly",
+					handlerOptions:
+					{
+						freehand: true,
+						freehandToggle: null
+					}
+				} ),
+			triangle: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.RegularPolygon,
+				{
+					displayClass: "olControlDrawFeatureTriangle",
+					title: "triangle",
+					handlerOptions:
+					{
+						sides: 3
+					}
+				} ),
+			circle: new OpenLayers.Control.DrawFeature(
+				drawlayers[ "userfeature" ],
+				OpenLayers.Handler.RegularPolygon,
+				{
+					displayClass: "olControlDrawFeatureCircle",
+					title: "circle",
+					handlerOptions:
+					{
+						sides: 40
+					}
+				} )
+		};
+		
+		//Add each of the tools listed above to the map 
+		for(var key in draw_controls) {
+			map.addControl(draw_controls[key]);
+		}
+	;
+					
+					
+					//Add data to hidden field when a shape has been added
+					drawlayers[ "userfeature" ].events.on({
+						featureadded: function( event ){
+							update_form_input();
+							load_map_vars();
+							change_map_mode('select');
+						},
+						featureremoved: function( event ){
+							update_form_input();
+							hide_map_vars();
+						},
+					});
+					
+					//The following only allows one shape to be drawn at a time
+					drawlayers[ "userfeature" ].events.on({
+						beforefeatureadded: function( event ){
+							delete_all_features();
+						}
+					});
+					//------------END Setup Draw Controls-----------//
+					
+					
+						
+		//------------Setup Manipulation Controls-----------//
+		var manipulation_controls = {
+			select: new OpenLayers.Control.SelectFeature(
+				drawlayers[ "userfeature" ],
+				{
+					title: "select",
+					clickout: true,
+					onSelect: onFeatureSelect,
+					onUnselect: onFeatureUnselect
+				})
+		};
+		
+		//Add each of the tools listed above to the map 
+		for(var key in manipulation_controls) {
+			map.addControl(manipulation_controls[key]);
+		}
+		//------------END Setup Manipulation Controls-----------//
+		
+					
+										
+					//Draw any saved geometry and zoom as appropriate
+					draw_geometry_and_zoom();
+					
+					//Change initial map mode from the default navigation to select
+					change_map_mode('select');
+				}
+				
+				jQuery(document).ready(function() {
+					init();		
+				});
+								
+				//Change layer function definition
+				function change_map_view(view_type){
+					//Return layers in an array by name
+					var new_layer = map.getLayersByName(view_type);
+					
+					//Only use first layer
+					if(new_layer[0])
+						map.setBaseLayer(new_layer[0]);
+				};
+				
+				//Change draw mode function definition
+				function change_map_mode(mode_type){
+					var map_modes = ["select", "points", "square", "poly", "circle"];
+					
+					if(mode_type == "path"){
+						jQuery("#draw-path-tutorial").show('fast');	
+					}else{
+						jQuery("#draw-path-tutorial").hide('fast');	
+					}
+					
+					//Cycle through draw layers to deactivate all but selected
+					for(var i =0; i &lt; map_modes.length; i++){
+						var control = map.getControlsBy('title',map_modes[i]);
+						
+						if(control[0]){
+							if(mode_type == map_modes[i]){
+								jQuery("#button-" + map_modes[i] + "-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/" + map_modes[i] + "-icon-down.gif");
+								control[0].activate();
+							}else{
+								jQuery("#button-" + map_modes[i] + "-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/" + map_modes[i] + "-icon-up.gif");
+								control[0].deactivate();
+							}
+						}
+					}
+				};
+								
+					
+		var selected_feature = null;
+		//Function called when object is selected
+		function onFeatureSelect( feature ){
+			selected_feature = feature;
+			jQuery("#controls").show("slow");					
+		};
+		
+		//Function called when object is unselected
+		function onFeatureUnselect( feature ){
+			selected_feature = null;
+			jQuery("#controls").hide("slow");
+		};
+		
+		function delete_selected_feature(){
+			var userfeature_layer = map.getLayersByName('userfeature');
+		
+			if(userfeature_layer[0] &amp;&amp; selected_feature &amp;&amp; confirm('Deleting a field area is undoable. Are you sure you wish to continue?')){
+				userfeature_layer[0].removeFeatures(selected_feature);	
+				jQuery("#controls").hide("slow");
+			}
+			
+			selected_feature = null;		
+		};
+		
+		
+		function delete_all_features(){
+			var userfeature_layer = map.getLayersByName('userfeature');
+			if(!userfeature_layer[0]){
+				return;
+			}
+			
+			var features = userfeature_layer[0].features;
+			for(i=0; i&lt;features.length; i++){
+				userfeature_layer[0].removeFeatures(features[i]);	
+			}
+		};
+		
+		//Respond to delete key event
+		jQuery("html").keyup(function(e){
+			if(e.keyCode == 46)
+				delete_selected_feature();
+		});
+		
+		function zoom_extents(){
+			var serialized_features = jQuery("#map_coords").val();
+			var userfeature_layer = map.getLayersByName('userfeature');
+			
+			//If there are no shapes to load or the userfeature layer was unavailable, default zoom to all of state
+			if(!serialized_features || !userfeature_layer[0]){
+				map.zoomToExtent( bounds );	
+			}else{
+				map.zoomToExtent( userfeature_layer[0].getDataExtent() );		
+			}
+		}
+	
+				
+						
+		var show_soil_layers = false;
+		function toggle_soil_layer(){
+			
+			var mupolygon_layer = map.getLayersByName('mupolygon');
+			if(!mupolygon_layer[0]){
+				return;
+			}
+
+			show_soil_layers = !show_soil_layers;
+			if(show_soil_layers){
+				mupolygon_layer[0].setVisibility(true);
+				jQuery("#button-soil-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/soil-button-down.gif");
+			}else{
+				mupolygon_layer[0].setVisibility(false);
+				jQuery("#button-soil-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/soil-button-up.gif");
+			}	
+			
+			mupolygon_layer[0].redraw();
+		}
+	
+				
+				function draw_geometry_and_zoom(){
+				
+					var serialized_features = jQuery("#map_coords").val();
+					var userfeature_layer = map.getLayersByName('userfeature');
+					
+					//If there are no shapes to load or the userfeature layer was unavailable, default zoom to all of state
+					if(!serialized_features || !userfeature_layer[0]){
+						map.zoomToExtent( bounds );	
+						return;
+					}
+					
+					var feature_specs = JSON.parse(serialized_features);
+					
+					var new_features = [];
+					for(i=0; i&lt;feature_specs.length; i++){
+						new_features.push(new OpenLayers.Feature.Vector(
+							OpenLayers.Geometry.fromWKT(feature_specs[i])
+						));
+					}
+					
+					update_field_label();
+					
+					userfeature_layer[0].addFeatures(new_features);
+					map.zoomToExtent( userfeature_layer[0].getDataExtent() );	
+				};
+				
+				
+				function update_form_input(){
+					var userfeature_layer = map.getLayersByName('userfeature');
+					if(!userfeature_layer[0]){
+						return;
+					}
+					
+					var features = userfeature_layer[0].features;
+					
+					var output = [];
+					for(i=0; i&lt;features.length; i++){
+						var feature_geometry = features[i].geometry;	
+						output.push(feature_geometry.toString());
+					}
+					
+					jQuery("#map_coords").val(JSON.stringify(output));
+				};
+					
+							
+				//AJAX Handler
+				function load_map_vars(){
+					jQuery("#mapvars").html("Loading...");
+					//jQuery("#mapvars_box").show("slow");
+					var request = jQuery.ajax({
+						url : '/wp-admin/admin-ajax.php',
+						type: "POST",
+						data : {action: "bin_field_data"},
+					});
+					
+					request.done(function(msg){
+						jQuery("#mapvars").html(msg.substr(0, msg.length-1));
+					});
+					
+					request.fail(function(jqXHR, textStatus){
+						jQuery("#mapvars").html("Could not load in field data from the server.");
+					});
+				};
+				
+				
+				function hide_map_vars(){
+					jQuery("#mapvars").html("");	
+					//jQuery("#mapvars_box").hide("slow");
+				}	
+				
+				
+				function update_field_label(){
+					var userfeature_layer = map.getLayersByName('userfeature');
+					if(!userfeature_layer[0]){
+						return;
+					}
+					userfeature_layer[0].styleMap.styles.default.defaultStyle.label = jQuery("#name").val();
+					userfeature_layer[0].redraw();		
+				}
+	
+				//Add dynamic field label
+				jQuery("#name").on('change',function(e){
+					update_field_label();
+				});
+				
+					
+		jQuery("#county_selector").on('change', function(e){
+			var county_id = jQuery("#county_selector").val();
+			var request = OpenLayers.Request.GET({
+				url:"/wp-content/plugins/kps-webspinner/reports/county_server.php",
+				params: {county: county_id},
+				callback: zoom_on_county
+			});
+		});
+		
+		function zoom_on_county(response){
+			var geojson_format = new OpenLayers.Format.GeoJSON();
+			var vectors = geojson_format.read(response.responseText)
+			var bounds = vectors[0].geometry.getBounds();
+			map.zoomToExtent(bounds);
+		}
+		
+		jQuery(document).ready(function() {
+			//jQuery("#county_selector").	
+		});
+	
+
+			</script>	<div class="control-group" id="name_group"><label for="name" class="control-label"><span class="required">* </span>Field Name:</label><div class="controls"><input type="text" value="Test One" required="" id="name" name="name"></div></div><div class="control-group" id="feeding_operation_id_group"><label for="feeding_operation_id" class="control-label"><span class="required">* </span>Associated Feeding Operation:</label><div class="controls"><select required="" id="feeding_operation_id" name="feeding_operation_id" type="select"><option value="">--SELECT--</option><option value="09c343a1-7abc-4639-911d-5a6263ad9db7">BigSquare</option><option selected="selected" value="34fd1070-a214-40bf-ba37-2c4da0a482e9">kristin</option><option value="c89ae1a8-d99a-4b9c-a315-8b0408a9fd12">Red 5</option><option value="7ebd75a2-87e0-4e51-9d6c-5eb5afcc5e7c">Test</option></select><span class="help-inline">Select the feeding operation this field is to be associated with.</span></div></div><input type="hidden" value="[&quot;POLYGON((-10281510.848306999 5005150.90998,-10281510.848306999 5093206.3665523,-10486973.580309004 5093206.3665523,-10486973.580309004 5005150.90998,-10281510.848306999 5005150.90998))&quot;]" id="map_coords" name="map_coords"><div class="control-group" id="conservation_practices_group"><label for="conservation_practices" class="control-label"><span class="required">* </span>Conservation Practices:</label><div class="controls"><select required="" id="conservation_practices" name="conservation_practices" type="select"><option value="">--Select--</option><option value="10">None</option><option selected="selected" value="20">Grade stabilization full flow</option><option value="30">Level terraces</option><option value="40">Ponds and grade stabilization retention</option><option value="50">Tile inlet terraces</option></select></div></div><div class="control-group" id="tile_drainage_group"><label for="tile_drainage" class="control-label"><span class="required">* </span>Tile Drainage:</label><div class="controls"><select required="" id="tile_drainage" name="tile_drainage" type="select"><option value="">--Select--</option><option selected="selected" value="10">Yes</option><option value="20">No</option><option value="30">Unknown</option></select></div></div><div class="control-group" id="good_drainage_group"><label for="good_drainage" class="control-label"><span class="required">* </span>Does the field have good drainage:</label><div class="controls"><label class="radio inline"> <input type="radio" checked="checked" value="1" required="" name="good_drainage" id="good_drainage-0"> Yes </label> <label class="radio inline"> <input type="radio" value="0" required="" name="good_drainage" id="good_drainage-1"> No </label> </div></div><div class="control-group" id="own_rent_group"><label for="own_rent" class="control-label"><span class="required">* </span>Own or Rent:</label><div class="controls"><select required="" id="own_rent" name="own_rent" type="select"><option value="">--Select--</option><option selected="selected" value="10">Own</option><option value="20">Rent</option></select></div></div><div class="control-group" id="length_rental_agreement_group" style="display: none;"><label for="length_rental_agreement" class="control-label">Length of Rental Agreement:</label><div class="controls"><input type="text" value="0" parentid="own_rent" id="length_rental_agreement" name="length_rental_agreement"><span class="help-inline">in years</span></div></div><div style="display:none;" id="form-response"></div><div class="form-actions"><input type="submit" class="btn btn-primary" id="submit_button" name="" value="Save and Continue"><span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation"><img title="Processing..." src="/wp-content/plugins/kps-webspinner/assets/proc-animation.gif"></span></div></fieldset></form>

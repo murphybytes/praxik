@@ -1,0 +1,71 @@
+
+/*http://docs.openlayers.org/library/controls.html#panels*/
+#map{
+	height:500px;
+	width:100%;
+	box-shadow:0 0 4px #999 ;
+	border:solid 1px #999;
+}
+#mapcontainer{
+	padding-right:15px;
+}
+
+.olControlLayerSwitcher
+{
+    position: absolute;
+    top: 32px;
+}
+.olControlEditingToolbar div
+{
+    float: left;
+    width: 24px;
+    height: 24px;
+}
+.olControlEditingToolbar .olControlZoomBoxItemActive
+{
+    background-image: url( "../images/zoom_box_on.png" );
+}
+.olControlEditingToolbar .olControlZoomBoxItemInactive
+{
+    background-image: url( "../images/zoom_box_off.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureBoxItemActive
+{
+    background-image: url( "../images/draw_box_on.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureBoxItemInactive
+{
+    background-image: url( "../images/draw_box_off.png" );
+}
+.olControlEditingToolbar .olControlDrawFeaturePolyItemActive
+{
+    background-image: url( "../images/draw_poly_on.png" );
+}
+.olControlEditingToolbar .olControlDrawFeaturePolyItemInactive
+{
+    background-image: url( "../images/draw_poly_off.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureFreePolyItemActive
+{
+    background-image: url( "../images/draw_freepoly_on.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureFreePolyItemInActive
+{
+    background-image: url( "../images/draw_freepoly_off.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureTriangleItemActive
+{
+    background-image: url( "../images/draw_triangle_on.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureTriangleItemInactive
+{
+    background-image: url( "../images/draw_triangle_off.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureCircleItemActive
+{
+    background-image: url( "../images/draw_circle_on.png" );
+}
+.olControlEditingToolbar .olControlDrawFeatureCircleItemInactive
+{
+    background-image: url( "../images/draw_circle_off.png" );
+}
