@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   store :data, accessors: [:first_name, :last_name, :primary_phone, :secondary_phone]
 
+  has_many :fields
+
   def to_s
     login
   end
