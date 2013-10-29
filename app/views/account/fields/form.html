@@ -25,9 +25,7 @@
             </step>
             <step>
               <accordion close-others="oneAtATime">
-                <accordion-group ng-repeat="plan in field.plans">
-                  <accordion-heading>Plan year {{$index + 1}}</accordion-heading>
-
+                <accordion-group ng-repeat="plan in field.plans" heading="Plan year {{$index + 1}}">
                   <coll options="years" ng-model="plan.year">Vegetation:
                   </coll>
                   <coll options="crops" ng-model="plan.crop">Crop:
