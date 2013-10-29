@@ -1,0 +1,109 @@
+<html lang="en"><!--<![endif]--><head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Home : MMP360</title>
+    <meta content="" name="description">
+    <meta content="CFSPH Webspinner" name="author">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+    <!-- CSS
+    ================================================== -->
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/base.css" rel="stylesheet">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/skeleton.css" rel="stylesheet">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/layout.css" rel="stylesheet">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/style.css" rel="stylesheet">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/form-styles.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lusitana:400,700">
+    <!--[if !IE]>-->
+    <link media="screen and (max-width: 767px)" href="http://mmp360.com/wp-content/themes/kps_skeleton/table-styles.css" rel="stylesheet">
+    <!--<![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicons
+    ================================================== -->
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/images/favicon.ico" rel="shortcut icon">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/images/IMMP_57x57.png" rel="apple-touch-icon">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/images/IMMP_72x72.png" sizes="72x72" rel="apple-touch-icon">
+    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/images/IMMP_114x114.png" sizes="114x114" rel="apple-touch-icon">
+
+    <meta content="noindex,nofollow" name="robots">
+    <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/open-layers/theme/default/style.css" id="openlayers_theme-css" rel="stylesheet">
+    <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/open-layers/css/map.css" id="openlayers_map-css" rel="stylesheet">
+    <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/tablesorter/style.css" id="tablesorter_style-css" rel="stylesheet">
+    <link media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" id="calendar_style-css" rel="stylesheet">
+    <link href="http://mmp360.com/xmlrpc.php?rsd" title="RSD" type="application/rsd+xml" rel="EditURI">
+    <link href="http://mmp360.com/wp-includes/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest"> 
+    <link href="http://mmp360.com/edit-user/" title="Edit User" rel="prev">
+    <meta content="WordPress 3.5.2" name="generator">
+    <link href="http://mmp360.com/" rel="canonical">
+    <%= javascript_include_tag "home", "data-turbolinks-track" => true %>
+  <body>
+
+
+    <section>
+    <div class="container" id="login">
+      <div class="sixteen columns">
+        <div align="right">
+          <% if user_signed_in? %>
+            <%= current_user %>: <%= link_to "Signout", destroy_user_session_path, method: "DELETE" %>
+          <% else %>
+            <%= link_to "Signin", new_user_session_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="container main">
+      <header class="container">
+      <a href="http://mmp360.com"><img id="logo" title="MMP360" src="http://mmp360.com/wp-content/themes/kps_skeleton/images/praxik-mmp360-logo.png"></a>
+      </header>	
+
+      <div id="splash-screen"></div>
+
+      <div class="four columns omega">
+        <nav>
+        <div id="mini-menu">
+          <select name="sections" class="menu_select">
+            <option value="network" selected="selected">- select -</option>
+            <optgroup label="About">
+              <option value="http://mmp360.com/about-this-site/">About This Site</option>
+              <option value="http://mmp360.com/contact-us/">Contact Us</option>
+              <option value="http://mmp360.com/services/">Services</option>
+            </optgroup>
+          </select>
+        </div>
+        <div id="normal-menu">
+          <div><h5>About</h5></div>
+          <ul>
+            <li><a href="http://mmp360.com/about-this-site/">About This Site</a></li>
+            <li><a href="http://mmp360.com/contact-us/">Contact Us</a></li>
+            <li><a href="http://mmp360.com/services/">Services</a></li>
+          </ul>
+        </div>
+        </nav>
+
+        <%= yield %>
+      </div>
+    </div>
+    </section>
+
+    <footer>
+    <div class="container">
+      <div class="sixteen columns">
+        <div align="right">
+          <a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy</a><br>
+          &copy; 2013 Praxik, LLC
+        </div>
+      </div>
+    </div>
+    </footer>
+    <!--110:Gold100:61.0237in^3010:6.673x10^-11001:English101:6.626x10^-34111:Platinum011:mc^2-->
+
+</body></html>
