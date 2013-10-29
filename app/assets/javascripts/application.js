@@ -22,7 +22,7 @@ app = angular.module('LowaFields', ['LowaFieldsServices', 'ngRoute', 'ng', 'ui.b
 function FieldsCtrl($scope, Data) {
     console.log("init");
     $scope.crops = ['Corn', 'Soybeans', 'Wheat', 'Oat', 'Alfalfa', 'Corn silage'];
-    $scope.crops = 'Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower']
+    $scope.harvestMethods = ['Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower'];
     $scope.field = {plans: [{}, {}, {}, {}]};
     $scope.step = 1;
     $scope.colors = ["Love", "Data"];
