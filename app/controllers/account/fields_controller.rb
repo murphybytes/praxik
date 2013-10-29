@@ -1,5 +1,9 @@
 class Account::FieldsController < AccountsController
 
+  def index
+    @fields = current_user.fields
+  end
+
   def show
     @field = Field.find(params[:id])
 

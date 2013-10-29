@@ -2,6 +2,7 @@ class Field < ActiveRecord::Base
 
   store :data
 
+  belongs_to :user
   has_one :operation
 
   def method_missing(method_name, *value)
