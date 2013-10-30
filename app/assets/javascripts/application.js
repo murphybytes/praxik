@@ -182,9 +182,11 @@ app.directive('steps', function() {
       transclude: true,
       controller: function($scope) {
           var steps = [];
+          this.totalSteps = 0;
           this.addStep = function(step) {
               if (steps.length == 0) step.showMe = true;
               steps.push(step);
+              this.totalSteps = this.totalSteps + 1;
           }
           
           this.step = function(step) {
@@ -227,8 +229,10 @@ app.directive('next', function() {
           scope.step = 1;
 
           scope.next = function() {
-            scope.step = scope.step + 1;
-            stepsController.step(scope.step);
+            if(scope.step < stepsController.totalSteps) {
+              scope.step = scope.step + 1;
+              stepsController.step(scope.step);
+            }
           }
       }
     };
