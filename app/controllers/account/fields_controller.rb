@@ -10,15 +10,25 @@ class Account::FieldsController < AccountsController
   def show
     @field = Field.find(params[:id])
 
-    render json: @field.data
+    render json: {id: @field.id}.merge(@field.data)
   end
 
   def new
     render "form.html"
   end
 
+  def update
+    @field = Field.find(params[:id])
+    @field.data = params
+    @field.save
+
+    render json: @field.id 
+  end
+
   def create 
-    render json: true
+    @field = current_user.fields.create(id: params[:id], data: params)
+
+    render json: {id: @field.id}.merge(@field.data || {})
   end
 
 end

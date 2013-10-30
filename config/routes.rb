@@ -2,6 +2,10 @@ Praxik::Application.routes.draw do
   devise_for :users
 
   get '/account', to: "accounts#index"
+  get '/services', to: "home#services"
+  get '/contact', to: "home#contact"
+  get '/about', to: "home#about"
+
   namespace :account do
     resources :fields 
   end

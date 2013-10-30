@@ -1,4 +1,3 @@
-
 (function(){ 
 
 //  if(jQuery("#mapcontainer").length) {
@@ -666,4 +665,4 @@
         //jQuery("#county_selector"). 
       });
 //  }
-})();
+});

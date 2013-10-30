@@ -23,7 +23,7 @@ function MyFieldsCtrl($scope, Data) {
     $scope.myFields = Data.query();
 }
 
-function FieldsCtrl($scope, $routeParams, Data) {
+function FieldsCtrl($scope, $routeParams, $http, Data) {
     $scope.crops = ['Corn', 'Soybeans', 'Wheat', 'Oat', 'Alfalfa', 'Corn silage'];
     $scope.harvestMethods = ['Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower'];
     $scope.step = 1;
@@ -33,6 +33,7 @@ function FieldsCtrl($scope, $routeParams, Data) {
     $scope.yesNoBlank = ["Yes", "No", "Unknown"];
     $scope.ownRent = ["Own", "Rent"];
     $scope.conservationPractices = ["Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
+    var fieldChanged = false;
 
     if($routeParams.id) {
       Data.get({"id": $routeParams.id}, function(data) {
@@ -48,12 +49,27 @@ function FieldsCtrl($scope, $routeParams, Data) {
          setInterval(function() {
              if (fieldChanged) {
                  fieldChanged = false;
-                 angular.copy($scope.field).$save();
+                 angular.copy($scope.field).$update();
              }
          }, 3000);
       });
     } else {
       $scope.field = {plans: [{}, {}, {}, {}]};
+      $scope.$watch('field', function (value) {
+          l("field changed");
+             fieldChanged = true;
+         }, true);
+
+       setInterval(function() {
+             if (fieldChanged) {
+                 fieldChanged = false;
+                 if($scope.field.id) {
+                   angular.copy($scope.field).$update();
+                 } else {
+                   $scope.field = Data.save($scope.field);
+                 }
+             }
+         }, 3000);
     }
 }
 
