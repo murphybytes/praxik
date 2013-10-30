@@ -1,5 +1,5 @@
   console.log("foo"+jQuery("#map").length);
-
+// i am off this
 (function(){ 
 
 //  if(jQuery("#mapcontainer").length) {
@@ -667,4 +667,4 @@
         //jQuery("#county_selector"). 
       });
 //  }
-})();
+});
