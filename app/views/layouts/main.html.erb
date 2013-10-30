@@ -13,11 +13,7 @@
 
     <!-- CSS
     ================================================== -->
-    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/base.css" rel="stylesheet">
-    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/skeleton.css" rel="stylesheet">
-    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/layout.css" rel="stylesheet">
-    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/style.css" rel="stylesheet">
-    <link href="http://mmp360.com/wp-content/themes/kps_skeleton/form-styles.css" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lusitana:400,700">
     <!--[if !IE]>-->
     <link media="screen and (max-width: 767px)" href="http://mmp360.com/wp-content/themes/kps_skeleton/table-styles.css" rel="stylesheet">
@@ -39,11 +35,11 @@
     <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/open-layers/css/map.css" id="openlayers_map-css" rel="stylesheet">
     <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/tablesorter/style.css" id="tablesorter_style-css" rel="stylesheet">
     <link media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" id="calendar_style-css" rel="stylesheet">
-    <link href="http://mmp360.com/xmlrpc.php?rsd" title="RSD" type="application/rsd+xml" rel="EditURI">
-    <link href="http://mmp360.com/wp-includes/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest"> 
-    <link href="http://mmp360.com/edit-user/" title="Edit User" rel="prev">
+    <link href="/xmlrpc.php?rsd" title="RSD" type="application/rsd+xml" rel="EditURI">
+    <link href="/wp-includes/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest"> 
+    <link href="/edit-user/" title="Edit User" rel="prev">
     <meta content="WordPress 3.5.2" name="generator">
-    <link href="http://mmp360.com/" rel="canonical">
+    <link href="/" rel="canonical">
     <%= javascript_include_tag "home", "data-turbolinks-track" => true %>
   <body>
 
@@ -62,7 +58,7 @@
     </div>
     <div class="container main">
       <header class="container">
-      <a href="http://mmp360.com"><img id="logo" title="MMP360" src="http://mmp360.com/wp-content/themes/kps_skeleton/images/praxik-mmp360-logo.png"></a>
+      <a href="/"><img id="logo" title="MMP360" src="assets/praxik-mmp360-logo.png"></a>
       </header>	
 
       <div id="splash-screen"></div>
@@ -73,18 +69,18 @@
           <select name="sections" class="menu_select">
             <option value="network" selected="selected">- select -</option>
             <optgroup label="Praxik MMP360">
-              <option value="http://mmp360.com/about-this-site/">About This Site</option>
-              <option value="http://mmp360.com/contact-us/">Contact Us</option>
-              <option value="http://mmp360.com/services/">Services</option>
+              <option value="/about-this-site">About This Site</option>
+              <option value="/contact-us">Contact Us</option>
+              <option value="/services">Services</option>
             </optgroup>
           </select>
         </div>
         <div id="normal-menu">
           <div><h5>Praxik MMP360</h5></div>
           <ul>
-            <li><a href="http://mmp360.com/about-this-site/">About This Site</a></li>
-            <li><a href="http://mmp360.com/contact-us/">Contact Us</a></li>
-            <li><a href="http://mmp360.com/services/">Services</a></li>
+            <li><a href="/about-this-site">About This Site</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="/services">Services</a></li>
           </ul>
         </div>
         </nav>
