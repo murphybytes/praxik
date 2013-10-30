@@ -1,0 +1,53 @@
+<div ng-controller="FieldsCtrl" ng-init="34">
+    <h1 class="remove-bottom">Add a Field</h1>
+    <hr>
+    <form class="form-horizontal">
+        <steps>
+            <step>
+                <text ng-model="field.name" required="">Field Name
+                </text>
+                <coll options="conservationPractices" ng-model="field.conservationPractice">Conservation Practices
+                </coll>
+                <radio  items="Yes | No | Blank" ng-model="field.tileDrainage">Tile Drainage
+                </radio>
+                <radio  items="Yes | No" ng-model="field.goodDrainage">Does the field have good drainage
+                </radio>
+                <radio  items="Own | Rent" ng-model="field.ownOrRent">Own or Rent
+                </radio>
+            </step>
+            <step>
+                <text ng-model="field.bufferName" required="">Buffer Name
+                </text>
+                <text ng-model="field.bufferWidth" required="">Buffer Width
+                </text>
+                <coll options="vegetations" ng-model="field.vegetation">Vegetation
+                </coll>
+            </step>
+            <step>
+              <accordion close-others="oneAtATime">
+                <accordion-group ng-repeat="plan in field.plans" heading="Plan year {{$index + 1}}">
+                  <coll options="years" ng-model="plan.year">Vegetation:
+                  </coll>
+                  <coll options="crops" ng-model="plan.crop">Crop:
+                  </coll>
+                  <text ng-model="plan.optimalYield">Optimal Yield:
+                  </text>
+                  <coll options="plantingMethods" ng-model="plan.plantingMethod">Planting Method:
+                  </coll>
+                  <text ng-model="plan.plantingDate">Planting Date:
+                  </text>
+                  <coll options="harvestMethods" ng-model="plan.harvestMethod">Harvest Method:
+                  </coll>
+                  <text ng-model="plan.harvestDate">Harvest Date:
+                  </text>
+                </accordion-group>
+              </accordion>
+            </step>
+
+            <div class="form-actions">
+                <prev>Prev</prev>
+                <next>Next</next>
+            </div>
+        </steps>
+    </form>
+</div>

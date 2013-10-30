@@ -6,4 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create({login: "r5i", password: "demo1"})
+u = User.create({login: "r5i", password: "demo1"})
+u.fields.create({ data: {
+  name: "Mafia",
+  conservationPractice: "Grade stabilization full flow",
+  tileDrainage: "Yes",
+  goodDrainage: "No",
+  ownOrRent: "Own",
+  bufferName: "Jakson Buffer",
+  bufferWidth: "1000",
+  vegetation: "Perennial grass"
+}})

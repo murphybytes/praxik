@@ -19,31 +19,50 @@
 l = console.log;
 app = angular.module('LowaFields', ['LowaFieldsServices', 'ngRoute', 'ng', 'ui.bootstrap']);
 
-function FieldsCtrl($scope, Data) {
+function MyFieldsCtrl($scope, Data) {
+    $scope.myFields = Data.query();
+}
+
+function FieldsCtrl($scope, $routeParams, Data) {
     $scope.crops = ['Corn', 'Soybeans', 'Wheat', 'Oat', 'Alfalfa', 'Corn silage'];
     $scope.harvestMethods = ['Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower'];
-    $scope.field = {plans: [{}, {}, {}, {}]};
     $scope.step = 1;
     $scope.colors = ["Love", "Data"];
     $scope.vegetations = ["Perennial grass"];
     $scope.yesNo = ["Yes", "No"];
     $scope.yesNoBlank = ["Yes", "No", "Unknown"];
     $scope.ownRent = ["Own", "Rent"];
-    $scope.field.color = "Love";
     $scope.conservationPractices = ["Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
 
     $scope.$watch('field', function (value) {
         l($scope.field);
     }, true);
 
-    //Data.get({"id": "37154664585"});
+    if($routeParams.id) {
+      Data.get({"id": $routeParams.id}, function(data) {
+         $scope.field = data;
+         if(!$scope.field.plans) {
+           $scope.field.plans = [{}, {}, {}, {}];
+         }
+      });
+    } else {
+      $scope.field = {plans: [{}, {}, {}, {}]};
+    }
 }
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
-      when('/fields', {
-        templateUrl: 'account/fields',
+      when('/fields/new', {
+        templateUrl: 'fields/form.html',
         controller: 'FieldsCtrl'
+      }).
+      when('/fields/edit/:id', {
+        templateUrl: 'fields/form.html',
+        controller: 'FieldsCtrl'
+      }).
+      when('/fields', {
+        templateUrl: 'fields/list.html',
+        controller: 'MyFieldsCtrl'
       })
   }]);
 

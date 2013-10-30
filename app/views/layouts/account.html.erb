@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1" type="text/javascript" style=""></script>
@@ -61,7 +62,7 @@
               <option value="http://mmp360.com/my-feeding-operations/">My Feeding Operations</option>
             </optgroup>
             <optgroup label="Field Management">
-              <option value="http://mmp360.com/add-field/">Add a Field</option>
+              <option value="#/fields">Add a Field</option>
               <option value="http://mmp360.com/my-fields/">My Fields</option>
             </optgroup>
             <optgroup label="Praxik MMP360">
@@ -88,8 +89,8 @@
           </ul>
           <div><h5>Field Management</h5></div>
           <ul>
-            <li><a href="http://mmp360.com/add-field/">Add a Field</a></li>
-            <li><a href="http://mmp360.com/my-fields/">My Fields</a></li>
+            <li><a href="#/fields/new">Add a Field</a></li>
+            <li><a href="#/fields">My Fields</a></li>
           </ul>
           <div><h5>Praxik MMP360</h5></div>
           <ul>
@@ -102,8 +103,7 @@
       </div>
 
         <div class="twelve columns alpha">
-          <div id="content">
-            <%= yield %>
+          <div id="content" ng-view>
           </div> <!-- / MY REPORTS page content -->
         </div> <!-- / HOMEPAGE content -->
       </div> <!-- /container main -->

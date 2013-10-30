@@ -1,0 +1,20 @@
+<h1 class="remove-bottom">My Fields</h1>
+
+<table width="100%" class="tablesorter responsive" id="view-field-table">
+    <thead>
+        <tr>
+            <th class="header headerSortDown">Name</th>
+            <th class="header">Feeding Operation</th>
+            <th class="header">Last Update</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd" ng-repeat="field in myFields">
+            <td align="left" data-label="Name">{{field.name}}</td>
+            <td align="left" data-label="Feeding Operation">{{field.feedingOperation}}</td>
+            <td align="left" data-label="Last Update">2013-10-28</td>
+            <td align="center" data-label=""><a href="#/fields/edit/{{field.id}}">edit</a></td>
+        </tr>
+    </tbody>
+</table>
