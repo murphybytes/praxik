@@ -13,6 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require app
+//= require file
+//= require select-menu
+//= require ui-bootstrap-0.6.0
+//= require ui-utils
+//= require angular-google-maps
+//= require add-feeding-operation
 //= require_tree .
 
 
