@@ -138,7 +138,7 @@
         minZoomLevel: 7,
         projection: "EPSG:3857",
         units: "m",
-        theme: "stylesheets/old_css/map.css"
+        theme: "/assets/old_css/base.css?body=1"
       };
       
       //Initial map creation call
