@@ -1,4 +1,3 @@
-  console.log("foo"+jQuery("#map").length);
 
 (function(){ 
 
@@ -457,7 +456,7 @@
           
           //Change draw mode function definition
           function change_map_mode(mode_type){
-            console.log("FooBar");
+
             var map_modes = ["select", "points", "square", "poly", "circle"];
             
             if(mode_type == "path"){

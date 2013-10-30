@@ -1,20 +1,77 @@
 <h1 class="remove-bottom">My Fields</h1>
+<hr>
 
-<table width="100%" class="tablesorter responsive" id="view-field-table">
-    <thead>
-        <tr>
-            <th class="header headerSortDown">Name</th>
-            <th class="header">Feeding Operation</th>
-            <th class="header">Last Update</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="odd" ng-repeat="field in myFields">
-            <td align="left" data-label="Name">{{field.name}}</td>
-            <td align="left" data-label="Feeding Operation">{{field.feedingOperation}}</td>
-            <td align="left" data-label="Last Update">2013-10-28</td>
-            <td align="center" data-label=""><a href="#/fields/edit/{{field.id}}">edit</a></td>
-        </tr>
-    </tbody>
-</table>
+
+<form action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_my_fields&amp;nonce=1b55fcc90e" id="my_fields" method="post" class="form-horizontal">
+    <fieldset>
+        <input type="hidden" name="form" id="form" value="my_fields"/>
+        <input type="hidden" name="nonce" id="nonce" value="1b55fcc90e"/>
+        <div class="control-group">
+            <div style="float:left;width:250px;">
+                <select id="selected_action" name="selected_action" style="width:150px;">
+                    <option value="" selected="selected">--Select Action-- </option>
+                    <option value="delete">Delete Selected</option>
+                </select>   
+                <input type="submit" id="doaction" name="doaction" value="Apply" />
+            </div>
+        </div>
+        <table id="view-field-table" class="table table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Feeding Operation</th>
+                    <th>Last Update</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="odd" ng-repeat="field in myFields">
+                    <td align="left" data-label="Name">{{field.name}}</td>
+                    <td align="left" data-label="Feeding Operation">{{field.feedingOperation}}</td>
+                    <td align="left" data-label="Last Update">2013-10-28</td>
+                    <td align="center" data-label=""><a href="#/fields/edit/{{field.id}}">edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+</form>
+
+
+<script type="text/javascript">
+    //Adds user friendly button submission animation
+    function reset_submit_button(){
+        jQuery(document).find("input[type=submit]").removeAttr("disabled"); 
+        jQuery("#form-processing-animation").hide();
+    }
+    jQuery(document).ready(function() {     
+        jQuery("#my_fields").bind("submit", function() { 
+            jQuery("#form-processing-animation").show();
+            jQuery(this).find("input[type=submit]").attr("disabled", "disabled"); 
+        });
+    });
+</script>
+<script type="text/javascript">
+    jQuery(document).ready( function() {
+        jQuery("#view-field-table").tablesorter({  
+            sortList: [[1,0]],
+            widgets: ['zebra'],
+            headers:{
+                0:{
+                    sorter: false
+                },
+                4:{
+                    sorter: false
+                }
+            }
+        });
+        jQuery("#my_fields")
+            .submit( function() {   
+                if(jQuery("#selected_action").val() == "delete")    {
+                    return confirm("This cannot be undone. Do you wish to continue?")
+                }else{
+                    jQuery('input[type="submit"]').removeAttr('disabled');
+                    return false;
+                }
+        });
+    });
+</script>
