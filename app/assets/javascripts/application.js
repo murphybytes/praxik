@@ -34,16 +34,23 @@ function FieldsCtrl($scope, $routeParams, Data) {
     $scope.ownRent = ["Own", "Rent"];
     $scope.conservationPractices = ["Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
 
-    $scope.$watch('field', function (value) {
-        l($scope.field);
-    }, true);
-
     if($routeParams.id) {
       Data.get({"id": $routeParams.id}, function(data) {
          $scope.field = data;
          if(!$scope.field.plans) {
            $scope.field.plans = [{}, {}, {}, {}];
          }
+         $scope.$watch('field', function (value) {
+             fieldChanged = true;
+         }, true);
+
+
+         setInterval(function() {
+             if (fieldChanged) {
+                 fieldChanged = false;
+                 angular.copy($scope.field).$save();
+             }
+         }, 3000);
       });
     } else {
       $scope.field = {plans: [{}, {}, {}, {}]};
@@ -63,6 +70,9 @@ app.config(['$routeProvider', function($routeProvider) {
       when('/fields', {
         templateUrl: 'fields/list.html',
         controller: 'MyFieldsCtrl'
+      }).
+      when('/', {
+        templateUrl: 'pages/account.html'
       })
   }]);
 

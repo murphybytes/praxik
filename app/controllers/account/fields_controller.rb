@@ -17,4 +17,8 @@ class Account::FieldsController < AccountsController
     render "form.html"
   end
 
+  def create 
+    render json: true
+  end
+
 end
