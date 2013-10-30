@@ -173,7 +173,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 		height:240px;
 		margin:10px;
 		box-shadow: 0 1px 4px #333;
-		background-image:url(images/corn-field-wallcharts.jpg);
+		background-image:url(/assets/corn-field-wallcharts.jpg);
 		background-position:center;
 		
 	}	
