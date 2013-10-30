@@ -17,7 +17,7 @@
 
 
 l = console.log;
-app = angular.module('LowaFields', ['LowaFieldsServices', 'ngRoute', 'ng', 'ui.bootstrap']);
+app = angular.module('LowaFields', ['LowaFieldsServices', 'GoogleMap', 'ngRoute', 'ng', 'ui.bootstrap']);
 
 function MyFieldsCtrl($scope, Data) {
     $scope.myFields = Data.query();
