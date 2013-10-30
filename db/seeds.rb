@@ -17,3 +17,14 @@ u.fields.create({ data: {
   bufferWidth: "1000",
   vegetation: "Perennial grass"
 }})
+
+u.fields.create({ data: {
+  name: "Titanic",
+  conservationPractice: "Grade stabilization full flow",
+  tileDrainage: "Yes",
+  goodDrainage: "No",
+  ownOrRent: "Own",
+  bufferName: "Jakson Buffer",
+  bufferWidth: "1000",
+  vegetation: "Perennial grass"
+}})
