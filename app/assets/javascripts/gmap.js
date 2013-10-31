@@ -675,6 +675,13 @@ console.log("foo"+jQuery("#mapcontainer").length);
         map.zoomToExtent(bounds);
       }
       
+      jQuery("#button-select-icon").on("click",function() {
+        change_map_mode('select');
+      });
+      jQuery("#button-square-icon").on("click", function() {
+        change_map_mode('square');
+      });
+
       jQuery(document).ready(function() {
         //jQuery("#county_selector"). 
       });
