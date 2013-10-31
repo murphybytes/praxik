@@ -19,8 +19,6 @@
 l = console.log;
 app = angular.module('LowaFields', ['BackendServices', 'GoogleMap', 'ngRoute', 'ng', 'MyInputs', 'ui.bootstrap']);
 
-
-
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
       when('/fields/new', {
