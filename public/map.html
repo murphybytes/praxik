@@ -14,10 +14,41 @@
             <strong>Zoom to:</strong> 
             <select id="county_selector">
                 <option value="" selected="selected">--SELECT COUNTY--</option>
-                <option value="001">Adair</option><option value="003">Adams</option><option value="005">Allamakee</option><option value="007">Appanoose</option><option value="009">Audubon</option><option value="011">Benton</option><option value="013">Black Hawk</option><option value="015">Boone</option><option value="017">Bremer</option><option value="019">Buchanan</option><option value="021">Buena Vista</option><option value="023">Butler</option><option value="025">Calhoun</option><option value="027">Carroll</option><option value="029">Cass</option><option value="031">Cedar</option><option value="033">Cerro Gordo</option><option value="035">Cherokee</option><option value="037">Chickasaw</option><option value="039">Clarke</option><option value="041">Clay</option><option value="043">Clayton</option><option value="045">Clinton</option><option value="047">Crawford</option><option value="049">Dallas</option><option value="051">Davis</option><option value="053">Decatur</option><option value="055">Delaware</option><option value="057">Des Moines</option><option value="059">Dickinson</option><option value="061">Dubuque</option><option value="063">Emmet</option><option value="065">Fayette</option><option value="067">Floyd</option><option value="069">Franklin</option><option value="071">Fremont</option><option value="073">Greene</option><option value="075">Grundy</option><option value="077">Guthrie</option><option value="079">Hamilton</option><option value="081">Hancock</option><option value="083">Hardin</option><option value="085">Harrison</option><option value="087">Henry</option><option value="089">Howard</option><option value="091">Humboldt</option><option value="093">Ida</option><option value="095">Iowa</option><option value="097">Jackson</option><option value="099">Jasper</option><option value="101">Jefferson</option><option value="103">Johnson</option><option value="105">Jones</option><option value="107">Keokuk</option><option value="109">Kossuth</option><option value="111">Lee</option><option value="113">Linn</option><option value="115">Louisa</option><option value="117">Lucas</option><option value="119">Lyon</option><option value="121">Madison</option><option value="123">Mahaska</option><option value="125">Marion</option><option value="127">Marshall</option><option value="129">Mills</option><option value="131">Mitchell</option><option value="133">Monona</option><option value="135">Monroe</option><option value="137">Montgomery</option><option value="139">Muscatine</option><option value="141">O'Brien</option><option value="143">Osceola</option><option value="145">Page</option><option value="147">Palo Alto</option><option value="149">Plymouth</option><option value="151">Pocahontas</option><option value="153">Polk</option><option value="155">Pottawattamie</option><option value="157">Poweshiek</option><option value="159">Ringgold</option><option value="161">Sac</option><option value="163">Scott</option><option value="165">Shelby</option><option value="167">Sioux</option><option value="169">Story</option><option value="171">Tama</option><option value="173">Taylor</option><option value="175">Union</option><option value="177">Van Buren</option><option value="179">Wapello</option><option value="181">Warren</option><option value="183">Washington</option><option value="185">Wayne</option><option value="187">Webster</option><option value="189">Winnebago</option><option value="191">Winneshiek</option><option value="193">Woodbury</option><option value="195">Worth</option><option value="197">Wright</option>
+                <option value="001">Adair</option>
+                <option value="003">Adams</option>
+                <option value="005">Allamakee</option>
+                <option value="007">Appanoose</option>
+                <option value="009">Audubon</option>
+                <option value="011">Benton</option>
+                <option value="013">Black Hawk</option>
+                <option value="015">Boone</option>
+                <option value="017">Bremer</option>
+                <option value="019">Buchanan</option>
+                <option value="021">Buena Vista</option>
+                <option value="023">Butler</option>
+                <option value="025">Calhoun</option>
+                <option value="027">Carroll</option>
+                <option value="029">Cass</option>
+                <option value="031">Cedar</option>
+                <option value="033">Cerro Gordo</option>
+                <option value="035">Cherokee</option>
+                <option value="037">Chickasaw</option>
+                <option value="039">Clarke</option>
+                <option value="041">Clay</option>
+                <option value="043">Clayton</option>
+                <option value="045">Clinton</option>
+                <option value="047">Crawford</option>
+                <option value="049">Dallas</option>
+                <option value="051">Davis</option>
+                <option value="053">Decatur</option>
+                <option value="055">Delaware</option>
+                <option value="057">Des Moines</option>
+                <option value="059">Dickinson</option>
+                <option value="061">Dubuque</option>
+                <option value="063">Emmet</option>
             </select>
         </div>
-        <div map id="map" class="map-container"></div>
+        <div id="map" class="map-container"></div>
         <div id="controls" style="display:none;float:left;" >
             <input type="button" name="delete_feature" onclick="delete_selected_feature();" value="Delete Selected Feature" /><br />
         </div>
@@ -32,7 +63,7 @@
         </div>
         <div class="green-box"><p>Use the map above to navigate to and draw a shape over your feeding operation. If you mess up, you can delete the shape and try again.</p></div>
     </div> <!-- /mapcontainer -->
+    <input type="hidden" name="map_coords" id="map_coords"/>
 </div>
 
-<input type="hidden" name="map_coords" id="map_coords"/>
 
