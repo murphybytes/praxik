@@ -1,4 +1,4 @@
-<h1 class="remove-bottom">My Fields</h1>
+<h1 class="remove-bottom">My Feeding Operations</h1>
 <hr>
 
 
@@ -19,7 +19,6 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Feeding Operation</th>
                     <th>Last Update</th>
                     <th></th>
                 </tr>
@@ -27,9 +26,8 @@
             <tbody>
                 <tr class="odd" ng-repeat="doc in docs">
                     <td align="left" data-label="Name">{{doc.data.name}}</td>
-                    <td align="left" data-label="Feeding Operation">{{doc.data.feedingOperation}}</td>
                     <td align="left" data-label="Last Update">2013-10-28</td>
-                    <td align="center" data-label=""><a href="#/fields/edit/{{doc.id}}">edit</a></td>
+                    <td align="center" data-label=""><a href="#/operations/edit/{{doc.id}}">edit</a></td>
                 </tr>
             </tbody>
         </table>

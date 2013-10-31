@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20131023160137) do
 
   create_table "operations", force: true do |t|
     t.integer  "field_id"
+    t.integer  "user_id"
+    t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

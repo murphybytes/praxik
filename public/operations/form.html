@@ -1,0 +1,113 @@
+<h1 class="remove-bottom">Add a Operation</h1>
+<hr>
+<h2>Step 1 of 2: General Details and Contact Information</h2>
+<form class="form-horizontal">
+    <steps>
+      <step>
+        <text ng-model="doc.name" required="">Name of Operation:
+        </text>
+        <text ng-model="doc.facilityID" required="">Facility ID No.:
+        </text>
+        <text ng-model="doc.911StreetAddres" required="">911 Street Addres:
+        </text>
+        <text ng-model="doc.city" required="">City:
+        </text>
+        <text ng-model="doc.zip" required="">Zip:
+        </text>
+
+        <accordion close-others="oneAtATime">
+          <accordion-group heading="Owner Information">
+            <text ng-model="doc.ownerInfo.name" required="">Name:
+            </text>
+            <text ng-model="doc.ownerInfo.address" required="">Address:
+            </text>
+            <text ng-model="doc.ownerInfo.city" required="">City:
+            </text>
+            <text ng-model="doc.ownerInfo.state" required="">State:
+            </text>
+            <text ng-model="doc.ownerInfo.zip" required="">Zip:
+            </text>
+            <text ng-model="doc.ownerInfo.phone" required="">Phone:
+            </text>
+            <text ng-model="doc.ownerInfo.email" required="">Email:
+            </text>
+          </accordion-group>
+
+          <accordion-group heading="Contact Information">
+            <text ng-model="doc.contactInfo.name" required="">Name:
+            </text>
+            <text ng-model="doc.contactInfo.address" required="">Address:
+            </text>
+            <text ng-model="doc.contactInfo.city" required="">City:
+            </text>
+            <text ng-model="doc.contactInfo.state" required="">State:
+            </text>
+            <text ng-model="doc.contactInfo.zip" required="">Zip:
+            </text>
+            <text ng-model="doc.contactInfo.phone" required="">Phone:
+            </text>
+            <text ng-model="doc.contactInfo.email" required="">Email:
+            </text>
+          </accordion-group>
+
+          <accordion-group heading="Contract Company">
+          </accordion-group>
+        </accordion>
+      </step>
+
+      <step>
+        <accordion>
+          <accordion-group heading="Feeding Operation Parameters">
+            <text ng-model="doc.feedingOperationParameters.animalTypeAndProductPhase" required="">Animal Type and Product Phase:
+            </text>
+            <text ng-model="doc.feedingOperationParameters.MaxNumberofAnimalsConfined" required="">Max Number of Animals Confined:
+            </text>
+            <text ng-model="doc.feedingOperationParameters.estimatedAnnualAnimalProduction" required="">Estimated Annual Animal Production:
+            </text>
+            <coll options="years" ng-model="doc.feedingOperationParameters.manureStorageStructure">Manure Storage Structure:
+            </coll>
+            <text ng-model="doc.feedingOperationParameters.daysPerYearFacilityIsOccupied" required="">Days Per Year Facility is Occupied:
+            </text>
+          </accordion-group>
+
+          <accordion-group heading="Manure Nutrient Content">
+            <coll options="" ng-model="doc.manureNutrientContent.units">Units
+            </coll>
+            <text ng-model="doc.manureNutrientContent.totalN" required="">Total N::
+            </text>
+            <text ng-model="doc.manureNutrientContent.totalP0" required="">Total P₂0₅:
+            </text>
+
+            <accordion>
+              <accordion-group heading="%TN Available">
+                 <text ng-model="doc.manureNutrientContent.TNAvailable.firstYear" required="">First Year:
+                </text>
+                <text ng-model="doc.manureNutrientContent.TNAvailable.secondYear" required="">Second Year:
+                </text>
+                <text ng-model="doc.manureNutrientContent.TNAvailable.thirdYear" required="">Third Year:
+                </text>
+              </accordion-group>
+
+              <accordion-group heading="Available N">
+                <text ng-model="doc.manureNutrientContent.AvailableN.firstYear" required="">First Year:
+                </text>
+                <text ng-model="doc.manureNutrientContent.AvailableN.secondYear" required="">Second Year:
+                </text>
+                <text ng-model="doc.manureNutrientContent.AvailableN.thirdYear" required="">Third Year:
+                </text>
+              </accordion-group>
+            </accordion>
+          </accordion-group>
+      </step>
+  
+      <step>
+         <text ng-model="doc.sourceOfNutrientData" required="">Source of Nutrient Data:
+         </text>
+      </step>
+
+      <div class="form-actions">
+          <prev>Prev</prev>
+          <next>Next</next>
+      </div>
+    </steps>
+</form>

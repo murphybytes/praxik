@@ -3,8 +3,7 @@ class Account::FieldsController < AccountsController
   def index
     @fields = current_user.fields
 
-    fields = @fields.map{|field| {id: field.id}.merge(field.data)}
-    render json: fields
+    render json: @fields
   end
 
   def show

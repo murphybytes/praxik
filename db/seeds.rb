@@ -28,3 +28,8 @@ u.fields.create({ data: {
   bufferWidth: "1000",
   vegetation: "Perennial grass"
 }})
+
+u.operations.create({ data: {
+  name: "TestOne"
+}})
+u

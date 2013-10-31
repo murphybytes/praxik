@@ -8,6 +8,7 @@ Praxik::Application.routes.draw do
 
   namespace :account do
     resources :fields 
+    resources :operations 
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
