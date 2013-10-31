@@ -1,33 +1,13 @@
 var app = angular.module("GoogleMap", ['ngResource']);
 
-app.directive('imap', function() {
-    return {
-      restrict: 'EA',
-      template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required" ></span></label>' +
-                '<div class="controls">' +
-                '<input type="text" ng-model="ngModel" />' +
-                '</div>' +
-                '</div>',
-      scope: {
-              ngModel: '=',
-              name: '@name',
-          },
-      replace: true,
-    };
-});
 
-
-app.directive('map', function() {
+app.directive('mapArea', function() {
     return {
+        require: "^?map",
         restrict: 'EA',
-        templateUrl: "map.html",
         scope: { },
-        replace: true,
-        transclude: true,
-        link: function(scope, element, attrs, transclude) {
-            var mapSpace = element.find(".map-container");
-            map = new OpenLayers.Map(mapSpace[0], GMap.mapoptions);
+        link: function(scope, element, attrs) {
+            map = new OpenLayers.Map(element[0], GMap.mapoptions);
             map.addLayers([
                 GMap.googlelayers[ "terrain" ],
                 GMap.googlelayers[ "roadmap" ],
@@ -45,6 +25,18 @@ app.directive('map', function() {
             change_map_view(map, "hybrid");        
 
             return;
+        },
+    };
+});
+
+
+app.directive('map', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: "map.html",
+        scope: { },
+        replace: true,
+        link: function(scope, element, attrs, transclude) {
         },
     };
 });
