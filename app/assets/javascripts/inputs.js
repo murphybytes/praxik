@@ -1,3 +1,4 @@
+l = console.log;
 var app = angular.module("MyInputs", ['ng']);
 
 app.directive('text', function() {

@@ -7,6 +7,7 @@ app.directive('mapArea', function() {
         restrict: 'EA',
         scope: { },
         link: function(scope, element, attrs) {
+            l(GMap.mapoptions);
             map = new OpenLayers.Map(element[0], GMap.mapoptions);
             map.addLayers([
                 GMap.googlelayers[ "terrain" ],
@@ -22,7 +23,9 @@ app.directive('mapArea', function() {
             for(var key in GMap.drawControls) {
                 map.addControl(GMap.drawControls[key]);
             }
-            change_map_view(map, "hybrid");        
+            change_map_view(map, "roadmap");        
+            map.zoomToExtent( GMap.bounds ); 
+
 
             return;
         },
@@ -93,40 +96,42 @@ function decode(input) {
 }
 
 //Set for Iowa
-var bounds = new OpenLayers.Bounds(
-        -10757866.4085138, 4920674.43409749,
-        -10034363.897346, 5388559.04380514 );
-
-var drawoptions = {
-    styleMap: new OpenLayers.StyleMap({
-        "default": new OpenLayers.Style({
-            fillColor: "#7CC96E",
-        fillOpacity: 0.5,
-        strokeColor: "#209110",
-        strokeOpacity: 1,
-        strokeWidth: 2,
-        cursor: "pointer",
-        pointRadius: 6,
-        label: "",
-        fontColor:"#1F8E0F",
-        fontWeight: "bold",
-        labelOutlineColor: "#B4DCA8",
-        labelOutlineWidth: 2, 
-        }),
-        "select": new OpenLayers.Style({
-            fillColor: "#75CAB5",
-        fillOpacity: 0.5,
-        strokeColor: "#5FC2BA",
-        strokeOpacity: 1,
-        strokeWidth: 2,
-        graphicZIndex: 2,
-        cursor: "pointer",
-        label: ""
-        })
-    })
-};          
-
 function init() {
+    var bounds = new OpenLayers.Bounds(
+            -10757866.4085138, 4920674.43409749,
+            -10034363.897346, 5388559.04380514 );
+
+    GMap.bounds = bounds;
+    var drawoptions = {
+        styleMap: new OpenLayers.StyleMap({
+            "default": new OpenLayers.Style({
+                fillColor: "#7CC96E",
+            fillOpacity: 0.5,
+            strokeColor: "#209110",
+            strokeOpacity: 1,
+            strokeWidth: 2,
+            cursor: "pointer",
+            pointRadius: 6,
+            label: "",
+            fontColor:"#1F8E0F",
+            fontWeight: "bold",
+            labelOutlineColor: "#B4DCA8",
+            labelOutlineWidth: 2, 
+            }),
+            "select": new OpenLayers.Style({
+                fillColor: "#75CAB5",
+            fillOpacity: 0.5,
+            strokeColor: "#5FC2BA",
+            strokeOpacity: 1,
+            strokeWidth: 2,
+            graphicZIndex: 2,
+            cursor: "pointer",
+            label: ""
+            })
+        })
+    };          
+
+
     //Pink tile avoidance
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
 
@@ -296,7 +301,7 @@ function init() {
 
     };
 
-        //------------END Setup SSURGO Layers-----------//
+    //------------END Setup SSURGO Layers-----------//
 
 
     //------------Setup Draw Layers-----------//
@@ -400,7 +405,7 @@ function init() {
     };
 
     //Add each of the tools listed above to the map 
-    
+
     ;
 
 
