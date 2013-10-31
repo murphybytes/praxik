@@ -1,13 +1,33 @@
 var app = angular.module("GoogleMap", ['ngResource']);
 
+app.directive('imap', function() {
+    return {
+      restrict: 'EA',
+      template: '<div class="control-group">' +
+                '<label for="name" class="control-label"><span class="required" ></span></label>' +
+                '<div class="controls">' +
+                '<input type="text" ng-model="ngModel" />' +
+                '</div>' +
+                '</div>',
+      scope: {
+              ngModel: '=',
+              name: '@name',
+          },
+      replace: true,
+    };
+});
+
+
 app.directive('map', function() {
     return {
         restrict: 'EA',
         templateUrl: "map.html",
         scope: { },
         replace: true,
-        link: function(scope, element, attrs) {
-            map = new OpenLayers.Map(element[0], GMap.mapoptions);
+        transclude: true,
+        link: function(scope, element, attrs, transclude) {
+            var mapSpace = element.find(".map-container");
+            map = new OpenLayers.Map(mapSpace[0], GMap.mapoptions);
             map.addLayers([
                 GMap.googlelayers[ "terrain" ],
                 GMap.googlelayers[ "roadmap" ],
@@ -22,7 +42,7 @@ app.directive('map', function() {
             for(var key in GMap.drawControls) {
                 map.addControl(GMap.drawControls[key]);
             }
-            change_map_view("hybrid");        
+            change_map_view(map, "hybrid");        
 
             return;
         },
@@ -33,13 +53,14 @@ GMap = {};
 
 init();
 
-var keyStr = "ABCDEFGHIJKLMNOP" +
-"QRSTUVWXYZabcdef" +
-"ghijklmnopqrstuv" +
-"wxyz0123456789+/" +
-"=";
-
 function decode(input) {
+    var keyStr = "ABCDEFGHIJKLMNOP" +
+        "QRSTUVWXYZabcdef" +
+        "ghijklmnopqrstuv" +
+        "wxyz0123456789+/" +
+        "=";
+
+
     var output = "";
     var chr1, chr2, chr3 = "";
     var enc1, enc2, enc3, enc4 = "";
@@ -164,7 +185,7 @@ function init() {
         minZoomLevel: 7,
         projection: "EPSG:3857",
         units: "m",
-        theme: "css/libs/map.css"
+        theme: "assets/old_css/map.css"
     };
 
     //map.events.register("zoomend", map, zoom_level_change);
@@ -199,7 +220,7 @@ function init() {
                                  type: google.maps.MapTypeId.TERRAIN,
                          maxZoomLevel: 15
                              },
-                             GoogleMap.googleoptions ) ),
+                             GMap.googleoptions ) ),
         roadmap: new OpenLayers.Layer.Google(
                 "roadmap",
                 jQuery.extend(
@@ -207,7 +228,7 @@ function init() {
                         type: google.maps.MapTypeId.ROADMAP,
                 maxZoomLevel: 17
                     },
-                    GoogleMap.googleoptions ) ),
+                    GMap.googleoptions ) ),
         hybrid: new OpenLayers.Layer.Google(
                 "hybrid",
                 jQuery.extend(
@@ -215,7 +236,7 @@ function init() {
                         type: google.maps.MapTypeId.HYBRID,
                 maxZoomLevel: 17
                     },
-                    GoogleMap.googleoptions ) ),
+                    GMap.googleoptions ) ),
         satellite: new OpenLayers.Layer.Google(
                 "satellite",
                 jQuery.extend(
@@ -223,7 +244,7 @@ function init() {
                         type: google.maps.MapTypeId.SATELLITE,
                 maxZoomLevel: 17
                     },
-                    googleoptions ))
+                    GMap.googleoptions ))
     };
 
 
@@ -435,7 +456,7 @@ function init() {
 
 
     //Draw any saved geometry and zoom as appropriate
-    draw_geometry_and_zoom();
+    //draw_geometry_and_zoom();
 
     //Change initial map mode from the default navigation to select
     //change_map_mode('select');
