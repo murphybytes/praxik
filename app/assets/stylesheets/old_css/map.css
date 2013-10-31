@@ -1,6 +1,6 @@
 
 /*http://docs.openlayers.org/library/controls.html#panels*/
-#map{
+#map,.map-container{
 	height:500px;
 	width:100%;
 	box-shadow:0 0 4px #999 ;
