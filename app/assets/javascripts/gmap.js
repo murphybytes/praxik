@@ -8,12 +8,20 @@ app.directive('map', function() {
         replace: true,
         link: function(scope, element, attrs) {
             map = new OpenLayers.Map(element[0], GMap.mapoptions);
-            map.addLayers( [
+            map.addLayers([
                 GMap.googlelayers[ "terrain" ],
                 GMap.googlelayers[ "roadmap" ],
                 GMap.googlelayers[ "hybrid" ],
-                GMap.googlelayers[ "satellite" ]
-                ] );
+                GMap.googlelayers[ "satellite" ],
+                GMap.ssurgolayers[ "sapolygon" ],
+                GMap.ssurgolayers[ "mupolygon" ],
+                GMap.drawlayers[ "userfeature" ],
+                GMap.drawlayers[ "muintersect" ]
+            ]);
+    
+            for(var key in GMap.drawControls) {
+                map.addControl(GMap.drawControls[key]);
+            }
             change_map_view("hybrid");        
 
             return;
@@ -183,7 +191,7 @@ function init() {
         wrapDateLine: false
     };          
 
-    GoogleMap.googlelayers = {
+    GMap.googlelayers = {
         terrain: new OpenLayers.Layer.Google(
                          "terrain",
                          jQuery.extend(
@@ -243,7 +251,7 @@ function init() {
         yx : { projection : false }
     };
 
-    var ssurgolayers = {
+    GMap.ssurgolayers = {
         sapolygon: new OpenLayers.Layer.WMS(
                            "sapolygon", decode("aHR0cDovL2lvd2FtbXAuY29tL2dpcy9nZW9zZXJ2ZXIvc3N1cmdvL2d3Yy9zZXJ2aWNlL3dtcw=="),
                            jQuery.extend(
@@ -275,17 +283,12 @@ function init() {
 
     };
 
-    map.addLayers(
-            [
-            ssurgolayers[ "sapolygon" ],
-            ssurgolayers[ "mupolygon" ],
-            ] );    
-    //------------END Setup SSURGO Layers-----------//
+        //------------END Setup SSURGO Layers-----------//
 
 
     //------------Setup Draw Layers-----------//
 
-    var drawlayers ={
+    GMap.drawlayers ={
         userfeature: new OpenLayers.Layer.Vector(
                              "userfeature",
                              jQuery.extend(
@@ -302,33 +305,28 @@ function init() {
                     drawoptions ) )
     };
 
-    map.addLayers(
-            [
-            drawlayers[ "userfeature" ],
-            drawlayers[ "muintersect" ]
-            ] );
     //------------END Setup Draw Layers-----------//
 
 
 
     //------------Setup Draw Controls-----------//
-    var draw_controls ={
+    GMap.draw_controls = {
         points: new OpenLayers.Control.DrawFeature(
-                        drawlayers[ "userfeature" ],
+                        GMap.drawlayers[ "userfeature" ],
                         OpenLayers.Handler.Point,
                         {
                             displayClass: "olControlDrawFeaturePoint",
         title: "points"
                         } ),
         path: new OpenLayers.Control.DrawFeature(
-                      drawlayers[ "userfeature" ],
+                      GMap.drawlayers[ "userfeature" ],
                       OpenLayers.Handler.Path,
                       {
                           displayClass: "olControlDrawFeaturePath",
         title: "path"
                       } ),
         square: new OpenLayers.Control.DrawFeature(
-                        drawlayers[ "userfeature" ],
+                        GMap.drawlayers[ "userfeature" ],
                         OpenLayers.Handler.RegularPolygon,
                         {
                             displayClass: "olControlDrawFeatureBox",
@@ -339,7 +337,7 @@ function init() {
         }
                         } ),
         poly: new OpenLayers.Control.DrawFeature(
-                      drawlayers[ "userfeature" ],
+                      GMap.drawlayers[ "userfeature" ],
                       OpenLayers.Handler.Polygon,
                       {
                           displayClass: "olControlDrawFeaturePoly",
@@ -353,7 +351,7 @@ function init() {
         }
                       } ),
         freepoly: new OpenLayers.Control.DrawFeature(
-                          drawlayers[ "userfeature" ],
+                          GMap.drawlayers[ "userfeature" ],
                           OpenLayers.Handler.Polygon,
                           {
                               displayClass: "olControlDrawFeatureFreePoly",
@@ -365,7 +363,7 @@ function init() {
         }
                           } ),
         triangle: new OpenLayers.Control.DrawFeature(
-                          drawlayers[ "userfeature" ],
+                          GMap.drawlayers[ "userfeature" ],
                           OpenLayers.Handler.RegularPolygon,
                           {
                               displayClass: "olControlDrawFeatureTriangle",
@@ -376,7 +374,7 @@ function init() {
         }
                           } ),
         circle: new OpenLayers.Control.DrawFeature(
-                        drawlayers[ "userfeature" ],
+                        GMap.drawlayers[ "userfeature" ],
                         OpenLayers.Handler.RegularPolygon,
                         {
                             displayClass: "olControlDrawFeatureCircle",
@@ -389,14 +387,12 @@ function init() {
     };
 
     //Add each of the tools listed above to the map 
-    for(var key in draw_controls) {
-        map.addControl(draw_controls[key]);
-    }
+    
     ;
 
 
     //Add data to hidden field when a shape has been added
-    drawlayers[ "userfeature" ].events.on({
+    GMap.drawlayers[ "userfeature" ].events.on({
         featureadded: function( event ){
             update_form_input();
             load_map_vars();
@@ -409,7 +405,7 @@ function init() {
     });
 
     //The following only allows one shape to be drawn at a time
-    drawlayers[ "userfeature" ].events.on({
+    GMap.drawlayers[ "userfeature" ].events.on({
         beforefeatureadded: function( event ){
             delete_all_features();
         }
@@ -421,7 +417,7 @@ function init() {
     //------------Setup Manipulation Controls-----------//
     var manipulation_controls = {
         select: new OpenLayers.Control.SelectFeature(
-                        drawlayers[ "userfeature" ],
+                        GMap.drawlayers[ "userfeature" ],
                         {
                             title: "select",
         clickout: true,
