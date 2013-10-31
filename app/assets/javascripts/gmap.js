@@ -690,16 +690,16 @@ console.log("foo"+jQuery("#mapcontainer").length);
       });
       jQuery("#mapview-terrain").on("click", function() {
         change_map_view('terrain');
-      }
+      });
       jQuery("#mapview-roadmap").on("click", function() {
         change_map_view('roadmap');
-      }
+      });
       jQuery("#mapview-hybrid").on("click", function() {
         change_map_view('hybrid');
-      }
+      });
       jQuery("#mapview-satellite").on("click", function() {
         change_map_view('satellite');
-      }
+      });
 
 
       jQuery(document).ready(function() {
