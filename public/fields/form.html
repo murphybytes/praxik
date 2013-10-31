@@ -6,9 +6,9 @@
                 <div map> </div>
                 <text ng-model="field.name" required="">Field Name
                 </text>
-                <coll options="conservationPractices" ng-model="field.conservationPractice">Conservation Practices
+                <coll options="conservationPractices" ng-model="field.data.conservationPractice">Conservation Practices
                 </coll>
-                <radio  items="Yes | No | Blank" ng-model="field.tileDrainage">Tile Drainage
+                <radio  items="Yes | No | Blank" ng-model="field.data.tileDrainage">Tile Drainage
                 </radio>
                 <radio  items="Yes | No" ng-model="field.goodDrainage">Does the field have good drainage
                 </radio>
@@ -40,8 +40,58 @@
                   </coll>
                   <text ng-model="plan.harvestDate">Harvest Date:
                   </text>
+
+                  <div>
+                      <accordion close-others="oneAtATime">
+                        <accordion-group heading="Manure Application">
+                          <coll options="years" ng-model="plan.year">Method of Application:
+                          </coll>
+                          <coll options="years" ng-model="plan.year">Application Date:
+                          </coll>
+                          <text ng-model="plan.optimalYield">Planned Rate:
+                          </text>
+                          <text ng-model="plan.optimalYield">Application Loss Factor:
+                          </text>
+                          <text ng-model="plan.optimalYield">Spray Irrigation:
+                          </text>
+                        </accordion-group>
+                        <accordion-group heading="Tillage">
+                          <coll options="years" ng-model="plan.year">Method of Tillage:
+                          </coll>
+                          <text ng-model="plan.optimalYield">Operation Date:
+                          </text>
+                        </accordion-group>
+                        <accordion-group heading="Commercial Fertilizer">
+                          <coll options="years" ng-model="plan.year">Fertilizer Type:
+                          </coll>
+                          <text ng-model="plan.optimalYield">Application Rate:
+                          </text>
+                          <coll options="years" ng-model="plan.year">Method of Application:
+                          </coll>
+                          <text ng-model="plan.optimalYield">Application Date:
+                          </text>
+                        </accordion-group>
+                        <accordion-group heading="Herbicide">
+                          <coll options="years" ng-model="plan.year">Herbicide Type:
+                          </coll>
+                          <text ng-model="plan.optimalYield">Application Rate:
+                          </text>
+                          <coll options="years" ng-model="plan.year">Method of Application:
+                          </coll>
+                          <text ng-model="plan.optimalYield">Application Date:
+                          </text>
+                        </accordion-group>
+                      </accordion>
+                  </div>
                 </accordion-group>
               </accordion>
+            </step>
+
+            <step>
+              <coll options="years" ng-model="plan.year">Phosphorus Test Factor:
+              </coll>
+              <text ng-model="plan.optimalYield">P Test Result:
+              </text>
             </step>
 
             <div class="form-actions">

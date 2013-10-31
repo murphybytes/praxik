@@ -1,7 +1,7 @@
 l = console.log;
 
 var app = angular.module("LowaFieldsServices", ['ngResource']);
-app.factory("Data", DB);
+app.factory("Field", DB);
 
 function DB($resource) {
     var options = {

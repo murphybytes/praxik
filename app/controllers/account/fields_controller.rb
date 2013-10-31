@@ -10,7 +10,7 @@ class Account::FieldsController < AccountsController
   def show
     @field = Field.find(params[:id])
 
-    render json: {id: @field.id}.merge(@field.data)
+    render json: @field
   end
 
   def new
@@ -19,16 +19,19 @@ class Account::FieldsController < AccountsController
 
   def update
     @field = Field.find(params[:id])
-    @field.data = params
-    @field.save
 
-    render json: @field.id 
+    unless params[:data].blank?
+      @field.data = params[:data]
+      @field.save
+    end
+
+    render json: @field
   end
 
   def create 
-    @field = current_user.fields.create(id: params[:id], data: params)
+    @field = current_user.fields.create(data: params[:data])
 
-    render json: {id: @field.id}.merge(@field.data || {})
+    render json: @field
   end
 
 end

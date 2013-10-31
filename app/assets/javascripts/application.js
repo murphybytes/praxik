@@ -19,69 +19,73 @@
 l = console.log;
 app = angular.module('LowaFields', ['LowaFieldsServices', 'GoogleMap', 'ngRoute', 'ng', 'ui.bootstrap']);
 
-function MyFieldsCtrl($scope, Data) {
-    $scope.myFields = Data.query();
+function MyFieldsCtrl($scope, Field) {
+    $scope.myFields = Field.query();
 }
 
-function FieldsCtrl($scope, $routeParams, $http, Data) {
-    $scope.crops = ['Corn', 'Soybeans', 'Wheat', 'Oat', 'Alfalfa', 'Corn silage'];
-    $scope.harvestMethods = ['Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower'];
-    $scope.step = 1;
-    $scope.colors = ["Love", "Data"];
-    $scope.vegetations = ["Perennial grass"];
-    $scope.yesNo = ["Yes", "No"];
-    $scope.yesNoBlank = ["Yes", "No", "Unknown"];
-    $scope.ownRent = ["Own", "Rent"];
-    $scope.conservationPractices = ["Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
-    var fieldChanged = false;
+function EditFieldCtrl($scope, $routeParams, $http, $interval, Field) {
+   var timer = $interval(saveDoc, 3000);
+   var fieldChanged = false;
 
-    if($routeParams.id) {
-      Data.get({"id": $routeParams.id}, function(data) {
-         $scope.field = data;
-         if(!$scope.field.plans) {
-           $scope.field.plans = [{}, {}, {}, {}];
-         }
-         $scope.$watch('field', function (value) {
-             fieldChanged = true;
-         }, true);
+   $scope.rField = Field.get({"id": $routeParams.id}, function(field) {
+     $scope.field = field.data;
+   });
+   $scope.$watch('field', function (value) { fieldChanged = true; }, true);
 
+   function saveDoc() {
+       if (fieldChanged) {
+           fieldChanged = false;
 
-         setInterval(function() {
-             if (fieldChanged) {
-                 fieldChanged = false;
-                 angular.copy($scope.field).$update();
-             }
-         }, 3000);
-      });
-    } else {
-      $scope.field = {plans: [{}, {}, {}, {}]};
-      $scope.$watch('field', function (value) {
-          l("field changed");
-             fieldChanged = true;
-         }, true);
+           $scope.rField.data = $scope.field;
+           $scope.rField.$update();
+       }
+   };
 
-       setInterval(function() {
-             if (fieldChanged) {
-                 fieldChanged = false;
-                 if($scope.field.id) {
-                   angular.copy($scope.field).$update();
-                 } else {
-                   $scope.field = Data.save($scope.field);
-                 }
-             }
-         }, 3000);
-    }
+   $scope.$on("$destroy", function() {
+       if (timer) {
+           $interval.cancel(timer);
+       }
+   });
+}
+
+function NewFieldCtrl($scope, $http, $interval, Field) {
+   var id;
+   var timer = $interval(saveDoc, 3000);
+   var fieldChanged = false;
+
+   $scope.rField = new Field();
+   $scope.field = {plans: [{}, {}, {}, {}]};
+   $scope.$watch("field", function (value) { fieldChanged = true; }, true);
+
+   function saveDoc() {
+       if (fieldChanged) {
+           fieldChanged = false;
+            
+           $scope.rField.data = $scope.field;
+           if ($scope.rField.id) {
+             $scope.rField.$update();
+           } else {
+             $scope.rField.$save();
+           }
+       }
+   };
+
+   $scope.$on("$destroy", function() {
+       if (timer) {
+           $interval.cancel(timer);
+       }
+   });
 }
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
       when('/fields/new', {
         templateUrl: 'fields/form.html',
-        controller: 'FieldsCtrl'
+        controller: 'NewFieldCtrl'
       }).
       when('/fields/edit/:id', {
         templateUrl: 'fields/form.html',
-        controller: 'FieldsCtrl'
+        controller: 'EditFieldCtrl'
       }).
       when('/fields', {
         templateUrl: 'fields/list.html',
