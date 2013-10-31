@@ -679,6 +679,28 @@ console.log("foo"+jQuery("#mapcontainer").length);
       jQuery("#button-square-icon").on("click", function() {
         change_map_mode('square');
       });
+      jQuery("#button-poly-icon").on("click", function() {
+        change_map_mode('poly');
+      });
+      jQuery("#button-zoom").on("click", function() {
+        zoom_extents();
+      });
+      jQuery("#button-soil-icon").on("click", function() {
+        toggle_soil_layer();
+      });
+      jQuery("#mapview-terrain".on("click", function() {
+        change_map_view('terrain');
+      }
+      jQuery("#mapview-roadmap".on("click", function() {
+        change_map_view('roadmap');
+      }
+      jQuery("#mapview-hybrid".on("click", function() {
+        change_map_view('hybrid');
+      }
+      jQuery("#mapview-satellite".on("click", function() {
+        change_map_view('satellite');
+      }
+
 
       jQuery(document).ready(function() {
         //jQuery("#county_selector"). 

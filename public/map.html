@@ -5,10 +5,10 @@
     <div id="mapcontainer">
         <div align="right" style="padding:3px;">
             <strong>View:</strong>
-            <input type="radio" name="map_view" onclick="change_map_view('terrain');"/> Terrain
-            <input type="radio" name="map_view" onclick="change_map_view('roadmap');" /> Roadmap
-            <input type="radio" name="map_view" onclick="change_map_view('hybrid');" checked="checked" /> Hybrid
-            <input type="radio" name="map_view" onclick="change_map_view('satellite');" /> Satellite 
+            <input id="mapview-terrain" type="radio" name="map_view"/> Terrain
+            <input id="mapview-roadmap" type="radio" name="map_view"/> Roadmap
+            <input id="mapview-hybrid" type="radio" name="map_view" checked="checked" /> Hybrid
+            <input id="mapview-satellite" type="radio" name="map_view" /> Satellite 
         </div>
         <div align="right" style="padding:3px;">
             <strong>Zoom to:</strong> 
@@ -24,11 +24,11 @@
         <div class="map-icon-tray">
             <img src="/assets/select-icon-down.gif" id="button-select-icon" style="cursor:pointer" /> 
             <img src="/assets/square-icon-up.gif" id="button-square-icon" style="cursor:pointer" /> 
-            <img src="/assets/poly-icon-up.gif" id="button-poly-icon" onclick="change_map_mode('poly');" style="cursor:pointer" /> 
+            <img src="/assets/poly-icon-up.gif" id="button-poly-icon" style="cursor:pointer" /> 
         </div>
         <div class="map-zoom-tray">
-            <img src="/assets/zoom-icon.gif" onclick="zoom_extents();" style="cursor:pointer" /> 
-            <img src="/assets/soil-button-up.gif" id="button-soil-icon" onclick="toggle_soil_layer();" style="cursor:pointer;display:none;" />    
+            <img src="/assets/zoom-icon.gif" id="button-zoom" style="cursor:pointer" /> 
+            <img src="/assets/soil-button-up.gif" id="button-soil-icon" style="cursor:pointer;display:none;" />    
         </div>
         <div class="green-box"><p>Use the map above to navigate to and draw a shape over your feeding operation. If you mess up, you can delete the shape and try again.</p></div>
     </div> <!-- /mapcontainer -->
