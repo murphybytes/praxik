@@ -4,7 +4,7 @@
     <form class="form-horizontal">
         <steps>
             <step>
-                <map></map>
+                <map  ng-model="doc.geometry"></map>
                 <text ng-model="doc.name" required="">Field Name
                 </text>
                 <coll options="conservationPractices" ng-model="doc.data.conservationPractice">Conservation Practices

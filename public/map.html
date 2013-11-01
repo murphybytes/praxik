@@ -49,13 +49,14 @@
             </select>
         </div>
         <div class="map-container" map-area></div>
-        <div id="controls" style="display:none;float:left;" >
-            <input type="button" name="delete_feature" onclick="delete_selected_feature();" value="Delete Selected Feature" /><br />
+        <div id="controls" ng-show="inSelectMode">
+            <input type="button" ng-click="deleteSelectedFeature()" value="Delete Selected Feature" /><br />
         </div>
         <div class="map-icon-tray">
-            <img src="/assets/select-icon-down.gif" id="button-select-icon" style="cursor:pointer" /> 
-            <img src="/assets/square-icon-up.gif" id="button-square-icon" style="cursor:pointer" /> 
-            <img src="/assets/poly-icon-up.gif" id="button-poly-icon" style="cursor:pointer" /> 
+            <img src="/assets/select-icon-down.gif" id="button-select-icon" style="cursor:pointer" ng-click="mode('select')"  /> 
+            <img src="/assets/square-icon-up.gif" id="button-square-icon" style="cursor:pointer"   ng-click="mode('box')"     /> 
+            <img src="/assets/poly-icon-up.gif" id="button-poly-icon" style="cursor:pointer"       ng-click="mode('polygon')" />
+            <img style="cursor:pointer" id="button-circle-icon" src="/assets/circle-icon-up.gif"   ng-click="mode('circle')"  />
         </div>
         <div class="map-zoom-tray">
             <img src="/assets/zoom-icon.gif" id="button-zoom" style="cursor:pointer" /> 
