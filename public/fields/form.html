@@ -1,10 +1,11 @@
-    <h1 class="remove-bottom">Add a Field</h1>
-    <hr>
-    <h2>Step 1 of 2: General Details and Contact Information</h2>
+<h1 class="remove-bottom">{{action}} field {{doc.name}}</h1>
+<hr>
+<h2>Step 1 of 2: General Details and Contact Information</h2>
+
     <form class="form-horizontal">
         <steps>
             <step>
-                <map  ng-model="doc.nearestStreamGeometry">Locate and Mark Your Feeding Operation:
+                <map  ng-model="doc.fieldGeometry">Locate and Mark Your Field:
                 </map>
                 <text ng-model="doc.name" required="">Field Name
                 </text>

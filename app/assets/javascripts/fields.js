@@ -6,6 +6,7 @@ function EditFieldCtrl($scope, $routeParams, $http, $interval, Field) {
    var timer = $interval(saveDoc, 3000);
    var fieldChanged = false;
 
+   $scope.action = "Edit";
    $scope.rField = Field.get({"id": $routeParams.id}, function(doc) {
      $scope.doc = doc.data;
    });
@@ -31,6 +32,7 @@ function NewFieldCtrl($scope, $http, $interval, Field) {
    var timer = $interval(saveDoc, 3000);
    var fieldChanged = false;
 
+   $scope.action = "Add";
    $scope.rField = new Field();
    $scope.doc = {plans: [{}, {}, {}, {}]};
    $scope.$watch("doc", function (value) { fieldChanged = true; }, true);
