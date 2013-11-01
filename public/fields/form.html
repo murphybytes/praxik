@@ -11,7 +11,7 @@
                 </text>
                 <coll options="associatedFeedingOperations" ng-model="doc.associatedFeedingOperation">Associated Feeding Operation:
                 </coll>
-                <coll options="conservationPractices" ng-model="doc.conservationPractice">Conservation Practices
+                <coll options="data.conservationPractices" ng-model="doc.conservationPractice">Conservation Practices
                 </coll>
                 <radio  items="Yes | No | Blank" ng-model="doc.tileDrainage">Tile Drainage
                 </radio>
@@ -31,34 +31,34 @@
                 </text>
                 <text ng-model="doc.bufferWidth" required="">Buffer Width
                 </text>
-                <coll options="vegetations" ng-model="doc.vegetation">Vegetation
+                <coll options="data.vegetations" ng-model="doc.vegetation">Vegetation
                 </coll>
             </step>
             <step>
-              <accordion close-others="oneAtATime">
+              <accordion close-others="true">
                 <accordion-group ng-repeat="plan in doc.plans" heading="Plan year {{$index + 1}}">
-                  <coll options="years" ng-model="plan.year">Vegetation:
+                  <coll options="data.years" ng-model="plan.year">Year:
                   </coll>
-                  <coll options="crops" ng-model="plan.crop">Crop:
+                  <coll options="data.crops" ng-model="plan.crop">Crop:
                   </coll>
                   <text ng-model="plan.optimalYield">Optimal Yield:
                   </text>
-                  <coll options="plantingMethods" ng-model="plan.plantingMethod">Planting Method:
+                  <coll options="data.plantingMethods" ng-model="plan.plantingMethod">Planting Method:
                   </coll>
                   <text ng-model="plan.plantingDate">Planting Date:
                   </text>
-                  <coll options="harvestMethods" ng-model="plan.harvestMethod">Harvest Method:
+                  <coll options="data.harvestMethods" ng-model="plan.harvestMethod">Harvest Method:
                   </coll>
                   <text ng-model="plan.harvestDate">Harvest Date:
                   </text>
 
                   <div>
-                      <accordion close-others="oneAtATime">
+                      <accordion close-others="true">
                         <accordion-group heading="Manure Application">
-                          <coll options="years" ng-model="plan.year">Method of Application:
+                          <coll options="data.methodOfApplications" ng-model="plan.methodOfApplication">Method of Application:
                           </coll>
-                          <coll options="years" ng-model="plan.year">Application Date:
-                          </coll>
+                          <text ng-model="plan.applicationDate">Application Date:
+                          </text>
                           <text ng-model="plan.optimalYield">Planned Rate:
                           </text>
                           <text ng-model="plan.optimalYield">Application Loss Factor:
@@ -67,17 +67,17 @@
                           </text>
                         </accordion-group>
                         <accordion-group heading="Tillage">
-                          <coll options="years" ng-model="plan.year">Method of Tillage:
+                          <coll options="data.methodOfTillage" ng-model="plan.methodOfTillage">Method of Tillage:
                           </coll>
-                          <text ng-model="plan.optimalYield">Operation Date:
+                          <text ng-model="plan.operationDate">Operation Date:
                           </text>
                         </accordion-group>
                         <accordion-group heading="Commercial Fertilizer">
-                          <coll options="years" ng-model="plan.year">Fertilizer Type:
+                          <coll options="data.fertilizerType" ng-model="plan.fertilizerType">Fertilizer Type:
                           </coll>
                           <text ng-model="plan.optimalYield">Application Rate:
                           </text>
-                          <coll options="years" ng-model="plan.year">Method of Application:
+                          <coll options="years" ng-model="plan.methodOfApplication">Method of Application:
                           </coll>
                           <text ng-model="plan.optimalYield">Application Date:
                           </text>

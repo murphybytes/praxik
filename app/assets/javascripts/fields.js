@@ -3,9 +3,11 @@ function MyFieldsCtrl($scope, Field) {
 }
 
 
-function EditFieldCtrl($scope, $routeParams, $http, $interval, Field) {
+function EditFieldCtrl($scope, $routeParams, $http, $interval, Field, Operation) {
    var timer = $interval(saveDoc, 3000);
    var fieldChanged = false;
+
+   $scope.data = GlobalData;
 
    Operation.query(function(coll) {
        $scope.associatedFeedingOperations = [];
@@ -47,6 +49,7 @@ function NewFieldCtrl($scope, $http, $interval, Field, Operation) {
    var timer = $interval(saveDoc, 3000);
    var fieldChanged = false;
 
+   $scope.data = GlobalData;
    Operation.query(function(coll) {
        $scope.associatedFeedingOperations = [];
        var data = [];
