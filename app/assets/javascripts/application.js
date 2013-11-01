@@ -19,6 +19,14 @@
 l = console.log;
 app = angular.module('LowaFields', ['BackendServices', 'GoogleMap', 'ngRoute', 'ng', 'MyInputs', 'ui.bootstrap']);
 
+app.filter('normalize', function() {
+  return function(input) {
+      l("in filter", input);
+      return input.name;
+  }
+});
+
+
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
       when('/fields/new', {

@@ -2,9 +2,24 @@ function MyFieldsCtrl($scope, Field) {
     $scope.docs = Field.query();
 }
 
+
 function EditFieldCtrl($scope, $routeParams, $http, $interval, Field) {
    var timer = $interval(saveDoc, 3000);
    var fieldChanged = false;
+
+   Operation.query(function(coll) {
+       $scope.associatedFeedingOperations = [];
+       var data = [];
+
+       for(var i in coll) {
+           var doc = coll[i];
+           if (doc && doc.data) {
+             data.push(doc.data.name);
+           }
+       }
+
+       $scope.associatedFeedingOperations = data;
+   });
 
    $scope.action = "Edit";
    $scope.rField = Field.get({"id": $routeParams.id}, function(doc) {
@@ -28,9 +43,23 @@ function EditFieldCtrl($scope, $routeParams, $http, $interval, Field) {
    });
 }
 
-function NewFieldCtrl($scope, $http, $interval, Field) {
+function NewFieldCtrl($scope, $http, $interval, Field, Operation) {
    var timer = $interval(saveDoc, 3000);
    var fieldChanged = false;
+
+   Operation.query(function(coll) {
+       $scope.associatedFeedingOperations = [];
+       var data = [];
+
+       for(var i in coll) {
+           var doc = coll[i];
+           if (doc && doc.data) {
+             data.push(doc.data.name);
+           }
+       }
+
+       $scope.associatedFeedingOperations = data;
+   });
 
    $scope.action = "Add";
    $scope.rField = new Field();

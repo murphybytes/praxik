@@ -9,9 +9,11 @@
                 </map>
                 <text ng-model="doc.name" required="">Field Name
                 </text>
-                <coll options="conservationPractices" ng-model="doc.data.conservationPractice">Conservation Practices
+                <coll options="associatedFeedingOperations" ng-model="doc.associatedFeedingOperation">Associated Feeding Operation:
                 </coll>
-                <radio  items="Yes | No | Blank" ng-model="doc.data.tileDrainage">Tile Drainage
+                <coll options="conservationPractices" ng-model="doc.conservationPractice">Conservation Practices
+                </coll>
+                <radio  items="Yes | No | Blank" ng-model="doc.tileDrainage">Tile Drainage
                 </radio>
                 <radio  items="Yes | No" ng-model="doc.goodDrainage">Does the doc have good drainage
                 </radio>
