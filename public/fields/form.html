@@ -4,7 +4,7 @@
     <form class="form-horizontal">
         <steps>
             <step>
-                <map  ng-model="doc.geometry"></map>
+                <map  ng-model="doc.nearestStreamGeometry"></map>
                 <text ng-model="doc.name" required="">Field Name
                 </text>
                 <coll options="conservationPractices" ng-model="doc.data.conservationPractice">Conservation Practices
@@ -17,6 +17,7 @@
                 </radio>
             </step>
             <step>
+                <map  ng-model="doc.cool"></map>
                 <text ng-model="doc.bufferName" required="">Buffer Name
                 </text>
                 <text ng-model="doc.bufferWidth" required="">Buffer Width
