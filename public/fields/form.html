@@ -4,7 +4,8 @@
     <form class="form-horizontal">
         <steps>
             <step>
-                <map  ng-model="doc.nearestStreamGeometry"></map>
+                <map  ng-model="doc.nearestStreamGeometry">Locate and Mark Your Feeding Operation:
+                </map>
                 <text ng-model="doc.name" required="">Field Name
                 </text>
                 <coll options="conservationPractices" ng-model="doc.data.conservationPractice">Conservation Practices
@@ -17,7 +18,12 @@
                 </radio>
             </step>
             <step>
-                <map  ng-model="doc.cool"></map>
+                <map  ng-model="doc.nearestStreamGeometry">Mark the Nearest Stream:
+                </map>
+            </step>
+            <step>
+                <map  ng-model="doc.vegetativeBufferGeometry">Locate and Mark Vegetative Buffers:
+                </map>
                 <text ng-model="doc.bufferName" required="">Buffer Name
                 </text>
                 <text ng-model="doc.bufferWidth" required="">Buffer Width

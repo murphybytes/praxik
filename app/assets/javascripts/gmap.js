@@ -28,6 +28,7 @@ app.directive('map', function() {
             ngModel: "="
         },
         replace: true,
+        transclude: true,
         controller: function($scope) {
             var map, modelLoaded;
             $scope.inSelectMode = false;
