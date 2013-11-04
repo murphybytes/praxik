@@ -5,6 +5,8 @@ Praxik::Application.routes.draw do
   get '/services', to: "home#services"
   get '/contact', to: "home#contact"
   get '/about', to: "home#about"
+  get '/terms', to: "home#terms"
+  get '/privacy', to: "home#privacy"
 
   namespace :account do
     resources :fields 

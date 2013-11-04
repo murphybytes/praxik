@@ -65,7 +65,15 @@ app.config(['$routeProvider', function($routeProvider) {
       }).
       when('/contact', {
         templateUrl: 'pages/contact.html'
+      }).
+      when('/terms', {
+        templateUrl: 'pages/terms.html'
+      }).
+      when('/privacy', {
+        templateUrl: 'pages/privacy.html'
       })
+
+
 
 
   }]);
