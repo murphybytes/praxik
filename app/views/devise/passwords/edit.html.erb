@@ -1,16 +1,19 @@
-<h2>Change your password</h2>
+<div id="login">
+  <h1><a title="MMP360" href="http://mmp360.com" style="background-image:url(/assets/iowa-mmp-logo.png) !important;background-size:auto !important;height:75px !important;">MMP360</a></h1>
+  <p class="message">Change your password</p>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div><%= f.label :password, "New password" %><br />
-  <%= f.password_field :password, :autofocus => true %></div>
+  <p><%= f.label :password, "New password" %><br />
+  <%= f.password_field :password, :autofocus => true %></p>
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <p><%= f.label :password_confirmation, "Confirm new password" %><br />
+  <%= f.password_field :password_confirmation %></p>
 
-  <div><%= f.submit "Change my password" %></div>
+  <p class="submit"><%= f.submit("Change my password", :class=>"button button-primary button-large") %></p>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
