@@ -18,9 +18,7 @@
     </p>
   </form>
 
-  <p id="nav">
-  <a title="Password Lost and Found" href="#">Lost your password?</a>
-  </p>
+  <p id="nav"> <%= link_to "Lost your password?", new_password_path(resource_name) %> </p>
 
   <p id="backtoblog"><a title="Are you lost?" href="/">← Back to MMP360</a></p>
 </div>
