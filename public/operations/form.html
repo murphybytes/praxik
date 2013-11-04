@@ -14,12 +14,14 @@
         </text>
         <text ng-model="doc.city" required="">City:
         </text>
+        <text ng-model="doc.city" required="">State:
+        </text>
         <text ng-model="doc.zip" required="">Zip:
         </text>
 
         <accordion close-others="oneAtATime">
           <accordion-group heading="Owner Information">
-            <text ng-model="doc.ownerInfo.name" required="">Name:
+            <text ng-model="doc.ownerInfo.name" required="">Owner Name:
             </text>
             <text ng-model="doc.ownerInfo.address" required="">Address:
             </text>
@@ -36,23 +38,36 @@
           </accordion-group>
 
           <accordion-group heading="Contact Information">
-            <text ng-model="doc.contactInfo.name" required="">Name:
+            <div class="controls">Add if different than owner information above.</div>
+            <text ng-model="doc.contactInfo.name">Contact Name:
             </text>
-            <text ng-model="doc.contactInfo.address" required="">Address:
+            <text ng-model="doc.contactInfo.address">Address:
             </text>
-            <text ng-model="doc.contactInfo.city" required="">City:
+            <text ng-model="doc.contactInfo.city">City:
             </text>
-            <text ng-model="doc.contactInfo.state" required="">State:
+            <text ng-model="doc.contactInfo.state">State:
             </text>
-            <text ng-model="doc.contactInfo.zip" required="">Zip:
+            <text ng-model="doc.contactInfo.zip">Zip:
             </text>
-            <text ng-model="doc.contactInfo.phone" required="">Phone:
+            <text ng-model="doc.contactInfo.phone">Phone:
             </text>
-            <text ng-model="doc.contactInfo.email" required="">Email:
+            <text ng-model="doc.contactInfo.email">Email:
             </text>
           </accordion-group>
 
           <accordion-group heading="Contract Company">
+            <text ng-model="doc.contractCompany.name">Company Name:
+            </text>
+            <text ng-model="doc.contractCompany.address">Address:
+            </text>
+            <text ng-model="doc.contractCompany.city">City:
+            </text>
+            <text ng-model="doc.contractCompany.state">State:
+            </text>
+            <text ng-model="doc.contractCompany.zip">Zip:
+            </text>
+            <text ng-model="doc.contractCompany.phone">Phone:
+            </text>
           </accordion-group>
         </accordion>
       </step>
@@ -100,6 +115,7 @@
               </accordion-group>
             </accordion>
           </accordion-group>
+        </accordion>
       </step>
   
       <step>
@@ -109,7 +125,7 @@
 
       <div class="form-actions">
           <prev>Prev</prev>
-          <next>Next</next>
+          <next>Save and Continue</next>
       </div>
     </steps>
 </form>
