@@ -1,0 +1,63 @@
+<div class="twelve columns alpha">
+      <div id="content">
+        <h1 class="remove-bottom">Edit My Profile</h1>
+        <hr>
+          
+  
+  <form action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_edit_my_profile&amp;nonce=fe2ff75328" id="edit_my_profile" method="post" class="form-horizontal">
+    <fieldset>
+      <input type="hidden" name="form" id="form" value="edit_my_profile">
+      <div id="username_group" class="control-group">
+        <label class="control-label" for="username">Username:</label>
+        <div class="controls">
+          <input type="text" name="username" id="username" value="red5i" readonly="1">
+        </div>
+      </div>
+      <div id="email_group" class="control-group">
+        <label class="control-label" for="email">
+          <span class="required">* </span>Email:
+        </label>
+        <div class="controls">
+          <input type="email" name="email" id="email" value="bob@r5i.com" required="">
+        </div>
+      </div>
+      <div id="fname_group" class="control-group">
+        <label class="control-label" for="fname">
+          <span class="required">* </span>First Name:
+        </label>
+        <div class="controls">
+          <input type="text" name="fname" id="fname" value="Bob" required="">
+        </div>
+      </div>
+      <div id="lname_group" class="control-group">
+        <label class="control-label" for="lname">
+          <span class="required">* </span>Last Name:
+        </label><div class="controls">
+        <input type="text" name="lname" id="lname" value="Dooley" required="">
+      </div>
+    </div>
+    <div id="primary_phone_group" class="control-group">
+      <label class="control-label" for="primary_phone">Primary Phone:</label>
+      <div class="controls">
+        <input type="tel" name="primary_phone" id="primary_phone" placeholder="(e.g. 123-456-7890)" value="">
+      </div>
+    </div>
+    <div id="secondary_phone_group" class="control-group">
+      <label class="control-label" for="secondary_phone">Secondary Phone:</label>
+      <div class="controls">
+        <input type="tel" name="secondary_phone" id="secondary_phone" placeholder="(e.g. 123-456-7890)" value="">
+      </div>
+    </div>
+    <div id="form-response" style="display:none;"></div>
+    <div class="form-actions">
+      <input type="submit" value="Update Profile" name="" id="submit_button" class="btn btn-primary">
+      <span id="form-processing-animation" style="display:none;margin-left:35px;margin-right:35px;float:right;">
+        <img src="/assets/proc-animation.gif" title="Processing...">
+      </span>
+    </div>
+  </fieldset>
+</form>
+
+
+      </div>
+    </div>
