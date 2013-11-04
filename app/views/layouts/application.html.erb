@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="LowaFields"> <![endif]-->
-  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="LowaFields"> <![endif]-->
-    <!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="LowaFields"> <![endif]-->
-      <!--[if gt IE 8]><!--> <html class="no-js" ng-app="LowaFields"> <!--<![endif]-->
-        <head>
-          <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-          <title>MMP360 › Log In</title>
-          <link media="all" type="text/css" href="http://mmp360.com/wp-admin/css/wp-admin.min.css?ver=3.5.2" id="wp-admin-css" rel="stylesheet">
-          <link media="all" type="text/css" href="http://mmp360.com/wp-includes/css/buttons.min.css?ver=3.5.2" id="buttons-css" rel="stylesheet">
-          <link media="all" type="text/css" href="http://mmp360.com/wp-admin/css/colors-fresh.min.css?ver=3.5.2" id="colors-fresh-css" rel="stylesheet">
-          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js?ver=1.9.1" type="text/javascript"></script>
-          <style type="text/css">
-            h1 a { 	background-image:url(http://mmp360.com/wp-content/themes/kps_skeleton/images/iowa-mmp-logo.png) !important; 
-            background-size:auto !important;
-            height:75px !important;
-            }
-          </style><meta content="noindex,nofollow" name="robots">
-        </head>
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="LowaFields"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="LowaFields"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="LowaFields"> <!--<![endif]-->
+    <head>
 
-        <body class="login login-action-login wp-core-ui">
-          <%= yield %>
-        </body>
-      </html>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>MMP360 › Log In</title>
+    <meta name="description" content="">
+    <meta name="author" content="CFSPH Webspinner">
+    <meta name="robots" content="noindex,nofollow">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  </head>
+
+  <body class="login login-action-login wp-core-ui">
+    <%= yield %>
+  </body>
+</html>
