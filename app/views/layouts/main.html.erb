@@ -1,27 +1,21 @@
-<html lang="en"><!--<![endif]--><head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="LowaFields"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="LowaFields"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="LowaFields"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="LowaFields"> <!--<![endif]-->
+    <head>
 
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Home : MMP360</title>
-    <meta content="" name="description">
-    <meta content="CFSPH Webspinner" name="author">
+    <title>Praxik MMP360 : Iowa Manure Management Planning</title>
+    <meta name="description" content="">
+    <meta name="author" content="CFSPH Webspinner">
+    <meta name="robots" content="noindex,nofollow">
 
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
-
-    <!-- CSS
-    ================================================== -->
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lusitana:400,700">
-    <!--[if !IE]>-->
-    <link media="screen and (max-width: 767px)" href="http://mmp360.com/wp-content/themes/kps_skeleton/table-styles.css" rel="stylesheet">
-    <!--<![endif]-->
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <!-- Favicons
     ================================================== -->
@@ -30,17 +24,19 @@
     <link href="http://mmp360.com/wp-content/themes/kps_skeleton/images/IMMP_72x72.png" sizes="72x72" rel="apple-touch-icon">
     <link href="http://mmp360.com/wp-content/themes/kps_skeleton/images/IMMP_114x114.png" sizes="114x114" rel="apple-touch-icon">
 
-    <meta content="noindex,nofollow" name="robots">
-    <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/open-layers/theme/default/style.css" id="openlayers_theme-css" rel="stylesheet">
-    <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/open-layers/css/map.css" id="openlayers_map-css" rel="stylesheet">
-    <link media="all" type="text/css" href="http://mmp360.com/wp-content/plugins/kps-webspinner/code/lib/tablesorter/style.css" id="tablesorter_style-css" rel="stylesheet">
-    <link media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" id="calendar_style-css" rel="stylesheet">
-    <link href="/xmlrpc.php?rsd" title="RSD" type="application/rsd+xml" rel="EditURI">
-    <link href="/wp-includes/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest"> 
-    <link href="/edit-user/" title="Edit User" rel="prev">
-    <meta content="WordPress 3.5.2" name="generator">
-    <link href="/" rel="canonical">
+    <!-- CSS
+    ================================================== -->
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- JS
+    ================================================== -->
     <%= javascript_include_tag "home", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
   <body>
 
 
@@ -69,9 +65,9 @@
           <select name="sections" class="menu_select">
             <option value="network" selected="selected">- select -</option>
             <optgroup label="Praxik MMP360">
-              <option value="#/about">About This Site</option>
-              <option value="#/contact">Contact Us</option>
-              <option value="#/services">Services</option>
+              <option value="/about">About This Site</option>
+              <option value="/contact">Contact Us</option>
+              <option value="/services">Services</option>
             </optgroup>
           </select>
         </div>
@@ -94,7 +90,7 @@
     <div class="container">
       <div class="sixteen columns">
         <div align="right">
-          <a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy</a><br>
+          <a href="/terms">Terms of Service</a> | <a href="/privacy">Privacy Policy</a><br>
           &copy; 2013 Praxik, LLC
         </div>
       </div>
