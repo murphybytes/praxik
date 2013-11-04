@@ -56,6 +56,17 @@ app.config(['$routeProvider', function($routeProvider) {
       when('/operations', {
         templateUrl: 'operations/list.html',
         controller: 'MyOperationsCtrl'
+      }).
+      when('/about', {
+        templateUrl: 'pages/about.html'
+      }).
+      when('/services', {
+        templateUrl: 'pages/services.html'
+      }).
+      when('/contact', {
+        templateUrl: 'pages/contact.html'
       })
+
+
   }]);
 
