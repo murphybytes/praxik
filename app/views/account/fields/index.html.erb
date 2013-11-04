@@ -28,14 +28,14 @@
 							
 						</div>
 						<div class="map-icon-tray">
-							<img style="cursor:pointer" onclick="change_map_mode('select');" id="button-select-icon" src="/wp-content/plugins/kps-webspinner/assets/select-icon-down.gif"> 
-							<img style="cursor:pointer" onclick="change_map_mode('square');" id="button-square-icon" src="/wp-content/plugins/kps-webspinner/assets/square-icon-up.gif"> 
-							<img style="cursor:pointer" onclick="change_map_mode('poly');" id="button-poly-icon" src="/wp-content/plugins/kps-webspinner/assets/poly-icon-up.gif"> 
-							<img style="cursor:pointer" onclick="change_map_mode('circle');" id="button-circle-icon" src="/wp-content/plugins/kps-webspinner/assets/circle-icon-up.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('select');" id="button-select-icon" src="/assets/select-icon-down.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('square');" id="button-square-icon" src="/assets/square-icon-up.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('poly');" id="button-poly-icon" src="/assets/poly-icon-up.gif"> 
+							<img style="cursor:pointer" onclick="change_map_mode('circle');" id="button-circle-icon" src="/assets/circle-icon-up.gif"> 
 						</div>
 						<div class="map-zoom-tray">
-							<img style="cursor:pointer" onclick="zoom_extents();" src="http://mmp360.com/wp-content/plugins/kps-webspinner/assets/zoom-icon.gif"> 
-							<img style="cursor:pointer;display:none;" onclick="toggle_soil_layer();" id="button-soil-icon" src="http://mmp360.com/wp-content/plugins/kps-webspinner/assets/soil-button-up.gif"> 
+							<img style="cursor:pointer" onclick="zoom_extents();" src="/assets/zoom-icon.gif"> 
+							<img style="cursor:pointer;display:none;" onclick="toggle_soil_layer();" id="button-soil-icon" src="/assets/soil-button-up.gif"> 
 						</div>
 					</div>
 				</div>
@@ -178,7 +178,7 @@
 			minZoomLevel: 7,
 			projection: "EPSG:3857",
 			units: "m",
-			theme: "/wp-content/plugins/kps-webspinner/code/lib/open-layers/css/map.css"
+			theme: "/assets/map.css"
 		};
 		
 		//Initial map creation call
@@ -508,10 +508,10 @@
 						
 						if(control[0]){
 							if(mode_type == map_modes[i]){
-								jQuery("#button-" + map_modes[i] + "-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/" + map_modes[i] + "-icon-down.gif");
+								jQuery("#button-" + map_modes[i] + "-icon").attr("src","/assets/" + map_modes[i] + "-icon-down.gif");
 								control[0].activate();
 							}else{
-								jQuery("#button-" + map_modes[i] + "-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/" + map_modes[i] + "-icon-up.gif");
+								jQuery("#button-" + map_modes[i] + "-icon").attr("src","/assets/" + map_modes[i] + "-icon-up.gif");
 								control[0].deactivate();
 							}
 						}
@@ -587,10 +587,10 @@
 			show_soil_layers = !show_soil_layers;
 			if(show_soil_layers){
 				mupolygon_layer[0].setVisibility(true);
-				jQuery("#button-soil-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/soil-button-down.gif");
+				jQuery("#button-soil-icon").attr("src","/assets/soil-button-down.gif");
 			}else{
 				mupolygon_layer[0].setVisibility(false);
-				jQuery("#button-soil-icon").attr("src","/wp-content/plugins/kps-webspinner/assets/soil-button-up.gif");
+				jQuery("#button-soil-icon").attr("src","/assets/soil-button-up.gif");
 			}	
 			
 			mupolygon_layer[0].redraw();
@@ -704,4 +704,4 @@
 		});
 	
 
-			</script>	<div class="control-group" id="name_group"><label for="name" class="control-label"><span class="required">* </span>Field Name:</label><div class="controls"><input type="text" value="Test One" required="" id="name" name="name"></div></div><div class="control-group" id="feeding_operation_id_group"><label for="feeding_operation_id" class="control-label"><span class="required">* </span>Associated Feeding Operation:</label><div class="controls"><select required="" id="feeding_operation_id" name="feeding_operation_id" type="select"><option value="">--SELECT--</option><option value="09c343a1-7abc-4639-911d-5a6263ad9db7">BigSquare</option><option selected="selected" value="34fd1070-a214-40bf-ba37-2c4da0a482e9">kristin</option><option value="c89ae1a8-d99a-4b9c-a315-8b0408a9fd12">Red 5</option><option value="7ebd75a2-87e0-4e51-9d6c-5eb5afcc5e7c">Test</option></select><span class="help-inline">Select the feeding operation this field is to be associated with.</span></div></div><input type="hidden" value="[&quot;POLYGON((-10281510.848306999 5005150.90998,-10281510.848306999 5093206.3665523,-10486973.580309004 5093206.3665523,-10486973.580309004 5005150.90998,-10281510.848306999 5005150.90998))&quot;]" id="map_coords" name="map_coords"><div class="control-group" id="conservation_practices_group"><label for="conservation_practices" class="control-label"><span class="required">* </span>Conservation Practices:</label><div class="controls"><select required="" id="conservation_practices" name="conservation_practices" type="select"><option value="">--Select--</option><option value="10">None</option><option selected="selected" value="20">Grade stabilization full flow</option><option value="30">Level terraces</option><option value="40">Ponds and grade stabilization retention</option><option value="50">Tile inlet terraces</option></select></div></div><div class="control-group" id="tile_drainage_group"><label for="tile_drainage" class="control-label"><span class="required">* </span>Tile Drainage:</label><div class="controls"><select required="" id="tile_drainage" name="tile_drainage" type="select"><option value="">--Select--</option><option selected="selected" value="10">Yes</option><option value="20">No</option><option value="30">Unknown</option></select></div></div><div class="control-group" id="good_drainage_group"><label for="good_drainage" class="control-label"><span class="required">* </span>Does the field have good drainage:</label><div class="controls"><label class="radio inline"> <input type="radio" checked="checked" value="1" required="" name="good_drainage" id="good_drainage-0"> Yes </label> <label class="radio inline"> <input type="radio" value="0" required="" name="good_drainage" id="good_drainage-1"> No </label> </div></div><div class="control-group" id="own_rent_group"><label for="own_rent" class="control-label"><span class="required">* </span>Own or Rent:</label><div class="controls"><select required="" id="own_rent" name="own_rent" type="select"><option value="">--Select--</option><option selected="selected" value="10">Own</option><option value="20">Rent</option></select></div></div><div class="control-group" id="length_rental_agreement_group" style="display: none;"><label for="length_rental_agreement" class="control-label">Length of Rental Agreement:</label><div class="controls"><input type="text" value="0" parentid="own_rent" id="length_rental_agreement" name="length_rental_agreement"><span class="help-inline">in years</span></div></div><div style="display:none;" id="form-response"></div><div class="form-actions"><input type="submit" class="btn btn-primary" id="submit_button" name="" value="Save and Continue"><span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation"><img title="Processing..." src="/wp-content/plugins/kps-webspinner/assets/proc-animation.gif"></span></div></fieldset></form>
+			</script>	<div class="control-group" id="name_group"><label for="name" class="control-label"><span class="required">* </span>Field Name:</label><div class="controls"><input type="text" value="Test One" required="" id="name" name="name"></div></div><div class="control-group" id="feeding_operation_id_group"><label for="feeding_operation_id" class="control-label"><span class="required">* </span>Associated Feeding Operation:</label><div class="controls"><select required="" id="feeding_operation_id" name="feeding_operation_id" type="select"><option value="">--SELECT--</option><option value="09c343a1-7abc-4639-911d-5a6263ad9db7">BigSquare</option><option selected="selected" value="34fd1070-a214-40bf-ba37-2c4da0a482e9">kristin</option><option value="c89ae1a8-d99a-4b9c-a315-8b0408a9fd12">Red 5</option><option value="7ebd75a2-87e0-4e51-9d6c-5eb5afcc5e7c">Test</option></select><span class="help-inline">Select the feeding operation this field is to be associated with.</span></div></div><input type="hidden" value="[&quot;POLYGON((-10281510.848306999 5005150.90998,-10281510.848306999 5093206.3665523,-10486973.580309004 5093206.3665523,-10486973.580309004 5005150.90998,-10281510.848306999 5005150.90998))&quot;]" id="map_coords" name="map_coords"><div class="control-group" id="conservation_practices_group"><label for="conservation_practices" class="control-label"><span class="required">* </span>Conservation Practices:</label><div class="controls"><select required="" id="conservation_practices" name="conservation_practices" type="select"><option value="">--Select--</option><option value="10">None</option><option selected="selected" value="20">Grade stabilization full flow</option><option value="30">Level terraces</option><option value="40">Ponds and grade stabilization retention</option><option value="50">Tile inlet terraces</option></select></div></div><div class="control-group" id="tile_drainage_group"><label for="tile_drainage" class="control-label"><span class="required">* </span>Tile Drainage:</label><div class="controls"><select required="" id="tile_drainage" name="tile_drainage" type="select"><option value="">--Select--</option><option selected="selected" value="10">Yes</option><option value="20">No</option><option value="30">Unknown</option></select></div></div><div class="control-group" id="good_drainage_group"><label for="good_drainage" class="control-label"><span class="required">* </span>Does the field have good drainage:</label><div class="controls"><label class="radio inline"> <input type="radio" checked="checked" value="1" required="" name="good_drainage" id="good_drainage-0"> Yes </label> <label class="radio inline"> <input type="radio" value="0" required="" name="good_drainage" id="good_drainage-1"> No </label> </div></div><div class="control-group" id="own_rent_group"><label for="own_rent" class="control-label"><span class="required">* </span>Own or Rent:</label><div class="controls"><select required="" id="own_rent" name="own_rent" type="select"><option value="">--Select--</option><option selected="selected" value="10">Own</option><option value="20">Rent</option></select></div></div><div class="control-group" id="length_rental_agreement_group" style="display: none;"><label for="length_rental_agreement" class="control-label">Length of Rental Agreement:</label><div class="controls"><input type="text" value="0" parentid="own_rent" id="length_rental_agreement" name="length_rental_agreement"><span class="help-inline">in years</span></div></div><div style="display:none;" id="form-response"></div><div class="form-actions"><input type="submit" class="btn btn-primary" id="submit_button" name="" value="Save and Continue"><span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation"><img title="Processing..." src="/assets/proc-animation.gif"></span></div></fieldset></form>
