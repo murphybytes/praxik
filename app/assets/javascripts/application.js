@@ -71,10 +71,13 @@ app.config(['$routeProvider', function($routeProvider) {
       }).
       when('/privacy', {
         templateUrl: 'pages/privacy.html'
+      }).
+      when('/change-my-password', {
+        templateUrl: 'myaccount/changepassword.html'
+      }).
+      when('/edit-my-profile', {
+        templateUrl: 'myaccount/editprofile.html'
       })
-
-
-
 
   }]);
 
