@@ -6,7 +6,7 @@ app.directive('text', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required" ng-transclude></span></label>' +
+                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<input type="text" ng-model="ngModel" />' +
                 '</div>' +
@@ -33,7 +33,7 @@ app.directive('coll', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required" ng-transclude></span></label>' +
+                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<select ng-model="ngModel" ng-options="c for c in options"> </select>' +
                 '</div>' +
@@ -58,7 +58,7 @@ app.directive('radio', function() {
     return {
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required" ng-transclude></span></label>' +
+                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<label class="radio inline" ng-repeat="item in values">' +
                 '<input type="radio" value="{{item}}" ng-model="$parent.ngModel">' +
