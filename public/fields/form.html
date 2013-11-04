@@ -21,11 +21,11 @@
                 </radio>
             </step>
             <step>
-                <map  ng-model="doc.nearestStreamGeometry">Mark the Nearest Stream:
+                <map  ng-model="doc.nearestStreamGeometry" zoom-to="doc.fieldGeometry">Mark the Nearest Stream:
                 </map>
             </step>
             <step>
-                <map  ng-model="doc.vegetativeBufferGeometry">Locate and Mark Vegetative Buffers:
+                <map  ng-model="doc.vegetativeBufferGeometry" zoom-to="doc.fieldGeometry">Locate and Mark Vegetative Buffers:
                 </map>
                 <text ng-model="doc.bufferName" required="">Buffer Name
                 </text>

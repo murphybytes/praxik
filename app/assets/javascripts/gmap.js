@@ -25,7 +25,8 @@ app.directive('map', function() {
         restrict: 'EA',
         templateUrl: "map.html",
         scope: {
-            ngModel: "="
+            ngModel: "=",
+            zoomTo: "="
         },
         replace: true,
         transclude: true,
@@ -45,6 +46,11 @@ app.directive('map', function() {
             this.setMap = function (nmap) {
                 map = nmap;
             }
+
+            $scope.$watch("zoomTo", function (value) { 
+                console.log(value);
+                map.zoomTo(value);
+            });
 
             $scope.$watch("ngModel", function (value) { 
               if( !modelLoaded && value) {

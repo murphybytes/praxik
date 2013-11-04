@@ -24,7 +24,11 @@ GMap = function(element, listener) {
     addLayer("hybrid", google.maps.MapTypeId.HYBRID);
     addLayer("satellite", google.maps.MapTypeId.SATELLITE);
 
-    var drawLayer    = new OpenLayers.Layer.Vector("Draw layer");
+
+    
+
+    console.log(this.drawOptions);
+    var drawLayer  = new OpenLayers.Layer.Vector("Draw layer", this.drawOptions);
     this.drawLayer = drawLayer; 
 
     this.drawControls = {
@@ -100,6 +104,49 @@ GMap = function(element, listener) {
     }
 }
 
+GMap.prototype.drawOptions = {
+    styleMap: new OpenLayers.StyleMap({
+        "default": new OpenLayers.Style({
+            fillColor: "#7CC96E",
+        fillOpacity: 0.5,
+        strokeColor: "#209110",
+        strokeOpacity: 1,
+        strokeWidth: 2,
+        cursor: "pointer",
+        pointRadius: 6,
+        label: "",
+        fontColor:"#1F8E0F",
+        fontWeight: "bold",
+        labelOutlineColor: "#B4DCA8",
+        labelOutlineWidth: 2, 
+        }),
+        "select": new OpenLayers.Style({
+            fillColor: "#75CAB5",
+        fillOpacity: 0.5,
+        strokeColor: "#5FC2BA",
+        strokeOpacity: 1,
+        strokeWidth: 2,
+        graphicZIndex: 2,
+        cursor: "pointer",
+        label: ""
+        })
+    })
+};
+
+GMap.prototype.zoomTo = function(featureSpecs) {
+    this.drawFeatures(featureSpecs);
+    //var vectors = new OpenLayers.Layer.Vector("vector", {isBaseLayer: false});
+    //if ( featureSpecs ) {
+    //     for(var i in featureSpecs) {
+    //        var feature = new OpenLayers.Feature.Vector(OpenLayers.Geometry.fromWKT(featureSpecs[i]));
+    //        vectors.addFeatures([feature]);
+    //     } 
+
+    //     console.log(vectors.getDataExtent());
+    //     this.map.zoomToExtent(vectors.getDataExtent()); 
+    //}
+
+}
 
 GMap.prototype.deleteSelectedFeature = function() {
     if ( this.selectedFeature ) {
@@ -163,7 +210,7 @@ GMap.prototype.drawFeatures = function(featureSpecs) {
         }
 
         this.drawLayer.addFeatures(newFeatures);
-        //this.map.zoomToExtent(this.drawLayer.getDataExtent()); 
+        this.map.zoomToExtent(this.drawLayer.getDataExtent()); 
     }
 }
 
