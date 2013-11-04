@@ -1,12 +1,17 @@
-<h2>Forgot your password?</h2>
+<div id="login">
+  <h1><a title="MMP360" href="http://mmp360.com" style="background-image:url(/assets/iowa-mmp-logo.png) !important;background-size:auto !important;height:75px !important;">MMP360</a></h1>
+  <p class="message">Please enter your email address. You will receive a link to create a new password via email.</p>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, :autofocus => true %>
+  </p>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
+  <p class="submit"><%= f.submit("Get New Password", :class=>"button button-primary button-large") %></p>
 <% end %>
-
 <%= render "devise/shared/links" %>
+<p id="backtoblog"><a href="/" title="Are you lost?">← Back to MMP360</a></p>
+</div>
