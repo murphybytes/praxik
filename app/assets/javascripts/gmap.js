@@ -32,7 +32,7 @@ app.directive('map', function() {
         controller: function($scope) {
             var map, modelLoaded;
             $scope.inSelectMode = false;
-            $scope.mapType = "roadmap";
+            $scope.mapType = "hybrid";
 
             $scope.$watch("mapType", function (value) { 
                 map.changeMapView(value);

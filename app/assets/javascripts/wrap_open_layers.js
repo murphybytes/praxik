@@ -19,10 +19,10 @@ GMap = function(element, listener) {
     var map = new OpenLayers.Map(element, mapOptions);
     this.map = map;
 
-    gLayer("roadmap", google.maps.MapTypeId.ROADMAP);
-    gLayer("terrain", google.maps.MapTypeId.TERRAIN);
-    gLayer("hybrid", google.maps.MapTypeId.HYBRID);
-    gLayer("satellite", google.maps.MapTypeId.SATELLITE);
+    addLayer("roadmap", google.maps.MapTypeId.ROADMAP);
+    addLayer("terrain", google.maps.MapTypeId.TERRAIN);
+    addLayer("hybrid", google.maps.MapTypeId.HYBRID);
+    addLayer("satellite", google.maps.MapTypeId.SATELLITE);
 
     var drawLayer    = new OpenLayers.Layer.Vector("Draw layer");
     this.drawLayer = drawLayer; 
@@ -78,7 +78,7 @@ GMap = function(element, listener) {
 
     return this;
 
-    function gLayer(label, type) {
+    function addLayer(label, type) {
         var googleOptions = {
             buffer: 0,
             maxExtent: bounds,
