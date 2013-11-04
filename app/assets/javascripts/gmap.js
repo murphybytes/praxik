@@ -32,6 +32,11 @@ app.directive('map', function() {
         controller: function($scope) {
             var map, modelLoaded;
             $scope.inSelectMode = false;
+            $scope.mapType = "roadmap";
+
+            $scope.$watch("mapType", function (value) { 
+                map.changeMapView(value);
+            });
 
             this.onUpdate = function (data) {
                 $scope.ngModel = data;

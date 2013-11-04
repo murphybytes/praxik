@@ -16,29 +16,15 @@ GMap = function(element, listener) {
         theme: "assets/old_css/map.css"
     };
 
-    this.map = new OpenLayers.Map(element, mapOptions);
+    var map = new OpenLayers.Map(element, mapOptions);
+    this.map = map;
 
-    var googleOptions = {
-        buffer: 0,
-        maxExtent: bounds,
-        tileOrigin: new OpenLayers.LonLat( -20037508.34, -20037508.34 ),
-        tileSize: new OpenLayers.Size( 256, 256 ),
-        displayOutsideMaxExtent: false,
-        isBaseLayer: true,
-        wrapDateLine: false
-    };
+    gLayer("roadmap", google.maps.MapTypeId.ROADMAP);
+    gLayer("terrain", google.maps.MapTypeId.TERRAIN);
+    gLayer("hybrid", google.maps.MapTypeId.HYBRID);
+    gLayer("satellite", google.maps.MapTypeId.SATELLITE);
 
-    var roadMap = new OpenLayers.Layer.Google("roadmap", angular.extend(
-                { type: google.maps.MapTypeId.ROADMAP,
-                  maxZoomLevel: 15 },
-                  googleOptions ))
-
-    var lineLayer    = new OpenLayers.Layer.Vector("Line Layer"),
-        polygonLayer = new OpenLayers.Layer.Vector("Polygon Layer"),
-        boxLayer     = new OpenLayers.Layer.Vector("Box layer"),
-        circleLayer  = new OpenLayers.Layer.Vector("Circle layer"),
-        drawLayer    = new OpenLayers.Layer.Vector("Draw layer");
-
+    var drawLayer    = new OpenLayers.Layer.Vector("Draw layer");
     this.drawLayer = drawLayer; 
 
     this.drawControls = {
@@ -66,7 +52,7 @@ GMap = function(element, listener) {
 
     };
 
-    this.map.addLayers([roadMap, drawLayer]);
+    this.map.addLayers([drawLayer]);
     for(var key in this.drawControls) {
         this.map.addControl(this.drawControls[key]);
     }
@@ -79,8 +65,6 @@ GMap = function(element, listener) {
     });
 
     this.map.zoomToExtent(bounds); 
-    this.changeMapView("roadmap");        
-    this.changeMapMode("circle");
 
     function onFeatureSelect( feature ) {
       _this.selectedFeature = feature;
@@ -93,6 +77,27 @@ GMap = function(element, listener) {
     }
 
     return this;
+
+    function gLayer(label, type) {
+        var googleOptions = {
+            buffer: 0,
+            maxExtent: bounds,
+            tileOrigin: new OpenLayers.LonLat( -20037508.34, -20037508.34 ),
+            tileSize: new OpenLayers.Size( 256, 256 ),
+            displayOutsideMaxExtent: false,
+            isBaseLayer: true,
+            wrapDateLine: false
+        };
+
+        var layer = new OpenLayers.Layer.Google(label, angular.extend(
+                    { type: type,
+                      maxZoomLevel: 15 },
+                      googleOptions ));
+
+
+        map.addLayers([layer]);
+        return layer;
+    }
 }
 
 
@@ -161,4 +166,7 @@ GMap.prototype.drawFeatures = function(featureSpecs) {
         //this.map.zoomToExtent(this.drawLayer.getDataExtent()); 
     }
 }
+
+
+
 

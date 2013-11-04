@@ -5,49 +5,12 @@
     <div id="mapcontainer">
         <div align="right" style="padding:3px;">
             <strong>View:</strong>
-            <input id="mapview-terrain" type="radio" name="map_view"/> Terrain
-            <input id="mapview-roadmap" type="radio" name="map_view"/> Roadmap
-            <input id="mapview-hybrid" type="radio" name="map_view" checked="checked" /> Hybrid
-            <input id="mapview-satellite" type="radio" name="map_view" /> Satellite 
+            <input type="radio" name="map_view" ng-model="mapType" value="terrain"   /> Terrain
+            <input type="radio" name="map_view" ng-model="mapType" value="roadmap"   /> Roadmap
+            <input type="radio" name="map_view" ng-model="mapType" value="hybrid"    /> Hybrid
+            <input type="radio" name="map_view" ng-model="mapType" value="satellite" /> Satellite 
         </div>
-        <div align="right" style="padding:3px;">
-            <strong>Zoom to:</strong> 
-            <select id="county_selector">
-                <option value="" selected="selected">--SELECT COUNTY--</option>
-                <option value="001">Adair</option>
-                <option value="003">Adams</option>
-                <option value="005">Allamakee</option>
-                <option value="007">Appanoose</option>
-                <option value="009">Audubon</option>
-                <option value="011">Benton</option>
-                <option value="013">Black Hawk</option>
-                <option value="015">Boone</option>
-                <option value="017">Bremer</option>
-                <option value="019">Buchanan</option>
-                <option value="021">Buena Vista</option>
-                <option value="023">Butler</option>
-                <option value="025">Calhoun</option>
-                <option value="027">Carroll</option>
-                <option value="029">Cass</option>
-                <option value="031">Cedar</option>
-                <option value="033">Cerro Gordo</option>
-                <option value="035">Cherokee</option>
-                <option value="037">Chickasaw</option>
-                <option value="039">Clarke</option>
-                <option value="041">Clay</option>
-                <option value="043">Clayton</option>
-                <option value="045">Clinton</option>
-                <option value="047">Crawford</option>
-                <option value="049">Dallas</option>
-                <option value="051">Davis</option>
-                <option value="053">Decatur</option>
-                <option value="055">Delaware</option>
-                <option value="057">Des Moines</option>
-                <option value="059">Dickinson</option>
-                <option value="061">Dubuque</option>
-                <option value="063">Emmet</option>
-            </select>
-        </div>
+
         <div class="map-container" map-area></div>
         <div id="controls" ng-show="inSelectMode">
             <input type="button" ng-click="deleteSelectedFeature()" value="Delete Selected Feature" /><br />
