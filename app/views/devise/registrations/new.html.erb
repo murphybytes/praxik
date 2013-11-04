@@ -1,27 +1,51 @@
-<h2>Sign up</h2>
+<div id="login">
+  <h1><a title="MMP360" href="http://mmp360.com" style="background-image:url(/assets/iowa-mmp-logo.png) !important;background-size:auto !important;height:75px !important;">MMP360</a></h1>
+<p class="message">Register an Account</p>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-  <div class="twelve columns alpha">
-    <div id="content">
-      <h1 class="remove-bottom">Register an Account</h1>
-      <hr>
+      <form method="post" id="register" action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_register&amp;nonce=16e165a93d">
+          <input type="hidden" value="register" id="form" name="form">
 
-      <style type="text/css">label span.required { color: #B94A48; }span.help-inline, span.help-block { color: #888; font-size: .9em; font-style: italic; }</style>
-      <form class="form-horizontal" method="post" id="register" action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_register&amp;nonce=16e165a93d"><fieldset><input type="hidden" value="register" id="form" name="form"><div class="control-group" id="username_group"><label for="username" class="control-label"><span class="required">* </span>Username:</label><div class="controls"><input type="text" required="" id="username" name="username"></div></div><div class="control-group" id="email_group"><label for="email" class="control-label"><span class="required">* </span>Email:</label><div class="controls"><input type="email" required="" id="email" name="email"></div></div><div class="control-group" id="first_name_group"><label for="first_name" class="control-label"><span class="required">* </span>First Name:</label><div class="controls"><input type="text" required="" id="first_name" name="first_name"></div></div><div class="control-group" id="last_name_group"><label for="last_name" class="control-label"><span class="required">* </span>Last Name:</label><div class="controls"><input type="text" required="" id="last_name" name="last_name"></div></div><div class="control-group" id="new_password_group"><label for="new_password" class="control-label"><span class="required">* </span>Password:</label><div class="controls"><input type="password" required="" id="new_password" name="new_password"></div></div><div class="control-group" id="confirm_password_group"><label for="confirm_password" class="control-label"><span class="required">* </span>Confirm Password:</label><div class="controls"><input type="password" required="" id="confirm_password" name="confirm_password"></div></div><div class="control-group" id="referral_code_group"><label for="referral_code" class="control-label">Referral Code:</label><div class="controls"><input type="text" value="" id="referral_code" name="referral_code"><span class="help-block">If you were provided a referral code, add it in the textfield above.</span></div></div>
-          <div class="control-group" id="terms_group">
-            <label for="terms" class="control-label"><span class="required">* </span>Terms of Service:</label>
-            <div class="controls">
-              <label class="checkbox"> <input type="checkbox" value="yes" name="terms[]" id="terms-0"> I agree to the <a target="_blank" href="/terms-of-service">terms of service</a> of this website. </label> 
-            </div>
-          </div>
-          <div style="display:none;" id="form-response"></div>
-          <div class="form-actions"><input type="submit" class="btn btn-primary" id="submit_button" name="" value="Submit"><span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation"><img title="Processing..." src="/wp-content/plugins/kps-webspinner/assets/proc-animation.gif"></span>
-          </div>
-        </fieldset>
+          <label for="username">Username:<br>
+            <input type="text" required="" id="username" name="username">
+          </label>
+
+          <label for="email">Email:<br>
+            <input type="email" required="" id="email" name="email">
+          </label>
+
+          <label for="first_name" class="control-label">First Name:<br>
+            <input type="text" required="" id="first_name" name="first_name">
+          </label>
+
+          <label for="last_name" class="control-label">Last Name:<br>
+            <input type="text" required="" id="last_name" name="last_name">
+          </label>
+
+          <label for="new_password" class="control-label">Password:<br>
+            <input type="password" required="" id="new_password" name="new_password">
+          </label>
+          <label for="confirm_password" class="control-label">Confirm Password:<br>
+            <input type="password" required="" id="confirm_password" name="confirm_password">
+          </label>
+          <label for="referral_code" class="control-label">Referral Code:<br>
+            <input type="text" value="" id="referral_code" name="referral_code">
+          </label>
+          <span class="help-block">If you were provided a referral code, add it in the textfield above.</span><br><br>
+          <label for="terms" class="control-label">Terms of Service:<br>
+            <input type="checkbox" value="yes" name="terms[]" id="terms-0"> I agree to the <a target="_blank" href="/terms">terms of service</a> of this website.
+          </label> 
+
+          <div style="display:none;" id="form-response" class="message"></div>
+          
+          <div class="submit">
+            <input type="submit" class="button button-primary button-large" id="submit_button" name="" value="Submit">
+
+            <span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation">
+              <img title="Processing..." src="/assets/proc-animation.gif">
+            </span>
       </form>
-    </div>
-  </div>
-  <div><%= f.submit "Sign up" %></div>
 <% end %>
 
+</div>
