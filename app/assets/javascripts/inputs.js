@@ -140,7 +140,7 @@ app.directive('next', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<button ng-click="next()" ng-transclude ng-disabled="form.$invalid"></button>',
+      template: '<button ng-click="next()" ng-transclude ng-disabled="form.$invalid" disabled="disabled"></button>',
       replace: true,
       transclude: true,
       link: function(scope, element, attrs, stepsController) {
