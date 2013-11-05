@@ -18,20 +18,28 @@ app.directive('text', function() {
       replace: true,
       transclude: true,
       priority: 10,
+      link: function (scope, element, attrs) {
+      },
       compile: function (tElement, tAttrs, transclude) {
             var tInput = tElement.find('input');
             
              angular.forEach(tAttrs, function(value, key) {
-                if (key.charAt(0) == '$')
+                if ( (key.charAt(0) == '$') || (key == 'ngModel') ) {
                     return;
-                if (key == 'ngmodel')
-                    return;
+                }
 
+                if (key == 'req') {
+                  tInput.attr('required', 'true');
+                  return;
+                }
+                
                 tInput.attr(key, value);
-                tInput.parent().removeAttr(key);
             });
-            tElement.removeAttr('ng-model');
-            
+
+            ['ngModel', 'ngChange', 'type', 'placeholder'].forEach(function(name) {
+                tElement.removeAttr(tAttrs.$attr[name]);
+            });
+
             return;
         },
     };
@@ -55,9 +63,26 @@ app.directive('coll', function() {
       transclude: true,
       priority: 10,
       compile: function (tElement, tAttrs, transclude) {
-            tElement.removeAttr('ng-model');
-            tElement.removeAttr('options');
+             var tInput = tElement.find('select');
             
+             angular.forEach(tAttrs, function(value, key) {
+                if ( (key.charAt(0) == '$') || (key == 'ngModel') || (key == 'options') ) {
+                    return;
+                }
+
+                if (key == 'req') {
+                  tInput.attr('required', 'true');
+                  return;
+                }
+                
+                tInput.attr(key, value);
+            });
+
+            ['ngModel', 'ngChange', 'type', 'placeholder'].forEach(function(name) {
+                tElement.removeAttr(tAttrs.$attr[name]);
+            });
+
+
             return;
         },
     };
@@ -99,22 +124,33 @@ app.directive('steps', function() {
       replace: true,
       transclude: true,
       controller: function($scope) {
-          var steps = [];
+          var steps = [], currentStep;
           this.totalSteps = 0;
           this.addStep = function(step) {
-              if (steps.length == 0) step.showMe = true;
+              if (steps.length == 0) {
+                currentStep = step;
+                step.showMe = true;
+              }
+
               steps.push(step);
               this.totalSteps = this.totalSteps + 1;
           }
           
+          this.isValidCurrentStep = function() {
+              return currentStep.isValid();
+          }
+
           this.step = function(step) {
               var el = steps[step - 1]
 
               if(el) {
+
                 for(var i in steps) {
                     steps[i].showMe = false;
                 }
+
                 el.showMe = true;
+                currentStep = el;
               }
           }
       }
@@ -125,13 +161,18 @@ app.directive('step', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<form ng-show="showMe" ng-transclude class="multipage-form-step" name="form"></form>',
+      template: '<form ng-show="showMe" ng-transclude class="multipage-form-step"></form>',
       scope: { },
       replace: true,
       transclude: true,
       link: function(scope, element, attrs, stepsController) {
           scope.showMe = false;
           stepsController.addStep(scope);
+
+          var form = element.find('input').eq(0).controller('form');
+          scope.isValid = function() {
+              return form.$valid;
+          }
       }
     };
 });
@@ -140,11 +181,15 @@ app.directive('next', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<button ng-click="next()" ng-transclude ng-disabled="form.$invalid"></button>',
+      template: '<button ng-click="next()" ng-transclude ng-disabled="isValid()"></button>',
       replace: true,
       transclude: true,
       link: function(scope, element, attrs, stepsController) {
           scope.step = 1;
+
+          scope.isValid = function() {
+              return !stepsController.isValidCurrentStep();
+          }
 
           scope.next = function() {
             if(scope.step < stepsController.totalSteps) {

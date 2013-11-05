@@ -7,9 +7,9 @@
             <step>
                 <map  ng-model="doc.fieldGeometry">Locate and Mark Your Field:
                 </map>
-                <text ng-model="doc.name" type="number" required="required">Field Name:
+                <text ng-model="doc.name" req>Field Name:
                 </text>
-                <coll options="associatedFeedingOperations" ng-model="doc.associatedFeedingOperation">Associated Feeding Operation:
+                <coll options="associatedFeedingOperations" ng-model="doc.associatedFeedingOperation" req>Associated Feeding Operation:
                 </coll>
                 <coll options="data.conservationPractices" ng-model="doc.conservationPractice">Conservation Practices
                 </coll>
