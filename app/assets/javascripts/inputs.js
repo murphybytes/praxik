@@ -125,7 +125,7 @@ app.directive('step', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<form ng-show="showMe" ng-transclude class="multipage-form-step"></form>',
+      template: '<form ng-show="showMe" ng-transclude class="multipage-form-step" name="form"></form>',
       scope: { },
       replace: true,
       transclude: true,
@@ -140,7 +140,7 @@ app.directive('next', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<button ng-click="next()" ng-transclude></button>',
+      template: '<button ng-click="next()" ng-transclude ng-disabled="form.$invalid"></button>',
       replace: true,
       transclude: true,
       link: function(scope, element, attrs, stepsController) {
