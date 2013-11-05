@@ -6,66 +6,67 @@
       <step>
         <map  ng-model="doc.nearestStreamGeometry">Locate and Mark Your Feeding Operation:
         </map>
-        <text ng-model="doc.name" type="text" required="required">Name of Operation:</text>
-        <text ng-model="doc.facilityID" required>Facility ID No.:
+        <text ng-model="doc.name" type="text" required="required">Name of Operation:
         </text>
-        <text ng-model="doc.911StreetAddres" required>911 Street Addres:
+        <text ng-model="doc.facilityID" type="text" required="required">Facility ID No.:
         </text>
-        <text ng-model="doc.city" required>City:
+        <text ng-model="doc.911StreetAddres" type="text" required="required">911 Street Addres:
         </text>
-        <text ng-model="doc.state" required>State:
+        <text ng-model="doc.city" type="text" required="required">City:
         </text>
-        <text ng-model="doc.zip" required >Zip:
+        <text ng-model="doc.state" type="text" required="required">State:
+        </text>
+        <text ng-model="doc.zip" type="text" required="required" ng-minlength="5">Zip:
         </text>
 
         <accordion close-others="oneAtATime">
           <accordion-group heading="Owner Information">
-            <text ng-model="doc.ownerInfo.name" required>Owner Name:
+            <text ng-model="doc.ownerInfo.name" type="text" required="required">Owner Name:
             </text>
-            <text ng-model="doc.ownerInfo.address" required>Address:
+            <text ng-model="doc.ownerInfo.address" type="text" required="required">Address:
             </text>
-            <text ng-model="doc.ownerInfo.city" required>City:
+            <text ng-model="doc.ownerInfo.city" type="text" required="required">City:
             </text>
-            <text ng-model="doc.ownerInfo.state" required>State:
+            <text ng-model="doc.ownerInfo.state" type="text" required="required">State:
             </text>
-            <text ng-model="doc.ownerInfo.zip" required>Zip:
+            <text ng-model="doc.ownerInfo.zip" type="text" required="required">Zip:
             </text>
-            <text ng-model="doc.ownerInfo.phone" required>Phone:
+            <text ng-model="doc.ownerInfo.phone" type="text" required="required">Phone:
             </text>
-            <text ng-model="doc.ownerInfo.email" required>Email:
+            <text ng-model="doc.ownerInfo.email" type="text" required="required">Email:
             </text>
           </accordion-group>
 
           <accordion-group heading="Contact Information">
             <div class="controls">Add if different than owner information above.</div>
-            <text ng-model="doc.contactInfo.name">Contact Name:
+            <text ng-model="doc.contactInfo.name" type="text">Contact Name:
             </text>
-            <text ng-model="doc.contactInfo.address">Address:
+            <text ng-model="doc.contactInfo.address" type="text">Address:
             </text>
-            <text ng-model="doc.contactInfo.city">City:
+            <text ng-model="doc.contactInfo.city" type="text">City:
             </text>
-            <text ng-model="doc.contactInfo.state">State:
+            <text ng-model="doc.contactInfo.state" type="text">State:
             </text>
-            <text ng-model="doc.contactInfo.zip">Zip:
+            <text ng-model="doc.contactInfo.zip" type="text">Zip:
             </text>
-            <text ng-model="doc.contactInfo.phone">Phone:
+            <text ng-model="doc.contactInfo.phone" type="text">Phone:
             </text>
-            <text ng-model="doc.contactInfo.email">Email:
+            <text ng-model="doc.contactInfo.email" type="email">Email:
             </text>
           </accordion-group>
 
           <accordion-group heading="Contract Company">
-            <text ng-model="doc.contractCompany.name">Company Name:
+            <text ng-model="doc.contractCompany.name" type="text">Company Name:
             </text>
-            <text ng-model="doc.contractCompany.address">Address:
+            <text ng-model="doc.contractCompany.address" type="text">Address:
             </text>
-            <text ng-model="doc.contractCompany.city">City:
+            <text ng-model="doc.contractCompany.city" type="text">City:
             </text>
-            <text ng-model="doc.contractCompany.state">State:
+            <text ng-model="doc.contractCompany.state" type="text">State:
             </text>
-            <text ng-model="doc.contractCompany.zip">Zip:
+            <text ng-model="doc.contractCompany.zip" type="text">Zip:
             </text>
-            <text ng-model="doc.contractCompany.phone">Phone:
+            <text ng-model="doc.contractCompany.phone" type="text">Phone:
             </text>
           </accordion-group>
         </accordion>
@@ -74,42 +75,42 @@
       <step>
         <accordion>
           <accordion-group heading="Feeding Operation Parameters">
-            <text ng-model="doc.feedingOperationParameters.animalTypeAndProductPhase" required="">Animal Type and Product Phase:
+            <text ng-model="doc.feedingOperationParameters.animalTypeAndProductPhase" type="text" required="required">Animal Type and Product Phase:
             </text>
-            <text ng-model="doc.feedingOperationParameters.MaxNumberofAnimalsConfined" required="">Max Number of Animals Confined:
+            <text ng-model="doc.feedingOperationParameters.MaxNumberofAnimalsConfined" type="text" required="required">Max Number of Animals Confined:
             </text>
-            <text ng-model="doc.feedingOperationParameters.estimatedAnnualAnimalProduction" required="">Estimated Annual Animal Production:
+            <text ng-model="doc.feedingOperationParameters.estimatedAnnualAnimalProduction" type="text" required="required">Estimated Annual Animal Production:
             </text>
-            <coll options="years" ng-model="doc.feedingOperationParameters.manureStorageStructure">Manure Storage Structure:
+            <coll options="years" ng-model="doc.feedingOperationParameters.manureStorageStructure" type="text" required="required">Manure Storage Structure:
             </coll>
-            <text ng-model="doc.feedingOperationParameters.daysPerYearFacilityIsOccupied" required="">Days Per Year Facility is Occupied:
+            <text ng-model="doc.feedingOperationParameters.daysPerYearFacilityIsOccupied" type="text" required="required">Days Per Year Facility is Occupied:
             </text>
           </accordion-group>
 
           <accordion-group heading="Manure Nutrient Content">
-            <coll options="" ng-model="doc.manureNutrientContent.units">Units
+            <coll options="" ng-model="doc.manureNutrientContent.units" type="text" required="required">Units
             </coll>
-            <text ng-model="doc.manureNutrientContent.totalN" required="">Total N::
+            <text ng-model="doc.manureNutrientContent.totalN" type="text" required="required">Total N::
             </text>
-            <text ng-model="doc.manureNutrientContent.totalP0" required="">Total P₂0₅:
+            <text ng-model="doc.manureNutrientContent.totalP0" type="text" required="required">Total P₂0₅:
             </text>
 
             <accordion>
               <accordion-group heading="%TN Available">
-                 <text ng-model="doc.manureNutrientContent.TNAvailable.firstYear" required="">First Year:
+                 <text ng-model="doc.manureNutrientContent.TNAvailable.firstYear" required="" type="text" required="required">First Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.TNAvailable.secondYear" required="">Second Year:
+                <text ng-model="doc.manureNutrientContent.TNAvailable.secondYear" required="" type="text" required="required">Second Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.TNAvailable.thirdYear" required="">Third Year:
+                <text ng-model="doc.manureNutrientContent.TNAvailable.thirdYear" required="" type="text" required="required">Third Year:
                 </text>
               </accordion-group>
 
               <accordion-group heading="Available N">
-                <text ng-model="doc.manureNutrientContent.AvailableN.firstYear" required="">First Year:
+                <text ng-model="doc.manureNutrientContent.AvailableN.firstYear" required="" type="text" required="required">First Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.AvailableN.secondYear" required="">Second Year:
+                <text ng-model="doc.manureNutrientContent.AvailableN.secondYear" required="" type="text" required="required">Second Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.AvailableN.thirdYear" required="">Third Year:
+                <text ng-model="doc.manureNutrientContent.AvailableN.thirdYear" required="" type="text" required="required">Third Year:
                 </text>
               </accordion-group>
             </accordion>
