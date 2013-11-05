@@ -6,7 +6,7 @@ app.directive('text', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
+                '<label for="name" class="control-label"><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<input type="text" ng-model="ngModel" />' +
                 '</div>' +
@@ -21,6 +21,15 @@ app.directive('text', function() {
       compile: function (tElement, tAttrs, transclude) {
             var tInput = tElement.find('input');
             
+             angular.forEach(tAttrs, function(value, key) {
+                if (key.charAt(0) == '$')
+                    return;
+                if (key == 'ngmodel')
+                    return;
+
+                tInput.attr(key, value);
+                tInput.parent().removeAttr(key);
+            });
             tElement.removeAttr('ng-model');
             
             return;
@@ -116,7 +125,7 @@ app.directive('step', function() {
     return {
       require: '^?steps',
       restrict: 'EA',
-      template: '<div ng-show="showMe" ng-transclude class="multipage-form-step"></div>',
+      template: '<form ng-show="showMe" ng-transclude class="multipage-form-step"></form>',
       scope: { },
       replace: true,
       transclude: true,

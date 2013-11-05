@@ -24,15 +24,13 @@ GMap = function(element, listener) {
     addLayer("hybrid", google.maps.MapTypeId.HYBRID);
     addLayer("satellite", google.maps.MapTypeId.SATELLITE);
 
-
-    
-
-    console.log(this.drawOptions);
     var drawLayer  = new OpenLayers.Layer.Vector("Draw layer", this.drawOptions);
     this.drawLayer = drawLayer; 
 
     this.drawControls = {
-        line: new OpenLayers.Control.DrawFeature(drawLayer,
+        stream: new OpenLayers.Control.DrawFeature(drawLayer,
+                OpenLayers.Handler.Path),
+        buffer: new OpenLayers.Control.DrawFeature(drawLayer,
                 OpenLayers.Handler.Path),
         polygon: new OpenLayers.Control.DrawFeature(drawLayer,
                 OpenLayers.Handler.Polygon),
@@ -83,7 +81,7 @@ GMap = function(element, listener) {
     return this;
 
     function addLayer(label, type) {
-        var googleOptions = {
+        var options = {
             buffer: 0,
             maxExtent: bounds,
             tileOrigin: new OpenLayers.LonLat( -20037508.34, -20037508.34 ),
@@ -96,7 +94,7 @@ GMap = function(element, listener) {
         var layer = new OpenLayers.Layer.Google(label, angular.extend(
                     { type: type,
                       maxZoomLevel: 15 },
-                      googleOptions ));
+                      options ));
 
 
         map.addLayers([layer]);
@@ -108,27 +106,27 @@ GMap.prototype.drawOptions = {
     styleMap: new OpenLayers.StyleMap({
         "default": new OpenLayers.Style({
             fillColor: "#7CC96E",
-        fillOpacity: 0.5,
-        strokeColor: "#209110",
-        strokeOpacity: 1,
-        strokeWidth: 2,
-        cursor: "pointer",
-        pointRadius: 6,
-        label: "",
-        fontColor:"#1F8E0F",
-        fontWeight: "bold",
-        labelOutlineColor: "#B4DCA8",
-        labelOutlineWidth: 2, 
+            fillOpacity: 0.5,
+            strokeColor: "#209110",
+            strokeOpacity: 1,
+            strokeWidth: 2,
+            cursor: "pointer",
+            pointRadius: 6,
+            label: "",
+            fontColor:"#1F8E0F",
+            fontWeight: "bold",
+            labelOutlineColor: "#B4DCA8",
+            labelOutlineWidth: 2, 
         }),
         "select": new OpenLayers.Style({
             fillColor: "#75CAB5",
-        fillOpacity: 0.5,
-        strokeColor: "#5FC2BA",
-        strokeOpacity: 1,
-        strokeWidth: 2,
-        graphicZIndex: 2,
-        cursor: "pointer",
-        label: ""
+            fillOpacity: 0.5,
+            strokeColor: "#5FC2BA",
+            strokeOpacity: 1,
+            strokeWidth: 2,
+            graphicZIndex: 2,
+            cursor: "pointer",
+            label: ""
         })
     })
 };
