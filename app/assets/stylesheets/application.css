@@ -13,6 +13,7 @@
  *= require_tree ./old_css
  */
 
+
 /* Change Angular collapse to genitive margin instead of display none */
 .multipage-form-step {}
 .form-horizontal [ng\:cloak],.form-horizontal [ng-cloak],.form-horizontal [data-ng-cloak],.form-horizontal [x-ng-cloak],.form-horizontal .ng-cloak,.form-horizontal .x-ng-cloak,.form-horizontal .ng-hide {
