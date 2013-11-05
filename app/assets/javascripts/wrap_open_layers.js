@@ -24,17 +24,22 @@ GMap = function(element, listener) {
     addLayer("hybrid", google.maps.MapTypeId.HYBRID);
     addLayer("satellite", google.maps.MapTypeId.SATELLITE);
 
+    function render(label) {
+        addControlLayers("label");
+
+    }
+
     var drawLayer  = new OpenLayers.Layer.Vector("Draw layer", this.drawOptions);
     this.drawLayer = drawLayer; 
 
     this.drawControls = {
-        stream: new OpenLayers.Control.DrawFeature(drawLayer,
+        stream: new OpenLayers.Control.DrawFeature(drawLayers('Stream'),
                 OpenLayers.Handler.Path),
-        buffer: new OpenLayers.Control.DrawFeature(drawLayer,
+        buffer: new OpenLayers.Control.DrawFeature(drawLayers('Buffer'),
                 OpenLayers.Handler.Path),
-        polygon: new OpenLayers.Control.DrawFeature(drawLayer,
+        polygon: new OpenLayers.Control.DrawFeature(drawLayers('Field'),
                 OpenLayers.Handler.Polygon),
-        box: new OpenLayers.Control.DrawFeature(drawLayer,
+        field: new OpenLayers.Control.DrawFeature(drawLayers('Field'),
                 OpenLayers.Handler.RegularPolygon, {
                     persist: true,
                     displayClass: "olControlDrawFeatureBox",
@@ -197,7 +202,17 @@ GMap.prototype.save = function() {
     }
 }
 
-GMap.prototype.drawFeatures = function(featureSpecs) {
+GMap.prototype.drawLayer = function(label) {
+    if (!label) {
+        label = 'default';
+    }
+
+    return this.drawLayers[label.toLowerCase()];
+}
+
+GMap.prototype.drawFeatures = function(featureSpecs, label) {
+    var layer = this.drawLayer(label);
+
     if (featureSpecs) {
         var newFeatures = [];
 
@@ -207,8 +222,8 @@ GMap.prototype.drawFeatures = function(featureSpecs) {
                         OpenLayers.Geometry.fromWKT(featureSpecs[i])));
         }
 
-        this.drawLayer.addFeatures(newFeatures);
-        this.map.zoomToExtent(this.drawLayer.getDataExtent()); 
+        layer.addFeatures(newFeatures);
+        this.map.zoomToExtent(layer.getDataExtent()); 
     }
 }
 
