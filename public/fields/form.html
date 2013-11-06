@@ -16,7 +16,7 @@
                 </coll>
                 <coll options="data.conservationPractices" ng-model="doc.conservationPractice" req>Conservation Practices
                 </coll>
-                <radio  items="Yes | No | Blank" ng-model="doc.tileDrainage" req>Tile Drainage
+                <radio  items="Yes | No | Unknown" ng-model="doc.tileDrainage" req>Tile Drainage
                 </radio>
                 <radio  items="Yes | No" ng-model="doc.goodDrainage" req>Does the field have good drainage:
                 </radio>
@@ -46,6 +46,7 @@
                 </coll>
             </step>
             <step>
+              <h2>Step 3 of 6: Identify and Label Vegetative Buffers</h2>
               <accordion close-others="true">
                 <accordion-group ng-repeat="plan in doc.plans" heading="Plan year {{$index + 1}}">
                   <coll options="data.years" ng-model="plan.year">Year:
