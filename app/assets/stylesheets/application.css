@@ -16,13 +16,16 @@
  *= require_tree ./old_css
  */
 
+/* Set form validation */
 input.ng-invalid.ng-dirty {
   border-color: #FA787E;
 }
-
 input.ng-valid.ng-dirty {
   border-color: #78FA89;
 }
+
+/* Map styles */
+.map-container {margin-bottom: 25px;}
 
 /* Change Angular collapse to genitive margin instead of display none */
 .multipage-form-step {}
