@@ -105,3 +105,5 @@ GlobalData.herbicideType =  [ "Basis 75DF", "Basis Blend", "Bicep II MAG. 5.5L, 
 GlobalData.herbicideMethodOfApplication = [ "Sprayer: Self propelled", "Sprayer: Non self propelled", "Irrigation" ];
 GlobalData.phosphorusTestFactor = [ 'Bray-1 P, Mehlich-3', 'Olsen', 'Mehlich-3 ICP' ];
 
+GlobalData.animalTypeAndProductPhase = [];
+GlobalData.manureStorageStructure = [ 'Nursery', 'Formed: Steel', 'Formed: Concrete', 'Formed: Concrete under building', 'Unformed: Covered', 'Unformed: Uncovered' ];

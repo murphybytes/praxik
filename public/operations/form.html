@@ -1,9 +1,9 @@
 <h1 class="remove-bottom">{{action}} operation {{doc.name}}</h1>
 <hr>
-<h2>Step 1 of 2: General Details and Contact Information</h2>
 <form class="form-horizontal">
     <steps>
       <step>
+        <h2>Step 1 of 2: General Details and Contact Information</h2>
         <map  ng-model="doc.nearestStreamGeometry">Locate and Mark Your Feeding Operation:
         </map>
         <text ng-model="doc.name" type="text" req>Name of Operation:
@@ -73,44 +73,45 @@
       </step>
 
       <step>
+        <h2>Step 2 of 3 Feeding and Nutrient Details</h2>
         <accordion>
           <accordion-group heading="Feeding Operation Parameters">
-            <text ng-model="doc.feedingOperationParameters.animalTypeAndProductPhase" type="text">Animal Type and Product Phase:
-            </text>
-            <text ng-model="doc.feedingOperationParameters.MaxNumberofAnimalsConfined" type="text">Max Number of Animals Confined:
-            </text>
-            <text ng-model="doc.feedingOperationParameters.estimatedAnnualAnimalProduction" type="text">Estimated Annual Animal Production:
-            </text>
-            <coll options="years" ng-model="doc.feedingOperationParameters.manureStorageStructure" type="text">Manure Storage Structure:
+            <coll options="data.animalTypeAndProductPhase" ng-model="doc.feedingOperationParameters.animalTypeAndProductPhase">Animal Type and Product Phase:
             </coll>
-            <text ng-model="doc.feedingOperationParameters.daysPerYearFacilityIsOccupied" type="text">Days Per Year Facility is Occupied:
+            <text ng-model="doc.feedingOperationParameters.MaxNumberofAnimalsConfined">Max Number of Animals Confined:
+            </text>
+            <text ng-model="doc.feedingOperationParameters.estimatedAnnualAnimalProduction">Estimated Annual Animal Production:
+            </text>
+            <coll options="data.manureStorageStructure" ng-model="doc.feedingOperationParameters.manureStorageStructure">Manure Storage Structure:
+            </coll>
+            <text ng-model="doc.feedingOperationParameters.daysPerYearFacilityIsOccupied">Days Per Year Facility is Occupied:
             </text>
           </accordion-group>
 
           <accordion-group heading="Manure Nutrient Content">
-            <coll options="" ng-model="doc.manureNutrientContent.units" type="text">Units
+            <coll options="" ng-model="doc.manureNutrientContent.units">Units
             </coll>
-            <text ng-model="doc.manureNutrientContent.totalN" type="text">Total N::
+            <text ng-model="doc.manureNutrientContent.totalN">Total N::
             </text>
-            <text ng-model="doc.manureNutrientContent.totalP0" type="text">Total P₂0₅:
+            <text ng-model="doc.manureNutrientContent.totalP0">Total P₂0₅:
             </text>
 
             <accordion>
               <accordion-group heading="%TN Available">
-                 <text ng-model="doc.manureNutrientContent.TNAvailable.firstYear" type="text">First Year:
+                 <text ng-model="doc.manureNutrientContent.TNAvailable.firstYear">First Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.TNAvailable.secondYear" type="text">Second Year:
+                <text ng-model="doc.manureNutrientContent.TNAvailable.secondYear">Second Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.TNAvailable.thirdYear" type="text">Third Year:
+                <text ng-model="doc.manureNutrientContent.TNAvailable.thirdYear">Third Year:
                 </text>
               </accordion-group>
 
               <accordion-group heading="Available N">
-                <text ng-model="doc.manureNutrientContent.AvailableN.firstYear" type="text">First Year:
+                <text ng-model="doc.manureNutrientContent.AvailableN.firstYear">First Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.AvailableN.secondYear" type="text">Second Year:
+                <text ng-model="doc.manureNutrientContent.AvailableN.secondYear">Second Year:
                 </text>
-                <text ng-model="doc.manureNutrientContent.AvailableN.thirdYear" type="text">Third Year:
+                <text ng-model="doc.manureNutrientContent.AvailableN.thirdYear">Third Year:
                 </text>
               </accordion-group>
             </accordion>
@@ -119,6 +120,7 @@
       </step>
   
       <step>
+         <h2>Step 3 of 3: Nutrient Reports</h2>
          <text ng-model="doc.sourceOfNutrientData">Source of Nutrient Data:
          </text>
       </step>
