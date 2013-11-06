@@ -36,7 +36,7 @@ app.directive('text', function() {
                 tInput.attr(key, value);
             });
 
-            ['ngModel', 'ngChange', 'type', 'placeholder'].forEach(function(name) {
+            ['datepickerPopup', 'ngModel', 'ngChange', 'type', 'placeholder'].forEach(function(name) {
                 tElement.removeAttr(tAttrs.$attr[name]);
             });
 
