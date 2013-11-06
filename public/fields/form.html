@@ -1,10 +1,13 @@
-<h1 class="remove-bottom">{{action}} field {{doc.name}}</h1>
+<h1 class="remove-bottom">{{action}} field <small>{{doc.name}}</small></h1>
 <hr>
-<h2>Step 1 of 2: General Details and Contact Information</h2>
 
     <form class="form-horizontal">
         <steps>
             <step>
+                <h2>Step 1 of 6: General Field Site Details</h2>
+                <label>
+                  <span class="required">* </span><strong>Locate and Mark Your Field:</strong>
+                </label>
                 <map  ng-model="doc.fieldGeometry">Locate and Mark Your Field:
                 </map>
                 <text ng-model="doc.name" req>Field Name:
@@ -15,14 +18,22 @@
                 </coll>
                 <radio  items="Yes | No | Blank" ng-model="doc.tileDrainage" req>Tile Drainage
                 </radio>
-                <radio  items="Yes | No" ng-model="doc.goodDrainage" req>Does the doc have good drainage
+                <radio  items="Yes | No" ng-model="doc.goodDrainage" req>Does the field have good drainage:
                 </radio>
                 <radio  items="Own | Rent" ng-model="doc.ownOrRent" req>Own or Rent
                 </radio>
             </step>
             <step>
+                <h2>Step 2 of 6: Identify Nearest Stream</h2>
+                <label>
+                  <span class="required">* </span><strong>Mark the Nearest Stream:</strong>
+                </label>
                 <map  ng-model="doc.nearestStreamGeometry" zoom-to="doc.fieldGeometry" label='Stream'>Mark the Nearest Stream:
                 </map>
+                <div id="draw-path-tutorial" align="center" style="border: 1px solid rgb(204, 204, 204); padding: 5px; display: block;">
+                  <strong>How to draw a line:</strong><br>
+                  <img src="/assets/map-tutorial-animation.gif" style="margin-left:15px;">
+                </div>
             </step>
             <step>
                 <map  ng-model="doc.vegetativeBufferGeometry" zoom-to="doc.fieldGeometry" label='Buffer'>Locate and Mark Vegetative Buffers:
