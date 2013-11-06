@@ -6,7 +6,7 @@ app.directive('text', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><strong ng-transclude></strong></label>' +
+                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<input type="text" ng-model="ngModel" />' +
                 '</div>' +
