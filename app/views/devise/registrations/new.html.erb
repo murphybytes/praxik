@@ -1,51 +1,47 @@
 <div id="login">
   <h1><a title="MMP360" href="http://mmp360.com" style="background-image:url(/assets/iowa-mmp-logo.png) !important;background-size:auto !important;height:75px !important;">MMP360</a></h1>
-<p class="message">Register an Account</p>
+  <p class="message">Register an Account</p>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <label for="username">Username:<br>
+      <input type="text" required="" id="username" name="user[login]">
+    </label>
 
-      <form method="post" id="register" action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_register&amp;nonce=16e165a93d">
-          <input type="hidden" value="register" id="form" name="form">
+    <label for="email">Email:<br>
+      <input type="email" required="" id="email" name="user[email]">
+    </label>
 
-          <label for="username">Username:<br>
-            <input type="text" required="" id="username" name="username">
-          </label>
+    <label for="first_name" class="control-label">First Name:<br>
+      <input type="text" required="" id="first_name" name="user[first_name]">
+    </label>
 
-          <label for="email">Email:<br>
-            <input type="email" required="" id="email" name="email">
-          </label>
+    <label for="last_name" class="control-label">Last Name:<br>
+      <input type="text" required="" id="last_name" name="user[last_name]">
+    </label>
 
-          <label for="first_name" class="control-label">First Name:<br>
-            <input type="text" required="" id="first_name" name="first_name">
-          </label>
+    <label for="new_password" class="control-label">Password:<br>
+      <input type="password" required="" id="new_password" name="user[password]">
+    </label>
+    <label for="confirm_password" class="control-label">Confirm Password:<br>
+      <input type="password" required="" id="confirm_password" name="user[password_confirmation]">
+    </label>
+    <label for="referral_code" class="control-label">Referral Code:<br>
+      <input type="text" value="" id="referral_code" name="referral_code">
+    </label>
 
-          <label for="last_name" class="control-label">Last Name:<br>
-            <input type="text" required="" id="last_name" name="last_name">
-          </label>
+    <span class="help-block">If you were provided a referral code, add it in the textfield above.</span><br><br>
+    <label for="terms" class="control-label">Terms of Service:<br>
+      <input type="checkbox" value="yes" name="terms[]" id="terms-0"> I agree to the <a target="_blank" href="/terms">terms of service</a> of this website.
+    </label> 
 
-          <label for="new_password" class="control-label">Password:<br>
-            <input type="password" required="" id="new_password" name="new_password">
-          </label>
-          <label for="confirm_password" class="control-label">Confirm Password:<br>
-            <input type="password" required="" id="confirm_password" name="confirm_password">
-          </label>
-          <label for="referral_code" class="control-label">Referral Code:<br>
-            <input type="text" value="" id="referral_code" name="referral_code">
-          </label>
-          <span class="help-block">If you were provided a referral code, add it in the textfield above.</span><br><br>
-          <label for="terms" class="control-label">Terms of Service:<br>
-            <input type="checkbox" value="yes" name="terms[]" id="terms-0"> I agree to the <a target="_blank" href="/terms">terms of service</a> of this website.
-          </label> 
+    <div style="display:none;" id="form-response" class="message"></div>
 
-          <div style="display:none;" id="form-response" class="message"></div>
-          
-          <div class="submit">
-            <input type="submit" class="button button-primary button-large" id="submit_button" name="" value="Submit">
+    <div class="submit">
+      <input type="submit" class="button button-primary button-large" id="submit_button" name="" value="Submit">
 
-            <span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation">
-              <img title="Processing..." src="/assets/proc-animation.gif">
-            </span>
-      </form>
-<% end %>
-
+      <span style="display:none;margin-left:35px;margin-right:35px;float:right;" id="form-processing-animation">
+        <img title="Processing..." src="/assets/proc-animation.gif">
+      </span>
+    </div>
+  <% end %>
 </div>
