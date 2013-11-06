@@ -62,16 +62,16 @@
                   </date>
                   <coll options="data.harvestMethods" ng-model="plan.harvestMethod">Harvest Method:
                   </coll>
-                  <text ng-model="plan.harvestDate">Harvest Date:
-                  </text>
+                  <date ng-model="plan.harvestDate">Harvest Date:
+                  </date>
 
                   <div>
                       <accordion close-others="true">
                       <accordion-group heading="Manure Application">
                           <coll options="data.methodOfApplications" ng-model="plan.manure.methodOfApplication">Method of Application:
                           </coll>
-                          <text ng-model="plan.manure.applicationDate">Application Date:
-                          </text>
+                          <date ng-model="plan.manure.applicationDate">Application Date:
+                          </date>
                           <text ng-model="plan.manure.optimalYield">Planned Rate:
                           </text>
                           <text ng-model="plan.manure.optimalYield">Application Loss Factor:
@@ -82,8 +82,8 @@
                         <accordion-group heading="Tillage">
                           <coll options="data.methodOfTillage" ng-model="plan.tillage.methodOfTillage">Method of Tillage:
                           </coll>
-                          <text ng-model="plan.tillage.operationDate">Operation Date:
-                          </text>
+                          <date ng-model="plan.tillage.operationDate">Operation Date:
+                          </date>
                         </accordion-group>
                         <accordion-group heading="Commercial Fertilizer">
                           <coll options="data.fertilizerType" ng-model="plan.commercial.fertilizerType">Fertilizer Type:
@@ -92,8 +92,8 @@
                           </text>
                           <coll options="data.commercialMethodOfApplications" ng-model="plan.commercial.methodOfApplication">Method of Application:
                           </coll>
-                          <text ng-model="plan.commercial.applicationDate">Application Date:
-                          </text>
+                          <date ng-model="plan.commercial.applicationDate">Application Date:
+                          </date>
                         </accordion-group>
                         <accordion-group heading="Herbicide">
                           <coll options="data.herbicideType" ng-model="plan.herbicide.herbicideType">Herbicide Type:
@@ -102,8 +102,8 @@
                           </text>
                           <coll options="data.herbicideMethodOfApplication" ng-model="plan.herbicide.methodOfApplication">Method of Application:
                           </coll>
-                          <text ng-model="plan.herbicide.applicationDate">Application Date:
-                          </text>
+                          <date ng-model="plan.herbicide.applicationDate">Application Date:
+                          </date>
                         </accordion-group>
                       </accordion>
                   </div>
