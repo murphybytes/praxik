@@ -37,7 +37,7 @@ Praxik::Application.configure do
                     :address        => "smtp.gmail.com",
                     :port           => 587,
                     :authentication => :plain,
-                    :user_name      => "faust451@gmail.com",
-                    :password       => "qawsedrftgyh123"
+                    :user_name      => "",
+                    :password       => ""
 }
 end
