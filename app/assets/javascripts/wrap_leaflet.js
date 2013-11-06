@@ -69,21 +69,27 @@ Maps = function(element) {
         return new L.Google(name, options); 
     }
 
-    var api = {};
-
     function notify(data) {
         listener.onCreateDraw(data);
     }
+
+
+    var api = {};
 
     api.addListener = function(obj) {
         listener = obj;
     }
 
-    api.drawFeatures = function(features) {
-        console.log("addToMap", features);
-        L.geoJson(features, {}).addTo(map);
+    api.zoomTo = function(jsonFeature) {
+        var feature = L.geoJson(jsonFeature);
+        console.log(feature, feature.getBounds());
+        //map.fitBounds(feature.getBounds());
+        map.setView(feature.getBounds().getCenter(), 10);
     }
 
+    api.drawFeatures = function(features) {
+        L.geoJson(features, {}).addTo(map);
+    }
 
     return api;
 }

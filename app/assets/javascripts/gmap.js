@@ -5,20 +5,28 @@ app.directive('map', function() {
     return {
         require: 'ngModel',
         restrict: 'EA',
-        templateUrl: "map.html",
+        template: '<div class="map-container"></div>',
         replace: true,
         transclude: true,
         scope: {
-            ngModel: "="
+            ngModel: "=",
+            zoomTo: "="
         },
         link: function(scope, element, attrs) {
+            console.log(element.children().children()[2]);
             var modelLoaded,
-                map = new Maps(element.children()[1]);
+                //map = new Maps(element.children().children()[2]);
+                map = new Maps(element[0]);
 
             map.addListener(scope);
 
+            scope.$watch("zoomTo", function (value) { 
+                if( value ) {
+                  map.zoomTo(value);
+                }
+            });
+
             scope.$watch("ngModel", function (value) { 
-                console.log(scope.ngModel);
                 if( !modelLoaded && value) {
                     map.drawFeatures(value);
                     modelLoaded = true;
