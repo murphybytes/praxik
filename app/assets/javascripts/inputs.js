@@ -171,7 +171,9 @@ app.directive('step', function() {
 
           var form = element.find('input').eq(0).controller('form');
           scope.isValid = function() {
-              return form.$valid;
+              if (form) {
+                return form.$valid;
+              }
           }
       }
     };
