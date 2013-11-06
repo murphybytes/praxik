@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 u = User.create({login: "r5i", password: "demo1"})
+u.confirm!
+
 u.fields.create({ data: {
   name: "Mafia",
   conservationPractice: "Grade stabilization full flow",
