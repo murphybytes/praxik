@@ -1,12 +1,12 @@
 Maps = function(element) {
     var listener,
+        drawnItems = new L.FeatureGroup(),
         lowaState = new L.LatLng(42.020855, -93.63639),
         map = new L.Map(element, {center: lowaState, zoom: 7});
 
     init();
     function init() {
-        var drawnItems = new L.FeatureGroup(),
-            layers = { 'Roadmap': googleLayer('ROADMAP'), 
+        var layers = { 'Roadmap': googleLayer('ROADMAP'), 
                        'Hybrid': googleLayer('HYBRID'),
                        'Terrain': googleLayer('TERRAIN') };
 
@@ -77,6 +77,11 @@ Maps = function(element) {
 
     api.addListener = function(obj) {
         listener = obj;
+    }
+
+    api.drawFeatures = function(features) {
+        console.log("addToMap", features);
+        L.geoJson(features, {}).addTo(map);
     }
 
 

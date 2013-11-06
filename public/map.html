@@ -1,33 +1,7 @@
 <div class="control-group">
-    <label>
-        <span class="required">* </span><strong ng-transclude></strong>
+    <label> <span class="required">* </span><strong ng-transclude></strong>
     </label>
-    <div id="mapcontainer">
-        <div align="right" style="padding:3px;">
-            <strong>View:</strong>
-            <input type="radio" name="map_view" ng-model="mapType" value="terrain"   /> Terrain
-            <input type="radio" name="map_view" ng-model="mapType" value="roadmap"   /> Roadmap
-            <input type="radio" name="map_view" ng-model="mapType" value="hybrid"    /> Hybrid
-            <input type="radio" name="map_view" ng-model="mapType" value="satellite" /> Satellite 
-        </div>
-
-        <div class="map-container" map-area></div>
-        <div id="controls" ng-show="inSelectMode">
-            <input type="button" ng-click="deleteSelectedFeature()" value="Delete Selected Feature" /><br />
-        </div>
-        <div class="map-icon-tray">
-            <img src="/assets/select-icon-down.gif" id="button-select-icon" style="cursor:pointer" ng-click="mode('select')"  /> 
-            <img src="/assets/square-icon-up.gif" id="button-square-icon" style="cursor:pointer"   ng-click="mode('box')"     /> 
-            <img src="/assets/poly-icon-up.gif" id="button-poly-icon" style="cursor:pointer"       ng-click="mode('line')" />
-            <img style="cursor:pointer" id="button-circle-icon" src="/assets/circle-icon-up.gif"   ng-click="mode('circle')"  />
-        </div>
-        <div class="map-zoom-tray">
-            <img src="/assets/zoom-icon.gif" id="button-zoom" style="cursor:pointer" /> 
-            <img src="/assets/soil-button-up.gif" id="button-soil-icon" style="cursor:pointer;display:none;" />    
-        </div>
-        <div class="green-box"><p>Use the map above to navigate to and draw a shape over your feeding operation. If you mess up, you can delete the shape and try again.</p></div>
-    </div> <!-- /mapcontainer -->
-    <input type="hidden" name="map_coords" id="map_coords"/>
+    <div class="map-container"></div>
 </div>
 
 
