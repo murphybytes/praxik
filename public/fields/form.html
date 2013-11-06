@@ -47,6 +47,7 @@
                 </coll>
             </step>
             <step>
+              <h2>Step 4 of 6: Field Management Practices</h2>
               <accordion close-others="true">
                 <accordion-group ng-repeat="plan in doc.plans" heading="Plan year {{$index + 1}}">
                   <coll options="data.years" ng-model="plan.year">Year:
@@ -66,42 +67,42 @@
 
                   <div>
                       <accordion close-others="true">
-                        <accordion-group heading="Manure Application">
-                          <coll options="data.methodOfApplications" ng-model="plan.methodOfApplication">Method of Application:
+                      <accordion-group heading="Manure Application">
+                          <coll options="data.methodOfApplications" ng-model="plan.manure.methodOfApplication">Method of Application:
                           </coll>
-                          <text ng-model="plan.applicationDate">Application Date:
+                          <text ng-model="plan.manure.applicationDate">Application Date:
                           </text>
-                          <text ng-model="plan.optimalYield">Planned Rate:
+                          <text ng-model="plan.manure.optimalYield">Planned Rate:
                           </text>
-                          <text ng-model="plan.optimalYield">Application Loss Factor:
+                          <text ng-model="plan.manure.optimalYield">Application Loss Factor:
                           </text>
-                          <text ng-model="plan.optimalYield">Spray Irrigation:
+                          <text ng-model="plan.manure.sprayIrrigation">Spray Irrigation:
                           </text>
                         </accordion-group>
                         <accordion-group heading="Tillage">
-                          <coll options="data.methodOfTillage" ng-model="plan.methodOfTillage">Method of Tillage:
+                          <coll options="data.methodOfTillage" ng-model="plan.tillage.methodOfTillage">Method of Tillage:
                           </coll>
-                          <text ng-model="plan.operationDate">Operation Date:
+                          <text ng-model="plan.tillage.operationDate">Operation Date:
                           </text>
                         </accordion-group>
                         <accordion-group heading="Commercial Fertilizer">
-                          <coll options="data.fertilizerType" ng-model="plan.fertilizerType">Fertilizer Type:
+                          <coll options="data.fertilizerType" ng-model="plan.commercial.fertilizerType">Fertilizer Type:
                           </coll>
-                          <text ng-model="plan.optimalYield">Application Rate:
+                          <text ng-model="plan.commercial.applicationRate">Application Rate:
                           </text>
-                          <coll options="years" ng-model="plan.methodOfApplication">Method of Application:
+                          <coll options="data.commercialMethodOfApplications" ng-model="plan.commercial.methodOfApplication">Method of Application:
                           </coll>
-                          <text ng-model="plan.optimalYield">Application Date:
+                          <text ng-model="plan.commercial.applicationDate">Application Date:
                           </text>
                         </accordion-group>
                         <accordion-group heading="Herbicide">
-                          <coll options="years" ng-model="plan.year">Herbicide Type:
+                          <coll options="data.herbicideType" ng-model="plan.herbicide.herbicideType">Herbicide Type:
                           </coll>
-                          <text ng-model="plan.optimalYield">Application Rate:
+                          <text ng-model="plan.herbicide.applicationRate">Application Rate:
                           </text>
-                          <coll options="years" ng-model="plan.year">Method of Application:
+                          <coll options="data.herbicideMethodOfApplication" ng-model="plan.herbicide.methodOfApplication">Method of Application:
                           </coll>
-                          <text ng-model="plan.optimalYield">Application Date:
+                          <text ng-model="plan.herbicide.applicationDate">Application Date:
                           </text>
                         </accordion-group>
                       </accordion>
@@ -111,9 +112,9 @@
             </step>
 
             <step>
-              <coll options="years" ng-model="plan.year">Phosphorus Test Factor:
+              <coll options="data.phosphorusTestFactor" ng-model="plan.year">Phosphorus Test Factor:
               </coll>
-              <text ng-model="plan.optimalYield">P Test Result:
+              <text ng-model="plan.pTestResult">P Test Result:
               </text>
             </step>
 

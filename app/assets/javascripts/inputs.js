@@ -142,6 +142,7 @@ app.directive('steps', function() {
 
           this.step = function(step) {
               var el = steps[step - 1]
+              console.log("step: ", step, "@", el, "@");
 
               if(el) {
 
@@ -173,6 +174,8 @@ app.directive('step', function() {
           scope.isValid = function() {
               if (form) {
                 return form.$valid;
+              } else {
+                  return true;
               }
           }
       }
