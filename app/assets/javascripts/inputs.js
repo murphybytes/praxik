@@ -28,7 +28,7 @@ app.directive('text', function() {
                     return;
                 }
 
-                if (key == 'reqq') {
+                if (key == 'req') {
                   tInput.attr('required', 'true');
                   return;
                 }
@@ -171,7 +171,7 @@ app.directive('step', function() {
 
           var form = element.find('input').eq(0).controller('form');
           scope.isValid = function() {
-              return true;//form.$valid;
+              return form.$valid;
           }
       }
     };
