@@ -8,7 +8,7 @@ app.directive('date', function() {
       template: '<div class="control-group">' +
                 '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
-                '<input type="text" datepicker-popup="dd-MMMM-yyyy" ng-model="ngModel" />' +
+                '<input type="text" datepicker-popup="dd-MMMM-yyyy" show-weeks="false" ng-model="ngModel" />' +
                 '</div>' +
                 '</div>',
       scope: {

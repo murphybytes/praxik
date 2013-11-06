@@ -105,5 +105,26 @@ GlobalData.herbicideType =  [ "Basis 75DF", "Basis Blend", "Bicep II MAG. 5.5L, 
 GlobalData.herbicideMethodOfApplication = [ "Sprayer: Self propelled", "Sprayer: Non self propelled", "Irrigation" ];
 GlobalData.phosphorusTestFactor = [ 'Bray-1 P, Mehlich-3', 'Olsen', 'Mehlich-3 ICP' ];
 
-GlobalData.animalTypeAndProductPhase = [];
+GlobalData.animalTypeAndProductPhase = [
+"Grow/finish (wet/dry)",
+"Grow/finish (dry feed)",
+"Grow/finish (earthen)",
+"Gestation",
+"Sow and litter",
+"Farrow-Nursery",
+"Farrow-Finish",
+"Wean/finish (wet/dry)",
+"Wean/finish (dry feed)",
+"Beef, Mature cows",
+"Beef, Finishing",
+"Beef, Feeder calves",
+"Dairy Cows, 1200 lbs and up",
+"Dairy Heifers, 900 lbs",
+"Dairy Calves, 500 lbs",
+"Dairy veal calves, 250 lbs",
+"Dairy herd",
+"Layer, caged, 4 lbs",
+"Broiler, litter, 2 lbs",
+"Turkeys, litter, 10 lbs",
+];
 GlobalData.manureStorageStructure = [ 'Nursery', 'Formed: Steel', 'Formed: Concrete', 'Formed: Concrete under building', 'Unformed: Covered', 'Unformed: Uncovered' ];
