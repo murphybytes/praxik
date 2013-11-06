@@ -32,6 +32,11 @@ Praxik::Application.configure do
   #config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => "praxik.red5demo.com" }
 
+  ActionMailer::Base.delivery_method = :sendmail
+  ActionMailer::Base.sendmail_settings = { 
+    :location       => '/usr/sbin/sendmail', 
+    :arguments      => '-i -t -f support@mmp360.com'
+  } 
   #ActionMailer::Base.delivery_method = :sendmail
   #ActionMailer::Base.sendmail_settings = { 
   #  :location       => '/usr/sbin/sendmail', 
