@@ -1,0 +1,71 @@
+<div class="twelve columns alpha">
+      <div id="content">
+        <h1 class="remove-bottom">My Reports</h1>
+        <hr>
+
+<form action="https://test.authorize.net/gateway/transact.dll" id="my_reports" method="post" class="form-horizontal">
+  <fieldset>
+    <input type="hidden" name="form" id="form" value="my_reports">
+    <input type="hidden" name="nonce" id="nonce" value="60409ab2e2">
+    <div class="white-box" style="margin-bottom:25px;">
+
+      <h2>Request a New Report</h2>
+      <p>Request your report by selecting the feeding operation and then select Pay for Report button below.</p>
+      <div id="x_po_num_group" class="control-group">
+        <label class="control-label" for="x_po_num">
+          <span class="required">* </span>Associated Feeding Operation:
+        </label>
+        <div class="controls">
+          <select type="select" name="x_po_num" id="x_po_num" required="">
+            <option value="">--SELECT--</option><option value="0495e4f2-edbf-4635-a339-f91bf34d6691">ASD</option><option value="09c343a1-7abc-4639-911d-5a6263ad9db7">BigSquare</option><option value="57d21e7c-c884-4fb1-a2be-58f8e7af4922">Kiki</option><option value="34fd1070-a214-40bf-ba37-2c4da0a482e9">kristin</option><option value="c89ae1a8-d99a-4b9c-a315-8b0408a9fd12">Red 5</option><option value="7ebd75a2-87e0-4e51-9d6c-5eb5afcc5e7c">Test</option>
+          </select>
+          <span class="help-inline">Select the feeding operation this report is for.</span>
+        </div>
+      </div>
+      <div id="cost-summary" class="controls" style="display:none;"></div>
+    </div>
+  </fieldset>
+</form>
+<script type="text/javascript">     //Adds user friendly button submission animation
+      function reset_submit_button(){
+        jQuery(document).find("input[type=submit]").removeAttr("disabled"); 
+        jQuery("#form-processing-animation").hide();
+      }       jQuery(document).ready(function() {   
+    jQuery("#my_reports").bind("submit", function() { 
+      jQuery("#form-processing-animation").show();
+      jQuery(this).find("input[type=submit]").attr("disabled", "disabled"); 
+    });});jQuery(document).ready(function() {
+});
+</script><h2>Your Paid Reports Report</h2>You have no reports to list.<script type="text/javascript">
+jQuery(document).ready( function() {
+  
+  jQuery("#view-report-table")
+    .tablesorter({  
+            sortList: [[1,0]],
+            widgets: ['zebra'],
+            headers:{
+            }
+          }); 
+          
+  jQuery("#x_po_num").change(function(){
+    var feeding_op_hash = jQuery(this).val();
+    jQuery("#cost-summary").show('slow'); 
+    jQuery.ajax({
+      type : "post",
+      dataType : "json",
+      url : '/wp-admin/admin-ajax.php',
+      data : {action: "bin_get_cost_summary", feeding_op: feeding_op_hash, nonce: jQuery('#nonce').val()},
+      success: function(bin) {
+        jQuery('#cost-summary').html(bin.response);
+      },
+      error: function(){
+        jQuery('#cost-summary').html("Could not load cost summary table.");
+      }
+    }); 
+  });
+  
+});
+</script>
+
+        </div>
+    </div>

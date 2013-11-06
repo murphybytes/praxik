@@ -29,6 +29,10 @@ app.filter('normalize', function() {
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
+      when('/my-reports', {
+        templateUrl: 'reports/my-reports.html',
+        controller: 'NewFieldCtrl'
+      }).
       when('/fields/new', {
         templateUrl: 'fields/form.html',
         controller: 'NewFieldCtrl'
