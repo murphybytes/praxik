@@ -15,11 +15,11 @@ Maps = function(element) {
         map.on('draw:created', onCreateDraw);
         map.addLayer(layers['Hybrid']);
         
-        var drawControls = {};
+        var drawControls = { position: 'topleft' };
         drawControls.draw = {
-            position: 'topleft',
+            marker: false,
             polygon: {
-                title: 'Draw a sexy polygon!',
+                title: 'Draw polygon!',
                 allowIntersection: false,
                 drawError: {
                     color: '#b00b00',
@@ -82,8 +82,6 @@ Maps = function(element) {
 
     api.zoomTo = function(jsonFeature) {
         var feature = L.geoJson(jsonFeature);
-        console.log(feature, feature.getBounds());
-        //map.fitBounds(feature.getBounds());
         map.setView(feature.getBounds().getCenter(), 10);
     }
 
