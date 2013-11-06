@@ -13,7 +13,6 @@ app.directive('map', function() {
             zoomTo: "="
         },
         link: function(scope, element, attrs) {
-            console.log(element.children().children()[2]);
             var modelLoaded,
                 //map = new Maps(element.children().children()[2]);
                 map = new Maps(element[0]);
@@ -34,8 +33,8 @@ app.directive('map', function() {
             }, true);
         },
         controller: function($scope) {
-            $scope.onCreateDraw = function(draw) {
-                $scope.ngModel = draw.toGeoJSON();
+            $scope.onCreateDraw = function(feature) {
+                $scope.ngModel = feature.toGeoJSON();
             }
         }
     };
