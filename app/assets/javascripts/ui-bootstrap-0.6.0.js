@@ -1091,6 +1091,7 @@ function ($compile, $parse, $document, $position, dateFilter, datepickerPopupCon
     require: 'ngModel',
     link: function(originalScope, element, attrs, ngModel) {
 
+      console.log("link dataPicker", element, element[0]);
       var closeOnDateSelection = angular.isDefined(attrs.closeOnDateSelection) ? scope.$eval(attrs.closeOnDateSelection) : datepickerPopupConfig.closeOnDateSelection;
       var dateFormat = attrs.datepickerPopup || datepickerPopupConfig.dateFormat;
 

@@ -1,6 +1,51 @@
 l = console.log;
 var app = angular.module("MyInputs", ['ng']);
 
+app.directive('date', function() {
+    return {
+      require: 'ngModel',
+      restrict: 'E',
+      template: '<div class="control-group">' +
+                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
+                '<div class="controls">' +
+                '<input type="text" datepicker-popup="dd-MMMM-yyyy" ng-model="ngModel" />' +
+                '</div>' +
+                '</div>',
+      scope: {
+              ngModel: '=',
+              name: '@name',
+          },
+      replace: true,
+      transclude: true,
+      priority: 10,
+      link: function (scope, element, attrs) {
+      },
+      compile: function (tElement, tAttrs, transclude) {
+            var tInput = tElement.find('input');
+            
+             angular.forEach(tAttrs, function(value, key) {
+                if ( (key.charAt(0) == '$') || (key == 'ngModel') ) {
+                    return;
+                }
+
+                if (key == 'req') {
+                  tInput.attr('required', 'true');
+                  return;
+                }
+                
+                tInput.attr(key, value);
+            });
+
+            ['datepickerPopup', 'ngModel', 'ngChange', 'type', 'placeholder'].forEach(function(name) {
+                tElement.removeAttr(tAttrs.$attr[name]);
+            });
+
+            return;
+        },
+    };
+});
+
+
 app.directive('text', function() {
     return {
       require: 'ngModel',
