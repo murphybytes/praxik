@@ -5,7 +5,7 @@ GlobalData.plantingMethods = [];
 GlobalData.crops = ['Corn', 'Soybeans', 'Wheat', 'Oat', 'Alfalfa', 'Corn silage'];
 GlobalData.harvestMethods = ['Combine, corn header', 'Combine, platform header', 'Combine, row crop header', 'Silage chopper', 'Windrower'];
 GlobalData.vegetations = ["Perennial grass"];
-GlobalData.conservationPractices = ["Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
+GlobalData.conservationPractices = ["None", "Grade stabilization full flow", "Level terraces", "Ponds and grade stabilization retention", "Tile inlet terraces"];
 GlobalData.plantingMethods = ["Planter 30 in rows", "Planter 15 in rows", "Drill or Airseeder"];
 
 GlobalData.methodOfApplications = [ "Knifed in or soil injection of liquid manure", 
