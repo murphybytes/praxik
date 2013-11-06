@@ -1,6 +1,10 @@
 Praxik::Application.routes.draw do
-  devise_for :users
+  devise_for :users, { :controllers => { :registrations  => "registrations" } }
+  devise_scope :user do
+    get 'users/please_confirm', to: "registrations#please_confirm", as: :user_registration_confirm
+  end
 
+  get '/', to: "accounts#index"
   get '/account', to: "accounts#index"
   get '/services', to: "home#services"
   get '/contact', to: "home#contact"
