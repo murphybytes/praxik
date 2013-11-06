@@ -4,10 +4,10 @@ Praxik::Application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
+  config.cache_classes = true 
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true 
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -30,7 +30,7 @@ Praxik::Application.configure do
   config.action_mailer.perform_deliveries = true # Set it to false to disable the email in dev mode
   config.action_mailer.raise_delivery_errors = true
   #config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.default_url_options = { :host => "praxik.red5demo.com" }
 
   #ActionMailer::Base.delivery_method = :sendmail
   #ActionMailer::Base.sendmail_settings = { 
