@@ -4,7 +4,45 @@
         <hr>
           
   <p>Please contact us using any of the following methods:</p>
-  <style type="text/css">label span.required { color: #B94A48; }span.help-inline, span.help-block { color: #888; font-size: .9em; font-style: italic; }</style><form action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_contact_us&amp;nonce=890d743eee" id="contact_us" method="post" class="form-horizontal"><fieldset><input type="hidden" name="form" id="form" value="contact_us"><div id="email_group" class="control-group"><label class="control-label" for="email"><span class="required">* </span>Email:</label><div class="controls"><input type="email" name="email" id="email" value="bob@r5i.com" required=""></div></div><div id="full_name_group" class="control-group"><label class="control-label" for="full_name"><span class="required">* </span>Name:</label><div class="controls"><input type="text" name="full_name" id="full_name" value="Bob Dooley" required=""></div></div><div id="message_group" class="control-group"><label class="control-label" for="email-form-message"><span class="required">* </span>Message:</label><div class="controls"><textarea rows="5" name="message" id="email-form-message" required=""></textarea></div></div><div id="form-response" style="display:none;"></div><div class="form-actions"><input type="submit" value="Send Message" name="" id="submit_button" class="btn btn-primary"><span id="form-processing-animation" style="display:none;margin-left:35px;margin-right:35px;float:right;"><img src="/wp-content/plugins/kps-webspinner/assets/proc-animation.gif" title="Processing..."></span></div></fieldset></form><script type="text/javascript">      //Adds user friendly button submission animation
+
+  <form action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_contact_us&amp;nonce=890d743eee" id="contact_us" method="post" class="form-horizontal">
+  <fieldset>
+  <input type="hidden" name="form" id="form" value="contact_us">
+  <div id="email_group" class="control-group">
+  <label class="control-label" for="email">
+  <span class="required">* </span>Email:
+  </label>
+  <div class="controls">
+  <input type="email" name="email" id="email" value="" required="">
+  </div>
+  </div>
+  <div id="full_name_group" class="control-group">
+  <label class="control-label" for="full_name">
+  <span class="required">* </span>Name:
+  </label>
+  <div class="controls">
+  <input type="text" name="full_name" id="full_name" value="" required="">
+  </div>
+  </div>
+  <div id="message_group" class="control-group">
+  <label class="control-label" for="email-form-message">
+  <span class="required">* </span>Message:
+  </label>
+  <div class="controls">
+  <textarea rows="5" name="message" id="email-form-message" required=""></textarea>
+  </div>
+  </div>
+  <div id="form-response" style="display:none;"></div>
+  <div class="form-actions">
+  <input type="submit" value="Send Message" name="" id="submit_button" class="btn btn-primary">
+  <span id="form-processing-animation" style="display:none;margin-left:35px;margin-right:35px;float:right;">
+  <img src="/wp-content/plugins/kps-webspinner/assets/proc-animation.gif" title="Processing...">
+  </span>
+  </div>
+  </fieldset>
+  </form>
+
+  <script type="text/javascript">      //Adds user friendly button submission animation
       function reset_submit_button(){
         jQuery(document).find("input[type=submit]").removeAttr("disabled"); 
         jQuery("#form-processing-animation").hide();
