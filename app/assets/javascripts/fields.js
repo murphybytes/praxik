@@ -4,7 +4,7 @@ function MyFieldsCtrl($scope, Field) {
 
 
 function EditFieldCtrl($scope, $routeParams, $http, $interval, Field, Operation) {
-   var timer = $interval(saveDoc, 3000);
+   var timer = $interval(saveDoc, 2000);
    var fieldChanged = false;
 
    $scope.data = GlobalData;
@@ -46,7 +46,7 @@ function EditFieldCtrl($scope, $routeParams, $http, $interval, Field, Operation)
 }
 
 function NewFieldCtrl($scope, $http, $interval, Field, Operation) {
-   var timer = $interval(saveDoc, 3000);
+   var timer = $interval(saveDoc, 2000);
    var fieldChanged = false;
 
    $scope.data = GlobalData;
