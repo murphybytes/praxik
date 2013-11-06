@@ -36,17 +36,17 @@
                 </div>
             </step>
             <step>
+                <h2>Step 3 of 6: Identify and Label Vegetative Buffers</h2>
                 <map  ng-model="doc.vegetativeBufferGeometry" zoom-to="doc.fieldGeometry" label='Buffer'>Locate and Mark Vegetative Buffers:
                 </map>
-                <text ng-model="doc.bufferName" required="">Buffer Name
+                <text ng-model="doc.bufferName">Buffer Name
                 </text>
-                <text ng-model="doc.bufferWidth" required="">Buffer Width
+                <text ng-model="doc.bufferWidth">Buffer Width
                 </text>
                 <coll options="data.vegetations" ng-model="doc.vegetation">Vegetation
                 </coll>
             </step>
             <step>
-              <h2>Step 3 of 6: Identify and Label Vegetative Buffers</h2>
               <accordion close-others="true">
                 <accordion-group ng-repeat="plan in doc.plans" heading="Plan year {{$index + 1}}">
                   <coll options="data.years" ng-model="plan.year">Year:
