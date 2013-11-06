@@ -3,7 +3,7 @@ function MyOperationsCtrl($scope, Operation) {
 }
 
 function EditOperationCtrl($scope, $routeParams, $http, $interval, Operation) {
-   var timer = $interval(saveDoc, 3000);
+   var timer = $interval(saveDoc, 2000);
    var docChanged = false;
 
    $scope.action = "Edit";
@@ -29,7 +29,7 @@ function EditOperationCtrl($scope, $routeParams, $http, $interval, Operation) {
 }
 
 function NewOperationCtrl($scope, $http, $interval, Operation) {
-   var timer = $interval(saveDoc, 3000);
+   var timer = $interval(saveDoc, 2000);
    var docChanged = false;
 
    $scope.action = "Add";

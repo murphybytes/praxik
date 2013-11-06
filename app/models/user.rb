@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :rememberable, :trackable, :registerable, :recoverable
+  devise :database_authenticatable, :rememberable, :trackable, :registerable, :recoverable, :confirmable
 
   store :data, accessors: [:first_name, :last_name, :primary_phone, :secondary_phone]
 
