@@ -17,18 +17,19 @@
  */
 
 /* Disabled button states */
-button,.button.disabled, button,.button[disabled] {
-cursor: default !important;
-background-image: none !important;
-opacity: 0.65 !important;
-filter: alpha(opacity=65) !important;
--webkit-box-shadow: none !important;
--moz-box-shadow: none !important;
-box-shadow: none !important;
+form .button.disabled, form .button[disabled], form button.disabled, form button[disabled] {
+cursor: default;
+background-image: none;
+opacity: 0.65;
+filter: alpha(opacity=65);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
 }
-button,.button:hover, button,.button:focus, button,.button:active, button,.button.active, button,.button.disabled, button,.button[disabled] {
-color: #333333 !important;
-background-color: #e6e6e6 !important;
+form .button:hover, form .button:focus, form .button:active, form .button.active, form .button.disabled, form .button[disabled],
+form button:hover, form button:focus, form button:active, form button.active, form button.disabled, form button[disabled] {
+color: #333333;
+background-color: #e6e6e6;
 }
 
 /* Set form validation */
