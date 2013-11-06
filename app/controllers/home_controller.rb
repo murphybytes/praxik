@@ -20,4 +20,5 @@ class HomeController < ApplicationController
   def privacy
     render "public/pages/privacy.html"
   end
+
 end
