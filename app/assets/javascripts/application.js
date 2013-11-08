@@ -38,10 +38,10 @@ function EditPasswordCtrl($scope, Profile) {
 
           if (!doc.is_valid) {
               $scope.message.type = "danger";
-              $scope.message.text = doc.errors[0] || "was not updated";
+              $scope.message.text = doc.errors[0] || "Was not updated";
           } else {
               $scope.message.type = "success";
-              $scope.message.text = "updated successfully";
+              $scope.message.text = "Updated successfully";
             }
       });
     }
@@ -57,10 +57,10 @@ function EditProfileCtrl($scope, Profile) {
 
             if (!doc.is_valid) {
               $scope.message.type = "danger";
-              $scope.message.text = doc.errors[0] || "was not updated";
+              $scope.message.text = doc.errors[0] || "Was not updated";
             } else {
               $scope.message.type = "success";
-              $scope.message.text = "updated successfully";
+              $scope.message.text = "Updated successfully";
             }
         })
     }
