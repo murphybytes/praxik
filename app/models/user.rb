@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
     login
   end
 
+  def as_json(opts)
+    slice(:id, :login, :email, :first_name, :last_name, :primary_phone, :secondary_phone)
+  end
+
 end

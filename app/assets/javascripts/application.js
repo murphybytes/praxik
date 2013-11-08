@@ -26,6 +26,14 @@ app.filter('normalize', function() {
   }
 });
 
+function EditProfileCtrl($scope, $routeParams, $http, $interval, Field, Profile) {
+    $scope.doc = Profile.get();
+
+    $scope.save = function() {
+        $scope.doc.$update();
+    }
+}
+
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
@@ -79,8 +87,9 @@ app.config(['$routeProvider', function($routeProvider) {
       when('/change-my-password', {
         templateUrl: 'myaccount/changepassword.html'
       }).
-      when('/edit-my-profile', {
-        templateUrl: 'myaccount/editprofile.html'
+      when('/profile', {
+        templateUrl: 'myaccount/editprofile.html',
+        controller: 'EditProfileCtrl'
       })
 
   }]);
