@@ -26,7 +26,16 @@ app.filter('normalize', function() {
   }
 });
 
-function EditProfileCtrl($scope, $routeParams, $http, $interval, Field, Profile) {
+function EditPasswordCtrl($scope, Profile) {
+    $scope.doc = {};
+
+    $scope.save = function() {
+      var profile = new Profile($scope.doc);
+      profile.$updatePassword();
+    }
+}
+
+function EditProfileCtrl($scope, Profile) {
     $scope.doc = Profile.get();
 
     $scope.save = function() {
@@ -84,13 +93,12 @@ app.config(['$routeProvider', function($routeProvider) {
       when('/privacy', {
         templateUrl: 'pages/privacy.html'
       }).
-      when('/change-my-password', {
-        templateUrl: 'myaccount/changepassword.html'
-      }).
       when('/profile', {
         templateUrl: 'myaccount/editprofile.html',
         controller: 'EditProfileCtrl'
+      }).when('/change-password', {
+        templateUrl: 'myaccount/changepassword.html',
+        controller: 'EditPasswordCtrl'
       })
-
   }]);
 

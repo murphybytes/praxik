@@ -14,9 +14,11 @@ Praxik::Application.routes.draw do
 
   namespace :account do
     resources :fields 
-    resources :operations 
+    resources :operations
+
     get '/profile', to: "profile#show"
     put '/profile', to: "profile#update"
+    put '/update_password', to: "profile#update_password"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

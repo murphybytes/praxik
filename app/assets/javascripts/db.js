@@ -9,8 +9,10 @@ function Profile($resource) {
     var options = {
     };
 
-    var Doc = $resource("/account/profile", {},
-            {update: {method:'PUT', params:{}, isArray:false}});
+    var Doc = $resource("/account/profile", {}, {
+                  update: {method:'PUT', params:{}, isArray:false},
+                  updatePassword: {url: "account/update_password",method:'PUT', params:{}, isArray:false}
+              });
              
 
     return Doc;
