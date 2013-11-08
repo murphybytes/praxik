@@ -7,10 +7,7 @@ class Account::ProfileController < AccountsController
 
   def update
     unless profile_params.blank?
-      res = current_user.update(profile_params)
-      p "DEBUG"
-      p res
-      p "DEBUG"
+      current_user.update(profile_params)
     end
 
     render json: current_user
