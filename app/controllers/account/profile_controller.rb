@@ -14,15 +14,21 @@ class Account::ProfileController < AccountsController
   end
 
   def update_password
-    current_user.update_with_password(profile_params)
+    current_user.update_with_password(password_params)
 
+    p profile_params
+    p current_user.errors
     render json: current_user
   end
 
   def profile_params
     params.permit(:email, :login, :first_name, :last_name, 
-                  :primary_phone, :secondary_phone, :current_password, 
-                  :password, :password_confirmation)
+                  :primary_phone, :secondary_phone)
   end
+
+  def password_params
+    params.permit(:current_password, :password, :password_confirmation)
+  end
+
 
 end

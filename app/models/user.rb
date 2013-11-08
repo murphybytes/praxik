@@ -22,7 +22,8 @@ class User < ActiveRecord::Base
 
   def as_json(opts)
     attrs = slice(:id, :login, :email, :first_name, :last_name, :primary_phone, :secondary_phone)
-    attrs[:errors] = errors.messages
+    attrs[:errors] = errors.full_messages
+    attrs[:is_valid] = attrs[:errors].blank?
 
     attrs
   end

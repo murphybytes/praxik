@@ -209,7 +209,7 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 		margin-right:10px;
 	}
 	
-	.alert{
+	.alert-off{
 		border:solid 1px red;
 		background-color:#EACCCC;
 		color:#900;

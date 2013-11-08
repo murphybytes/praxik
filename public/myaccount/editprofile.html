@@ -6,6 +6,8 @@
 
         <form id="edit_my_profile" class="form-horizontal" enctype=multipart/form-data">
             <fieldset>
+                <div class="alert alert-{{message.type}}" ng-show="message.visible">{{message.text}}</div>
+
                 <text ng-model="doc.login" req>User name:
                 </text>
                 <text ng-model="doc.email" req>Email:

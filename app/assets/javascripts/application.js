@@ -31,15 +31,38 @@ function EditPasswordCtrl($scope, Profile) {
 
     $scope.save = function() {
       var profile = new Profile($scope.doc);
-      profile.$updatePassword();
+      $scope.message = {visible: false};
+
+      profile.$updatePassword(function(doc) {
+          $scope.message.visible = true;
+
+          if (!doc.is_valid) {
+              $scope.message.type = "danger";
+              $scope.message.text = doc.errors[0] || "was not updated";
+          } else {
+              $scope.message.type = "success";
+              $scope.message.text = "updated successfully";
+            }
+      });
     }
 }
 
 function EditProfileCtrl($scope, Profile) {
     $scope.doc = Profile.get();
+    $scope.message = {visible: false};
 
     $scope.save = function() {
-        $scope.doc.$update();
+        $scope.doc.$update(function(doc) {
+            $scope.message.visible = true;
+
+            if (!doc.is_valid) {
+              $scope.message.type = "danger";
+              $scope.message.text = doc.errors[0] || "was not updated";
+            } else {
+              $scope.message.type = "success";
+              $scope.message.text = "updated successfully";
+            }
+        })
     }
 }
 
