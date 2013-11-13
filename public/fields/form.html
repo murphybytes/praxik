@@ -45,13 +45,13 @@
 
                 <div ng-repeat="buffer in doc.buffers">
                     <a href="" ng-click="doc.buffers.splice($index, 1)">delete</a>
-                    <text ng-model="buffer.bufferName">Buffer Name
+                    <text ng-model="buffer.bufferName">Buffer Name:
                     </text>
-                    <text ng-model="buffer.bufferWidth">Buffer Width
+                    <text ng-model="buffer.bufferWidth">Buffer Width:
                     </text>
-                    <coll options="data.vegetations" ng-model="doc.vegetation">Vegetation
+                    <coll options="data.vegetations" ng-model="buffer.vegetation">Vegetation:
                     </coll>
-                    <coll options="data.positions" ng-model="doc.vegetation">Vegetation
+                    <coll options="data.positions" ng-model="buffer.position">Position:
                     </coll>
                 </div>
             </step>
