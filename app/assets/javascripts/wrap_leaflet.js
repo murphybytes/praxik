@@ -113,7 +113,7 @@ Maps = function(element) {
                 var loc = results[0].geometry.location,
                     xy = new L.LatLng(loc.lat(), loc.lng());
 
-                map.setView(xy, 2);
+                map.setView(xy, 7);
             } else {
                 console.log("debug country: not working");
             }
