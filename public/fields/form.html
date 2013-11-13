@@ -9,9 +9,9 @@
                   <span class="required">* </span><strong>Locate and Mark Your Field:</strong>
                 </label>
 
-                <coll options="data.countries" ng-model="$root.country">Zoom to:
+                <coll options="data.counties" ng-model="$root.county">Zoom to:
                 </coll>
-                <map  ng-model="doc.fieldGeometry" zoom-to-country="$root.country">Locate and Mark Your Field:
+                <map  ng-model="doc.fieldGeometry" zoom-to-country="$root.county">Locate and Mark Your Field:
                 </map>
                 <text ng-model="doc.name" req>Field Name:
                 </text>

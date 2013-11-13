@@ -18,9 +18,9 @@ app.directive('map', function($rootScope) {
 
             map.addListener(scope);
 
-            $rootScope.$watch("country", function (value) {
+            $rootScope.$watch("county", function (value) {
                 if ( value ) {
-                  map.zoomToCountry(value);
+                  map.zoomToCounty(value);
                 }
             });
 
