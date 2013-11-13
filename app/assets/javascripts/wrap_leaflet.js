@@ -105,5 +105,20 @@ Maps = function(element) {
         }
     }
 
+    api.zoomToCountry = function(country) {
+        var geo = new google.maps.Geocoder();
+         
+        geo.geocode( { 'address': country }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var loc = results[0].geometry.location,
+                    xy = new L.LatLng(loc.lat(), loc.lng());
+
+                map.setView(xy, 10);
+            } else {
+                console.log("debug country: not working");
+            }
+        } );
+    }
+
     return api;
 }

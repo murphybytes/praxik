@@ -1,7 +1,7 @@
 var app = angular.module("GoogleMap", ['ngResource']);
 
 
-app.directive('map', function() {
+app.directive('map', function($rootScope) {
     return {
         require: 'ngModel',
         restrict: 'EA',
@@ -17,6 +17,12 @@ app.directive('map', function() {
                 map = new Maps(element[0]);
 
             map.addListener(scope);
+
+            $rootScope.$watch("country", function (value) {
+                if ( value ) {
+                  map.zoomToCountry(value);
+                }
+            });
 
             scope.$watch("zoomTo", function (value) {
                 if( value ) {
