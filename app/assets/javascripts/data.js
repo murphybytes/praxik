@@ -144,3 +144,7 @@ GlobalData.countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","An
 		,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
 		,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
 		,"Yemen","Zambia","Zimbabwe"];
+
+
+GlobalData.vegetations = ["Perennial grass"];
+GlobalData.positions   = ["Top", "Middle", "Bottom"];
