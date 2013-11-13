@@ -14,28 +14,52 @@ app.directive('map', function() {
         },
         link: function(scope, element, attrs) {
             var modelLoaded,
-                //map = new Maps(element.children().children()[2]);
                 map = new Maps(element[0]);
 
             map.addListener(scope);
 
-            scope.$watch("zoomTo", function (value) { 
+            scope.$watch("zoomTo", function (value) {
                 if( value ) {
-                  map.zoomTo(value);
+                  map.zoomTo(value.mapDraw);
                 }
             });
 
-            scope.$watch("ngModel", function (value) { 
-                if( !modelLoaded && value) {
-                    map.drawFeatures(value);
+            scope.$watch("ngModel", function (value) {
+                if ( !modelLoaded && value ) {
+                    map.drawFeatures(mapBy("mapDraw", value));
                     modelLoaded = true;
                 }
             }, true);
         },
         controller: function($scope) {
+            function addToModel(feature) {
+                if ( !$scope.ngModel ) {
+                    $scope.ngModel = [];
+                }
+
+                var data = {mapDraw: feature.toGeoJSON()};
+                $scope.ngModel.push(data);
+            }
+
             $scope.onCreateDraw = function(feature) {
-                $scope.ngModel = feature.toGeoJSON();
+                addToModel(feature);
+            }
+
+            $scope.onDeleteDraw = function(feature) {
+                console.log(feature, "onDelete", $scope.ngModel);
+                //$scope.ngModel = feature.toGeoJSON();
             }
         }
     };
 });
+
+function mapBy(fieldName, coll) {
+    var values = [];
+    if (coll) {
+        angular.forEach(coll, function(data) {
+            values.push(data[fieldName]);
+        });
+    }
+
+    return values
+}

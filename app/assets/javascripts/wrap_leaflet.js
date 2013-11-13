@@ -8,11 +8,23 @@ Maps = function(element) {
     function init() {
         var layers = { 'Roadmap': googleLayer('ROADMAP'), 
                        'Hybrid': googleLayer('HYBRID'),
-                       'Terrain': googleLayer('TERRAIN') };
+                       'Terrain': googleLayer('TERRAIN') 
+        };
+
+        var soil = L.tileLayer.wms("http://devgis.iowammp.com/geoserver/ssurgo/gwc/service/wms", {
+            layers: 'ssurgo:mupolygon',
+            format: 'image/png',
+            transparent: true,
+	    opacity: 0.3,
+            attribution: "Weather data © 2012 IEM Nexrad"
+        });
+
+        //soil.addTo(map);
 
         map.addControl(new L.Control.Layers(layers, {}));
         map.addLayer(drawnItems); 
         map.on('draw:created', onCreateDraw);
+        map.on('draw:deleted', onDeleteDraw);
         map.addLayer(layers['Hybrid']);
         
         var drawControls = { position: 'topleft' };
@@ -50,12 +62,15 @@ Maps = function(element) {
             var type = e.layerType,
                 layer = e.layer;
 
-            if (type === 'marker') {
-                layer.bindPopup('A popup!');
-            }
-
             drawnItems.addLayer(layer);
-            notify(layer);
+            listener.onCreateDraw(layer);
+        }
+
+        function onDeleteDraw(e) {
+            var type = e.layerType,
+                layers = e.layers._layers
+
+            listener.onDeleteDraw(layers);
         }
     }
 
@@ -69,11 +84,7 @@ Maps = function(element) {
         return new L.Google(name, options); 
     }
 
-    function notify(data) {
-        listener.onCreateDraw(data);
-    }
-
-
+    //------------------------------------------------------------------------------------------------------------------------------------------------
     var api = {};
 
     api.addListener = function(obj) {
@@ -86,7 +97,12 @@ Maps = function(element) {
     }
 
     api.drawFeatures = function(features) {
-        L.geoJson(features, {}).addTo(map);
+        if (features) {
+            var layer = L.geoJson(features, {}).addTo(map);
+            angular.forEach(layer._layers, function(item) {
+              drawnItems.addLayer(item);
+            })
+        }
     }
 
     return api;

@@ -28,7 +28,7 @@
                 <label>
                   <span class="required">* </span><strong>Mark the Nearest Stream:</strong>
                 </label>
-                <map  ng-model="doc.nearestStreamGeometry" zoom-to="doc.fieldGeometry" label='Stream'>Mark the Nearest Stream:
+                <map  ng-model="doc.nearestStreamGeometry" zoom-to="doc.fieldGeometry[0]" label='Stream'>Mark the Nearest Stream:
                 </map>
                 <div id="draw-path-tutorial" align="center" style="border: 1px solid rgb(204, 204, 204); padding: 5px; display: block;">
                   <strong>How to draw a line:</strong><br>
@@ -37,14 +37,18 @@
             </step>
             <step>
                 <h2>Step 3 of 6: Identify and Label Vegetative Buffers</h2>
-                <map  ng-model="doc.vegetativeBufferGeometry" zoom-to="doc.fieldGeometry" label='Buffer'>Locate and Mark Vegetative Buffers:
+                <map  ng-model="doc.buffers" zoom-to="doc.fieldGeometry[0]" label='Buffer'>Locate and Mark Vegetative Buffers:
                 </map>
-                <text ng-model="doc.bufferName">Buffer Name
-                </text>
-                <text ng-model="doc.bufferWidth">Buffer Width
-                </text>
-                <coll options="data.vegetations" ng-model="doc.vegetation">Vegetation
-                </coll>
+
+                <div ng-repeat="buffer in doc.buffers">
+                    <a href="" ng-click="doc.buffers.splice($index, 1)">delete</a>
+                    <text ng-model="buffer.bufferName">Buffer Name
+                    </text>
+                    <text ng-model="buffer.bufferWidth">Buffer Width
+                    </text>
+                    <coll options="buffer.vegetations" ng-model="doc.vegetation">Vegetation
+                    </coll>
+                </div>
             </step>
             <step>
               <h2>Step 4 of 6: Field Management Practices</h2>
