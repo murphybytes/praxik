@@ -146,5 +146,5 @@ GlobalData.countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","An
 		,"Yemen","Zambia","Zimbabwe"];
 
 
-GlobalData.vegetations = ["Perennial grass"];
-GlobalData.positions   = ["Top", "Middle", "Bottom"];
+GlobalData.vegetations = ["", "Perennial grass"];
+GlobalData.positions   = ["", "Top", "Middle", "Bottom"];
