@@ -127,10 +127,15 @@ GlobalData.animalTypeAndProductPhase = [
 "Broiler, litter, 2 lbs",
 "Turkeys, litter, 10 lbs",
 ];
-GlobalData.manureStorageStructure = [ 'Nursery', 'Formed: Steel', 'Formed: Concrete', 'Formed: Concrete under building', 'Unformed: Covered', 'Unformed: Uncovered' ];
+GlobalData.manureStorageStructure = ["", 'Nursery', 'Formed: Steel', 'Formed: Concrete', 'Formed: Concrete under building', 'Unformed: Covered', 'Unformed: Uncovered' ];
 
 GlobalData.counties = ['Adair','Adams','Allamakee','Appanoose','Audubon','Benton','Black Hawk','Boone','Bremer','Buchanan','Buena Vista','Butler','Calhoun','Carroll','Cass','Cedar','Cerro Gordo','Cherokee','Chickasaw','Clarke','Clay','Clayton','Clinton','Crawford','Dallas','Davis','Decatur','Delaware','Des Moines','Dickinson','Dubuque','Emmet','Fayette','Floyd','Franklin','Fremont','Greene','Grundy','Guthrie','Hamilton','Hancock','Hardin','Harrison','Henry','Howard','Humboldt','Ida','Iowa','Jackson','Jasper','Jefferson','Johnson','Jones','Keokuk','Kossuth','Lee','Linn','Louisa','Lucas','Lyon','Madison','Mahaska','Marion','Marshall','Mills','Mitchell','Monona','Monroe','Montgomery','Muscatine',"O'Brien",'Osceola','Page','Palo Alto','Plymouth','Pocahontas','Polk','Pottawattamie','Poweshiek','Ringgold','Sac','Scott','Shelby','Sioux','Story','Tama','Taylor','Union','Van Buren','Wapello','Warren','Washington','Wayne','Webster','Winnebago','Winneshiek','Woodbury','Worth','Wright'];
 
 
 GlobalData.vegetations = ["", "Perennial grass"];
 GlobalData.positions   = ["", "Top", "Middle", "Bottom"];
+GlobalData.operationMMP = ["", "Existing operation, not expanding", "Existing operation, expanding", "Existing operation, new owner", "New operation"];
+
+GlobalData.animalTypeAndProductPhase = ['--Select--','Nursery','Grow/finish (wet/dry)','Grow/finish (dry feed)','Grow/finish (earthen)','Gestation','Sow and litter','Farrow-Nursery','Farrow-Finish','Wean/finish (wet/dry)','Wean/finish (dry feed)','Beef, Mature cows','Beef, Finishing','Beef, Feeder calves','Dairy Cows, 1200 lbs and up','Dairy Heifers, 900 lbs','Dairy Calves, 500 lbs','Dairy veal calves, 250 lbs','Dairy herd','Layer, caged, 4 lbs','Broiler, litter, 2 lbs','Turkeys, litter, 10 lbs'];
+GlobalData.manureNutrientContentUnits = ['', 'lbs/1000gal'];
+
