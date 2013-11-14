@@ -3,7 +3,6 @@ function MyOperationsCtrl($scope, Operation) {
     $scope.drop = function(i, doc) {
         $scope.docs.splice(i, 1);
         doc.$delete(function() {
-            console.log("deleted");
             $scope.message = {
                 type: "success",
                 text: "Was deleted",

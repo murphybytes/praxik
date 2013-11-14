@@ -1,5 +1,16 @@
 function MyFieldsCtrl($scope, Field) {
     $scope.docs = Field.query();
+    $scope.drop = function(i, doc) {
+        $scope.docs.splice(i, 1);
+        doc.$delete(function() {
+            $scope.message = {
+                type: "success",
+                text: "Was deleted",
+                visible: true 
+            };
+        });
+    }
+
 }
 
 

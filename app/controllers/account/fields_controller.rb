@@ -33,4 +33,11 @@ class Account::FieldsController < AccountsController
     render json: @field
   end
 
+  def destroy
+    field = current_user.fields.find(params[:id])
+    field.destroy
+
+    render json: "success"
+  end
+
 end

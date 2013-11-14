@@ -16,7 +16,7 @@
             <tbody>
                 <tr class="odd" ng-repeat="doc in docs">
                     <td align="left" data-label="Name">{{doc.data.name}}</td>
-                    <td align="left" data-label="Last Update">2013-10-28</td>
+                    <td align="left" data-label="Last Update">{{doc.updated_at}}</td>
                     <td align="center" data-label="">
                         <a href="#/operations/edit/{{doc.id}}">edit</a> |
                         <a href="" ng-click="drop($index, doc)">delete</a>
