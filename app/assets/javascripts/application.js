@@ -19,6 +19,11 @@
 l = console.log;
 app = angular.module('LowaFields', ['BackendServices', 'GoogleMap', 'ngRoute', 'ng', 'MyInputs', 'ui.bootstrap']);
 
+app.run(function($rootScope) {
+   $rootScope.data = GlobalData;
+});
+
+
 app.filter('normalize', function() {
   return function(input) {
       l("in filter", input);
