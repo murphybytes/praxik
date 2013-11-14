@@ -168,7 +168,7 @@ app.directive('steps', function() {
       scope: { },
       replace: true,
       transclude: true,
-      controller: function($scope) {
+      controller: function($scope, $location) {
           var steps = [], currentStep;
           this.totalSteps = 0;
           this.addStep = function(step) {
@@ -186,14 +186,20 @@ app.directive('steps', function() {
           }
 
           this.step = function(step) {
-              var el = steps[step - 1]
-              if(el) {
-                for(var i in steps) {
-                    steps[i].showMe = false;
-                }
+              var el = steps[step - 1];
 
-                el.showMe = true;
-                currentStep = el;
+              if(el) {
+                  if ( el.hasLocation ) {
+                      //$location.path("/"+el.hasLocation);
+                      window.location.href = '/account#/operaitons'
+                  } else {
+                      for(var i in steps) {
+                          steps[i].showMe = false;
+                      }
+
+                      el.showMe = true;
+                      currentStep = el;
+                  }
               }
           }
       }
@@ -213,6 +219,8 @@ app.directive('step', function() {
           stepsController.addStep(scope);
 
           var form = element.find('input').eq(0).controller('form');
+          scope.hasLocation = attrs.href;
+
           scope.isValid = function() {
               if (form) {
                 return form.$valid;
