@@ -2,19 +2,9 @@
 <hr>
 
 
-<form action="http://mmp360.com/wp-admin/admin-ajax.php?action=bin_my_fields&amp;nonce=1b55fcc90e" id="my_fields" method="post" class="form-horizontal">
+<form id="my_fields" class="form-horizontal">
+    <div class="alert alert-{{message.type}}" ng-show="message.visible">{{message.text}}</div>
     <fieldset>
-        <input type="hidden" name="form" id="form" value="my_fields"/>
-        <input type="hidden" name="nonce" id="nonce" value="1b55fcc90e"/>
-        <div class="control-group">
-            <div style="float:left;width:250px;">
-                <select id="selected_action" name="selected_action" style="width:150px;">
-                    <option value="" selected="selected">--Select Action-- </option>
-                    <option value="delete">Delete Selected</option>
-                </select>   
-                <input type="submit" id="doaction" name="doaction" value="Apply" />
-            </div>
-        </div>
         <table id="view-field-table" class="table table-bordered" width="100%">
             <thead>
                 <tr>
@@ -27,7 +17,10 @@
                 <tr class="odd" ng-repeat="doc in docs">
                     <td align="left" data-label="Name">{{doc.data.name}}</td>
                     <td align="left" data-label="Last Update">2013-10-28</td>
-                    <td align="center" data-label=""><a href="#/operations/edit/{{doc.id}}">edit</a></td>
+                    <td align="center" data-label="">
+                        <a href="#/operations/edit/{{doc.id}}">edit</a> |
+                        <a href="" ng-click="drop($index, doc)">delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

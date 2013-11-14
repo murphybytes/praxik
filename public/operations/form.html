@@ -5,6 +5,9 @@
       <step>
         <h2>Step 1 of 2: General Details and Contact Information</h2>
 
+        <label>
+            <span class="required">* </span><strong>Locate and Mark Your Feeding Operation:</strong>
+        </label>
         <coll options="$root.data.counties" ng-model="$root.county">Zoom to:
         </coll>
         <map  ng-model="doc.nearestStreamGeometry" zoom-to-country="$root.county">Locate and Mark Your Feeding Operation:

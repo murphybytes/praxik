@@ -28,4 +28,11 @@ class Account::OperationsController < AccountsController
     render json: @operation
   end
 
+  def destroy
+    operation = current_user.operations.find(params[:id])
+    operation.destroy
+
+    render json: "success"
+  end
+
 end
