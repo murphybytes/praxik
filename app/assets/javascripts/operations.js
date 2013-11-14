@@ -17,7 +17,7 @@ function EditOperationCtrl($scope, $routeParams, $http, $interval, Operation) {
    var docChanged = false;
 
    $scope.initialConstructionDateShow = function() {
-       if ($scope.doc) {
+       if ($scope.doc && $scope.doc.feedingOperationParameters) {
          var show = $scope.doc.feedingOperationParameters.MMP == "Existing operation, expanding";
          return show;
        }
@@ -57,7 +57,7 @@ function NewOperationCtrl($scope, $http, $interval, Operation) {
    $scope.$watch("doc", function (value) { docChanged = true; }, true);
 
    $scope.initialConstructionDateShow = function() {
-       if ($scope.doc) {
+       if ($scope.doc && $scope.doc.feedingOperationParameters) {
            var show = $scope.doc.feedingOperationParameters.MMP == "Existing operation, expanding";
            return show;
        }
