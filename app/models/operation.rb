@@ -6,11 +6,10 @@ class Operation < ActiveRecord::Base
   belongs_to :field
 
   def as_json(opts)
-    slice(:id, :data, :updated_at)
-  end
+    data = slice(:id, :data)
+    data[:updated_at] = updated_at.to_s(:db)
 
-  def updated_at
-    super.to_s :db
+    data
   end
 
 end

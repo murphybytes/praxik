@@ -19,6 +19,7 @@ function EditOperationCtrl($scope, $routeParams, $http, $interval, Operation) {
    $scope.action = "Edit";
    $scope.rOperation = Operation.get({"id": $routeParams.id}, function(doc) {
      $scope.doc = doc.data;
+     $scope.doc.state = "Iowa";
    });
    $scope.$watch('doc', function (value) { docChanged = true; }, true);
 
@@ -45,6 +46,7 @@ function NewOperationCtrl($scope, $http, $interval, Operation) {
    $scope.action = "Add";
    $scope.rOperation = new Operation();
    $scope.doc = {plans: [{}, {}, {}, {}]};
+   $scope.doc.state = "Iowa";
    $scope.$watch("doc", function (value) { docChanged = true; }, true);
 
    function saveDoc() {

@@ -6,10 +6,10 @@ class Field < ActiveRecord::Base
   has_one :operation
 
   def as_json(opts)
-    slice(:id, :data, :updated_at)
+    data = slice(:id, :data)
+    data[:updated_at] = updated_at.to_s(:db)
+
+    data
   end
 
-  def updated_at
-    super.to_s :db
-  end
 end

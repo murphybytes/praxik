@@ -12,17 +12,21 @@
         </coll>
         <map  ng-model="doc.nearestStreamGeometry" zoom-to-country="$root.county">Locate and Mark Your Feeding Operation:
         </map>
-        <text ng-model="doc.name" type="text" req>Name of Operation:
+
+        <div class="green-box">
+            <p>Use the map above to navigate to and draw a shape over your feeding operation. If you mess up, you can delete the shape and try again.</p>
+        </div>
+        <text ng-model="doc.name" req>Name of Operation:
         </text>
-        <text ng-model="doc.facilityID" type="text" req>Facility ID No.:
+        <text ng-model="doc.facilityID" req>Facility ID No.:
         </text>
-        <text ng-model="doc.911StreetAddres" type="text" req>911 Street Address:
+        <text ng-model="doc.911StreetAddres" req>911 Street Address:
         </text>
-        <text ng-model="doc.city" type="text" req>City:
+        <text ng-model="doc.city" req>City:
         </text>
-        <text ng-model="doc.state" type="text" req>State:
+        <text ng-model="doc.state" readonly="1">State:
         </text>
-        <text ng-model="doc.zip" type="text" req ng-minlength="5">Zip:
+        <text ng-model="doc.zip" req ng-minlength="5">Zip:
         </text>
 
         <accordion close-others="oneAtATime">
