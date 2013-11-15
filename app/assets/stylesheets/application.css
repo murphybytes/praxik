@@ -28,7 +28,7 @@ $(".accordion-toggle").on("click",function() { $(this).parent().next().toggleCla
 #content {
   overflow: hidden;
   position: relative;
-  padding: 5px;
+  /*padding: 5px;*/
 }
 
 /* Disabled button states */
