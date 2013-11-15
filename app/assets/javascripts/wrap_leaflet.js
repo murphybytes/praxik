@@ -2,7 +2,7 @@ Maps = function(element) {
     var listener,
         drawnItems = new L.FeatureGroup(),
         lowaState = new L.LatLng(42.020855, -93.63639),
-        map = new L.Map(element, {center: lowaState, zoom: 7});
+        map = new L.Map(element, {center: lowaState, zoom: 7, scrollWheelZoom: false});
 
     init();
     function init() {
