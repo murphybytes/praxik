@@ -17,6 +17,12 @@
  *= require_tree ./old_css
  */
 
+/* 
+Fixes issue with flyout calenders in accordions
+$(".accordion-toggle").on("click",function() { $(this).parent().next().toggleClass("open") });
+ */
+.accordion-body.open { overflow: visible; }
+
 /* Contain all of the hidden accordion divs to eliminate excessive scrolling */
 #content {
   overflow: hidden;
