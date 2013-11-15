@@ -17,6 +17,12 @@
  *= require_tree ./old_css
  */
 
+/* Contain all of the hidden accordion divs to eliminate excessive scrolling */
+#content {
+  overflow: hidden;
+  position: relative;
+}
+
 /* Disabled button states */
 form .button.disabled, form .button[disabled], form button.disabled, form button[disabled] {
 cursor: default;
