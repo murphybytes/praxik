@@ -17,7 +17,7 @@
 
 
 l = console.log;
-app = angular.module('LowaFields', ['BackendServices', 'GoogleMap', 'ngRoute', 'ng', 'MyInputs', 'ui.bootstrap']);
+app = angular.module('LowaFields', ['angularFileUpload', 'BackendServices', 'GoogleMap', 'ngRoute', 'ng', 'MyInputs', 'ui.bootstrap']);
 
 app.run(function($rootScope) {
    $rootScope.data = GlobalData;

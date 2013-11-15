@@ -14,13 +14,15 @@ Praxik::Application.routes.draw do
 
   namespace :account do
     resources :fields 
-    resources :operations
+    resources :operations do
+    end
 
     get '/profile', to: "profile#show"
     put '/profile', to: "profile#update"
     put '/update_password', to: "profile#update_password"
   end
 
+  post '/account/upload', to: 'accounts#upload'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -13,6 +13,7 @@
  *= require leaflet
  *= require leaflet.draw
  *= require management_practices
+ *= require upload 
  *= require_tree ./account
  *= require_tree ./old_css
  */

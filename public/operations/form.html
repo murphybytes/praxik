@@ -137,6 +137,10 @@
          <h2>Step 3 of 3: Nutrient Reports</h2>
          <text ng-model="doc.sourceOfNutrientData">Source of Nutrient Data:
          </text>
+         <upload-file ng-model="doc.reports" dir="operations/{{original.id}}"> </upload-file>
+         <ul>
+             <li ng-repeat="f in doc.reports track by $index"><a href="{{f.path}}" target="_blank">{{f.name}}</li>
+         </ul>
       </step>
 
       <step href="operaitons">

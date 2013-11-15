@@ -271,3 +271,49 @@ app.directive('prev', function() {
       }
     };
 });
+
+app.directive('uploadFile', function() {
+    return {
+      require: '^?steps',
+      restrict: 'EA',
+      template: '<div>' +
+                '<div class="drop-box" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class">drop files here</div>' +
+                '</div>',
+      replace: true,
+      transclude: true,
+      scope: {
+          ngModel: "=",
+          dir: "@",
+      },
+      link: function(scope, element, attrs, stepsController) {
+      },
+      controller: function($scope, $upload) {
+          $scope.onFileSelect = function($files) {
+              console.log($scope.dir);
+              //$files: an array of files selected, each file has name, size, and type.
+              for (var i = 0; i < $files.length; i++) {
+                  var $file = $files[i];
+                  $scope.upload = $upload.upload({
+                      url: '/account/upload',
+                      headers: {'headerKey': 'headerValue'}, withCredential: true,
+                      data: {dir: $scope.dir},
+                      file: $file,
+                      progress: function(evt) {
+                          $scope.uploadProgress = parseInt(100.0 * evt.loaded / evt.total);
+                          console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                      }
+                  }).success(function(data, status, headers, config) {
+                      if ( !$scope.ngModel ) {
+                        $scope.ngModel = [];
+                      }
+                      $scope.ngModel.push(data);
+                      console.log($scope.ngModel);
+                  })
+                  //.error(...).then(...); 
+              }
+          }
+      }
+    }
+});
+
+

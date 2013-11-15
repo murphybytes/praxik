@@ -37,6 +37,8 @@ function EditFieldCtrl($scope, $routeParams, $http, $interval, Field, Operation)
    $scope.action = "Edit";
    $scope.rField = Field.get({"id": $routeParams.id}, function(doc) {
      $scope.doc = doc.data;
+     $scope.doc.id = doc.id;
+
      if (!$scope.doc.plans) {
        $scope.doc.plans = [{}, {}, {}, {}];
      }
