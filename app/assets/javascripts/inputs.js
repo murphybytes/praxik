@@ -289,7 +289,6 @@ app.directive('uploadFile', function() {
       },
       controller: function($scope, $upload) {
           $scope.onFileSelect = function($files) {
-              console.log($scope.dir);
               //$files: an array of files selected, each file has name, size, and type.
               for (var i = 0; i < $files.length; i++) {
                   var $file = $files[i];
@@ -307,7 +306,6 @@ app.directive('uploadFile', function() {
                         $scope.ngModel = [];
                       }
                       $scope.ngModel.push(data);
-                      console.log($scope.ngModel);
                   })
                   //.error(...).then(...); 
               }
