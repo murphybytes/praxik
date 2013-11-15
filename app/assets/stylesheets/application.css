@@ -21,6 +21,7 @@
 #content {
   overflow: hidden;
   position: relative;
+  padding: 5px;
 }
 
 /* Disabled button states */
