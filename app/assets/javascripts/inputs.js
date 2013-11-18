@@ -190,8 +190,7 @@ app.directive('steps', function() {
 
               if(el) {
                   if ( el.hasLocation ) {
-                      //$location.path("/"+el.hasLocation);
-                      window.location.href = '/account#/operaitons'
+                      $location.path("/"+el.hasLocation);
                   } else {
                       for(var i in steps) {
                           steps[i].showMe = false;
