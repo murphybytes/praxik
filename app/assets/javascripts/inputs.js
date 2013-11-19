@@ -6,7 +6,7 @@ app.directive('date', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
+                '<label for="name" class="control-label"><span class="required" ng-show="isReq">* </span><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<input type="text" datepicker-popup="dd-MMMM-yyyy" show-weeks="false" ng-model="ngModel" />' +
                 '</div>' +
@@ -19,6 +19,7 @@ app.directive('date', function() {
       transclude: true,
       priority: 10,
       link: function (scope, element, attrs) {
+          scope.isReq = false;
       },
       compile: function (tElement, tAttrs, transclude) {
             var tInput = tElement.find('input');
@@ -51,7 +52,7 @@ app.directive('text', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
+                '<label for="name" class="control-label"><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<input type="text" ng-model="ngModel" />' +
                 '</div>' +
@@ -66,8 +67,10 @@ app.directive('text', function() {
       link: function (scope, element, attrs) {
       },
       compile: function (tElement, tAttrs, transclude) {
-            var tInput = tElement.find('input');
+            var tInput = tElement.find('input'),
+                tLabel = tElement.find('label');
             
+             
              angular.forEach(tAttrs, function(value, key) {
                 if ( (key.charAt(0) == '$') || (key == 'ngModel') ) {
                     return;
@@ -75,6 +78,7 @@ app.directive('text', function() {
 
                 if (key == 'req') {
                   tInput.attr('required', 'true');
+                  tLabel.append('<span class="required">* </span>');
                   return;
                 }
                 
