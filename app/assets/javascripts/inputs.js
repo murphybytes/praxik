@@ -18,9 +18,6 @@ app.directive('date', function() {
       replace: true,
       transclude: true,
       priority: 10,
-      link: function (scope, element, attrs) {
-          scope.isReq = false;
-      },
       compile: function (tElement, tAttrs, transclude) {
             var tInput = tElement.find('input');
             
@@ -42,7 +39,7 @@ app.directive('date', function() {
             });
 
             return;
-        },
+        }
     };
 });
 
@@ -99,7 +96,7 @@ app.directive('coll', function() {
       require: 'ngModel',
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
+                '<label for="name" class="control-label"><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<select ng-model="ngModel" ng-options="c for c in options"> </select>' +
                 '</div>' +
@@ -112,7 +109,8 @@ app.directive('coll', function() {
       transclude: true,
       priority: 10,
       compile: function (tElement, tAttrs, transclude) {
-             var tInput = tElement.find('select');
+             var tInput = tElement.find('select'),
+                 tLabel = angular.element(tElement.children()[0]);
             
              angular.forEach(tAttrs, function(value, key) {
                 if ( (key.charAt(0) == '$') || (key == 'ngModel') || (key == 'options') ) {
@@ -121,6 +119,8 @@ app.directive('coll', function() {
 
                 if (key == 'req') {
                   tInput.attr('required', 'true');
+                  tLabel.append('<span class="required">* </span>');
+
                   return;
                 }
                 
@@ -141,7 +141,7 @@ app.directive('radio', function() {
     return {
       restrict: 'E',
       template: '<div class="control-group">' +
-                '<label for="name" class="control-label"><span class="required">* </span><strong ng-transclude></strong></label>' +
+                '<label for="name" class="control-label"><strong ng-transclude></strong></label>' +
                 '<div class="controls">' +
                 '<label class="radio inline" ng-repeat="item in values">' +
                 '<input type="radio" value="{{item}}" ng-model="$parent.ngModel">' +
@@ -157,10 +157,28 @@ app.directive('radio', function() {
       replace: true,
       transclude: true,
       priority: 10,
-      link: function(scope, element, attrs) {
-          if(scope.items) {
-            scope.values = scope.items.split("|")
+      controller: function($scope) {
+          if ($scope.items) {
+            $scope.values = $scope.items.split("|")
           }
+      },
+      compile: function (tElement, tAttrs, transclude) {
+          var tInput = tElement.find('input'),
+              tLabel = angular.element(tElement.children()[0]);
+
+          angular.forEach(tAttrs, function(value, key) {
+              if ( (key.charAt(0) == '$') || (key == 'ngModel') ) {
+                  return;
+              }
+
+              if (key == 'req') {
+                  //tInput.attr('required', 'true');
+                  tLabel.append('<span class="required">* </span>');
+                  return;
+              }
+
+              tInput.attr(key, value);
+          });
       }
     };
 });
