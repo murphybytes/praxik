@@ -293,13 +293,19 @@ app.directive('uploadFile', function() {
       controller: function($scope, $upload) {
           $scope.onFileSelect = function($files) {
               //$files: an array of files selected, each file has name, size, and type.
-              for (var i = 0; i < $files.length; i++) {
-                  var $file = $files[i];
+              var files = [];
+              angular.forEach($files, function(f) {
+                  if ( f.type == "application/pdf" ) {
+                      files.push(f);
+                  }
+              });
+
+              angular.forEach(files, function(file) {
                   $scope.upload = $upload.upload({
                       url: '/account/upload',
                       headers: {'headerKey': 'headerValue'}, withCredential: true,
                       data: {dir: $scope.dir},
-                      file: $file,
+                      file: file,
                       progress: function(evt) {
                           $scope.uploadProgress = parseInt(100.0 * evt.loaded / evt.total);
                           console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
@@ -311,7 +317,7 @@ app.directive('uploadFile', function() {
                       $scope.ngModel.push(data);
                   })
                   //.error(...).then(...); 
-              }
+              });
           }
       }
     }
