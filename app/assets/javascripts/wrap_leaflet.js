@@ -19,9 +19,8 @@ Maps = function(element) {
             attribution: "Weather data © 2012 IEM Nexrad"
         });
 
-        //soil.addTo(map);
 
-        map.addControl(new L.Control.Layers(layers, {}));
+        map.addControl(new L.Control.Layers(layers, {"Soil": soil}));
         map.addLayer(drawnItems); 
         map.on('draw:created', onCreateDraw);
         map.on('draw:deleted', onDeleteDraw);
