@@ -19,6 +19,16 @@ Maps = function(element) {
             attribution: "Weather data © 2012 IEM Nexrad"
         });
 
+        var county = L.tileLayer.wms("http://devgis.iowammp.com/geoserver/ssurgo/gwc/service/wms", {
+            layers: 'ssurgo:sapolygon',
+            format: 'image/png',
+            transparent: true,
+	    opacity: 0.5,
+            attribution: "Weather data © 2012 IEM Nexrad"
+        });
+
+
+        county.addTo(map);
 
         map.addControl(new L.Control.Layers(layers, {"Soil": soil}));
         map.addLayer(drawnItems); 
