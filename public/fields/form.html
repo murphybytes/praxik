@@ -78,43 +78,51 @@
 
                   <div>
                       <accordion close-others="true">
-                      <accordion-group heading="Manure Application">
-                          <coll options="data.methodOfApplications" ng-model="plan.manure.methodOfApplication">Method of Application:
-                          </coll>
-                          <date ng-model="plan.manure.applicationDate">Application Date:
-                          </date>
-                          <text ng-model="plan.manure.optimalYield">Planned Rate:
-                          </text>
-                          <text ng-model="plan.manure.optimalYield">Application Loss Factor:
-                          </text>
-                          <text ng-model="plan.manure.sprayIrrigation">Spray Irrigation:
-                          </text>
+                        <accordion-group heading="Manure Application">
+                          <edit-coll coll-data="plan.manure">
+                              <coll options="$root.data.methodOfApplications" ng-model="doc._methodOfApplication">Method of Application:
+                              </coll>
+                              <date ng-model="doc.applicationDate">Application Date:
+                              </date>
+                              <text ng-model="doc.optimalYield">Planned Rate:
+                              </text>
+                              <text ng-model="doc.applicationLossFactor">Application Loss Factor:
+                              </text>
+                              <text ng-model="doc.sprayIrrigation">Spray Irrigation:
+                              </text>
+                          </edit-coll>
                         </accordion-group>
                         <accordion-group heading="Tillage">
-                          <coll options="data.methodOfTillage" ng-model="plan.tillage.methodOfTillage">Method of Tillage:
-                          </coll>
-                          <date ng-model="plan.tillage.operationDate">Operation Date:
-                          </date>
+                          <edit-coll coll-data="plan.tillage">
+                            <coll options="$root.data.methodOfTillage" ng-model="doc._methodOfTillage">Method of Tillage:
+                            </coll>
+                            <date ng-model="doc.operationDate">Operation Date:
+                            </date>
+                          </edit-coll>
                         </accordion-group>
                         <accordion-group heading="Commercial Fertilizer">
-                          <coll options="data.fertilizerType" ng-model="plan.commercial.fertilizerType">Fertilizer Type:
-                          </coll>
-                          <text ng-model="plan.commercial.applicationRate">Application Rate:
-                          </text>
-                          <coll options="data.commercialMethodOfApplications" ng-model="plan.commercial.methodOfApplication">Method of Application:
-                          </coll>
-                          <date ng-model="plan.commercial.applicationDate">Application Date:
-                          </date>
+                          <edit-coll coll-data="plan.commercialFertilizer">
+                            <coll options="$root.data.fertilizerType" ng-model="doc._fertilizerType">Fertilizer Type:
+                            </coll>
+                            <text ng-model="doc.applicationRate">Application Rate:
+                            </text>
+                            <coll options="$root.data.commercialMethodOfApplications" ng-model="doc.methodOfApplication">Method of Application:
+                            </coll>
+                            <date ng-model="doc.applicationDate">Application Date:
+                            </date>
+                          </edit-coll>
                         </accordion-group>
                         <accordion-group heading="Herbicide">
-                          <coll options="data.herbicideType" ng-model="plan.herbicide.herbicideType">Herbicide Type:
-                          </coll>
-                          <text ng-model="plan.herbicide.applicationRate">Application Rate:
-                          </text>
-                          <coll options="data.herbicideMethodOfApplication" ng-model="plan.herbicide.methodOfApplication">Method of Application:
-                          </coll>
-                          <date ng-model="plan.herbicide.applicationDate">Application Date:
-                          </date>
+                          <edit-coll coll-data="plan.herbicide">
+                            <coll options="$root.data.herbicideType" ng-model="doc._herbicideType">Herbicide Type:
+                            </coll>
+                            <text ng-model="doc.applicationRate">Application Rate:
+                            </text>
+                            <coll options="$root.data.herbicideMethodOfApplication" ng-model="doc.methodOfApplication">Method of Application:
+                            </coll>
+                            <date ng-model="doc.applicationDate">Application Date:
+                            </date>
+                          </edit-coll>
                         </accordion-group>
                       </accordion>
                   </div>

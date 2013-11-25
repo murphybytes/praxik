@@ -21,6 +21,7 @@ app = angular.module('LowaFields', ['angularFileUpload', 'BackendServices', 'Goo
 
 app.run(function($rootScope) {
    $rootScope.data = GlobalData;
+   $rootScope.log = console.log;
 });
 
 

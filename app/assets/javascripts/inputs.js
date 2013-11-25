@@ -93,7 +93,7 @@ app.directive('text', function() {
 
 app.directive('coll', function() {
     return {
-      require: 'ngModel',
+      require: ['?ngModel'],
       restrict: 'E',
       template: '<div class="control-group">' +
                 '<label for="name" class="control-label"><strong ng-transclude></strong></label>' +
@@ -132,7 +132,12 @@ app.directive('coll', function() {
             });
 
 
-            return;
+            return {
+                pre: function preLink(scope, iElement, iAttrs, da) {
+                },
+                post: function postLink(scope, iElement, iAttrs, da) {
+                }
+            }
         },
     };
 });
@@ -336,6 +341,66 @@ app.directive('uploadFile', function() {
                   })
                   //.error(...).then(...); 
               });
+          }
+      }
+    }
+});
+
+app.directive('editColl', function($parse) {
+    return {
+      require: '',
+      restrict: 'E',
+      priority: 10,
+      scope: false,
+      template: '<div>' +
+                '<ul><li ng-repeat="item in items() track by $index">' +
+                '{{item}} | <a href="" ng-click="edit($index)">edit</a> | <a href="" ng-click="remove($index)">delete</a>' +
+                '</li></ul>' +
+                '<div ng-transclude></div>' +
+                '<button ng-click="add()" ng-show="!editMode">Add</button>' +
+                '<button ng-click="done()" ng-show="editMode">Done</button>' +
+                '</div>',
+      transclude: true,
+      replace: true,
+      link: function(scope, element, attrs, ctrls) {
+          var model = $parse(attrs["collData"]);
+          scope.doc = {};
+          scope.coll = model(scope.$parent);
+
+          scope.items = function() {
+              var data = [];
+              angular.forEach(scope.coll, function(item) {
+                  var k = Object.keys(item).find(function(el) { return el.match(/^_/) });
+                  data.push(item[k]);
+              });
+
+              return data;
+          }
+
+          if ( !angular.isArray(scope.coll) ) {
+              model.assign(scope.$parent, []);
+              scope.coll = model(scope.$parent);
+          }
+      },
+      controller: function($scope) {
+          $scope.editMode = false;
+
+          $scope.edit = function($index) {
+              $scope.doc = $scope.coll[$index];
+              $scope.editMode = true;
+          };
+
+          $scope.done = function() {
+            $scope.editMode = false;
+          };
+
+          $scope.remove = function(index) {
+              $scope.coll.splice(index, 1);
+          };
+
+          $scope.add = function() {
+              $scope.coll.push(angular.copy($scope.doc));
+              $scope.doc = {};
           }
       }
     }

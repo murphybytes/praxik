@@ -355,3 +355,9 @@ table th[class*="span"],
 .table-hover tbody tr.info:hover > td {
   background-color: #c4e3f3;
 }
+
+
+.ng-scope  {
+ /* border: 1px solid red;
+  margin: 3px; */
+}
