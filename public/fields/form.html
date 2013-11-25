@@ -61,6 +61,13 @@
               <h2>Step 4 of 6: Field Management Practices</h2>
               <accordion close-others="true">
                 <accordion-group ng-repeat="plan in doc.plans" heading="Plan year {{$index + 1}}">
+                  <div class="green-box" style="padding-bottom:15px;">
+                      <h4 style="margin-top:0">Copy a Plan Year</h4>
+                      <select ng-model="plan._copyFrom" ng-change="$root.loadYear(doc.plans, plan)" ng-options="'Plan Year ' + p for p in [1, 2, 3, 4]">
+                           <option value="">Nothing selected</option>
+                      </select>
+                  </div>
+
                   <coll options="data.years" ng-model="plan.year">Year:
                   </coll>
                   <coll options="data.crops" ng-model="plan.crop">Crop:

@@ -22,6 +22,12 @@ app = angular.module('LowaFields', ['angularFileUpload', 'BackendServices', 'Goo
 app.run(function($rootScope) {
    $rootScope.data = GlobalData;
    $rootScope.log = console.log;
+
+   $rootScope.loadYear = function(plans, plan) {
+       var i = plans.indexOf(plan);
+       plans[i] = angular.copy(plans[plan._copyFrom - 1]);
+       plans[i]._copyFrom = plan._copyFrom;
+   };
 });
 
 
