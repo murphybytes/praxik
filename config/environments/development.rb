@@ -27,6 +27,8 @@ Praxik::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+config.log_level = :debug
+
   config.action_mailer.perform_deliveries = false# Set it to false to disable the email in dev mode
   config.action_mailer.raise_delivery_errors = true
   #config.action_mailer.delivery_method = :smtp
